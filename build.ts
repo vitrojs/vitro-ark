@@ -15,45 +15,8 @@ if (fs.existsSync(dist)) {
   fs.rmSync(dist, { recursive: true, force: true })
 }
 
-const exclude = new Set(['environment'])
-
-const components = fs
-  .readdirSync('./src')
-  .filter((it) => !exclude.has(it) && fs.statSync(`./src/${it}`).isDirectory())
-
-const entrypoints = components.reduce(
-  (acc, it) => {
-    acc[it] = `./src/${it}/index.ts`
-    return acc
-  },
-  {} as Record<string, string>,
-)
-
-if (isProduction) {
-  const exports = components.reduce(
-    (acc, it) => {
-      acc[`./${it}`] = {
-        import: `./dist/${it}.js`,
-        types: `./src/${it}/index.ts`,
-      }
-      return acc
-    },
-    {} as Record<string, any>,
-  )
-
-  // @ts-ignore
-  pkg['exports'] = exports
-
-  fs.writeFileSync(
-    path.join(import.meta.dir, 'package.json'),
-    JSON.stringify(pkg, null, 2),
-  )
-}
-
 buildSync({
-  entryPoints: {
-    ...entrypoints,
-  },
+  entryPoints: ['./src/index.ts'],
   format: 'esm',
   outdir: 'dist',
   bundle: true,

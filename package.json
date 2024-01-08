@@ -3,6 +3,12 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./src/index.ts"
+    }
+  },
   "files": [
     "dist",
     "src"
@@ -11,7 +17,7 @@
     "dev": "panda && vite",
     "build": "bun build.ts",
     "postinstall": "NODE_ENV=production bun build.ts",
-    "format":"prettier --write src",
+    "format": "prettier --write src",
     "preview": "vite preview"
   },
   "trustedDependencies": [
