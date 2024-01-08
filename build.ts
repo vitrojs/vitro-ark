@@ -6,7 +6,6 @@ import * as path from 'node:path'
 import * as fs from 'node:fs'
 import * as url from 'node:url'
 
-
 const dirname = path.dirname(url.fileURLToPath(import.meta.url))
 const dist = path.join(dirname, 'dist')
 if (fs.existsSync(dist)) {
@@ -54,6 +53,7 @@ buildSync({
   splitting: true,
   platform: 'browser',
   external: [
+    'styled-system',
     ...Object.keys(pkg.dependencies || {}),
     ...Object.keys(pkg.peerDependencies || {}),
   ],
