@@ -1,0 +1,4 @@
+**/dist
+packages/lucide/icons
+packages/lucide/src/icons
+**/styled-system
