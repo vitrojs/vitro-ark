@@ -49,6 +49,7 @@
     "@zag-js/pin-input": "^0.32.0",
     "@zag-js/popover": "^0.32.0",
     "@zag-js/presence": "^0.32.0",
+    "@zag-js/progress": "^0.32.0",
     "@zag-js/radio-group": "^0.32.0",
     "@zag-js/rating-group": "^0.32.0",
     "@zag-js/select": "^0.32.0",
@@ -67,6 +68,7 @@
   "devDependencies": {
     "@pandacss/dev": "^0.25.0",
     "@park-ui/panda-preset": "^0.28.0",
+    "@zag-js/progress": "^0.32.0",
     "bun-types": "^1.0.21",
     "esbuild": "^0.19.11",
     "prettier": "^3.1.1",
