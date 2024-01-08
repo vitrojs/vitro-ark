@@ -1,6 +1,5 @@
 import { $, Portal } from 'vitro'
 import { Menu } from '.'
-import './menu.css'
 
 export const Basic = () => (
   <Menu.Root>

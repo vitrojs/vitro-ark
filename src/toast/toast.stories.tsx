@@ -1,5 +1,4 @@
 import { Toast, createToaster } from '.'
-import './toast.css'
 
 export const Basic = () => {
   const [Toaster, toast] = createToaster({

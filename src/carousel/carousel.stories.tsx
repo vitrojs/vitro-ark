@@ -1,6 +1,5 @@
 import { ButtonVariantProps, button } from 'styled-system/recipes'
 import { Carousel } from '.'
-import './carousel.css'
 import { $, $$, For } from 'vitro'
 
 const styles = {

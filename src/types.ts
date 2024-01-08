@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-
 export type CollectionItem = string | object
 type DistributiveOmit<T, K extends keyof any> = T extends any
   ? Omit<T, K>

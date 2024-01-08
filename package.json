@@ -11,6 +11,7 @@
     "dev": "panda && vite",
     "build": "bun build.ts",
     "postinstall": "NODE_ENV=production bun build.ts",
+    "format":"prettier --write src",
     "preview": "vite preview"
   },
   "trustedDependencies": [

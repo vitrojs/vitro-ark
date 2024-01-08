@@ -1,6 +1,5 @@
 import { For } from 'vitro'
 import { PinInput } from '.'
-import './pin-input.css'
 
 export const Basic = () => (
   <PinInput.Root onValueComplete={(e) => alert(e.valueAsString)}>

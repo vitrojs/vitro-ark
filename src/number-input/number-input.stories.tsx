@@ -1,5 +1,4 @@
 import { NumberInput } from '.'
-import './number-input.css'
 
 export const Basic = () => (
   <NumberInput.Root>

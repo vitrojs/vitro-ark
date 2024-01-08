@@ -8,7 +8,6 @@ import {
 import { Portal } from 'vitro'
 import { Assign } from '../types'
 import { Dialog } from '.'
-import './dialog.css'
 
 const Button = ({
   variant,

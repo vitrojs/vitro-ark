@@ -1,6 +1,5 @@
 import { FileUpload } from '.'
 import { For } from 'vitro'
-import './file-upload.css'
 
 export const Basic = () => (
   <FileUpload.Root maxFiles={5}>

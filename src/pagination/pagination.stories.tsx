@@ -1,6 +1,5 @@
 import { $, For } from 'vitro'
 import { Pagination } from '.'
-import './pagination.css'
 
 export const Basic = () => (
   <Pagination.Root count={5000} pageSize={10} siblingCount={2}>

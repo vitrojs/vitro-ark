@@ -1,6 +1,5 @@
 import { Portal } from 'vitro'
 import { DatePicker } from '.'
-import './date-picker.css'
 
 export const Basic = () => {
   return (

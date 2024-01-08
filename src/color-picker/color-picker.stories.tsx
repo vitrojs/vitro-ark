@@ -1,6 +1,5 @@
 import { $ } from 'vitro'
 import { ColorPicker } from '.'
-import './color-picker.css'
 
 export const Basic = () => {
   return (

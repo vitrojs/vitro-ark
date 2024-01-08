@@ -1,6 +1,5 @@
 import { For } from 'vitro'
 import { RadioGroup } from '.'
-import './radio-group.css'
 
 export const Basic = () => {
   const frameworks = ['React', 'Solid', 'Vue']
