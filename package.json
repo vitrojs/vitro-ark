@@ -3,128 +3,6 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "exports": {
-    "./accordion": {
-      "import": "./dist/accordion.js",
-      "types": "./src/accordion/index.ts"
-    },
-    "./avatar": {
-      "import": "./dist/avatar.js",
-      "types": "./src/avatar/index.ts"
-    },
-    "./carousel": {
-      "import": "./dist/carousel.js",
-      "types": "./src/carousel/index.ts"
-    },
-    "./checkbox": {
-      "import": "./dist/checkbox.js",
-      "types": "./src/checkbox/index.ts"
-    },
-    "./color-picker": {
-      "import": "./dist/color-picker.js",
-      "types": "./src/color-picker/index.ts"
-    },
-    "./combobox": {
-      "import": "./dist/combobox.js",
-      "types": "./src/combobox/index.ts"
-    },
-    "./date-picker": {
-      "import": "./dist/date-picker.js",
-      "types": "./src/date-picker/index.ts"
-    },
-    "./dialog": {
-      "import": "./dist/dialog.js",
-      "types": "./src/dialog/index.ts"
-    },
-    "./editable": {
-      "import": "./dist/editable.js",
-      "types": "./src/editable/index.ts"
-    },
-    "./environment": {
-      "import": "./dist/environment.js",
-      "types": "./src/environment/index.ts"
-    },
-    "./file-upload": {
-      "import": "./dist/file-upload.js",
-      "types": "./src/file-upload/index.ts"
-    },
-    "./hover-card": {
-      "import": "./dist/hover-card.js",
-      "types": "./src/hover-card/index.ts"
-    },
-    "./menu": {
-      "import": "./dist/menu.js",
-      "types": "./src/menu/index.ts"
-    },
-    "./number-input": {
-      "import": "./dist/number-input.js",
-      "types": "./src/number-input/index.ts"
-    },
-    "./pagination": {
-      "import": "./dist/pagination.js",
-      "types": "./src/pagination/index.ts"
-    },
-    "./pin-input": {
-      "import": "./dist/pin-input.js",
-      "types": "./src/pin-input/index.ts"
-    },
-    "./popover": {
-      "import": "./dist/popover.js",
-      "types": "./src/popover/index.ts"
-    },
-    "./presence": {
-      "import": "./dist/presence.js",
-      "types": "./src/presence/index.ts"
-    },
-    "./radio-group": {
-      "import": "./dist/radio-group.js",
-      "types": "./src/radio-group/index.ts"
-    },
-    "./rating-group": {
-      "import": "./dist/rating-group.js",
-      "types": "./src/rating-group/index.ts"
-    },
-    "./segment-group": {
-      "import": "./dist/segment-group.js",
-      "types": "./src/segment-group/index.ts"
-    },
-    "./select": {
-      "import": "./dist/select.js",
-      "types": "./src/select/index.ts"
-    },
-    "./slider": {
-      "import": "./dist/slider.js",
-      "types": "./src/slider/index.ts"
-    },
-    "./splitter": {
-      "import": "./dist/splitter.js",
-      "types": "./src/splitter/index.ts"
-    },
-    "./switch": {
-      "import": "./dist/switch.js",
-      "types": "./src/switch/index.ts"
-    },
-    "./tabs": {
-      "import": "./dist/tabs.js",
-      "types": "./src/tabs/index.ts"
-    },
-    "./tags-input": {
-      "import": "./dist/tags-input.js",
-      "types": "./src/tags-input/index.ts"
-    },
-    "./toast": {
-      "import": "./dist/toast.js",
-      "types": "./src/toast/index.ts"
-    },
-    "./toggle-group": {
-      "import": "./dist/toggle-group.js",
-      "types": "./src/toggle-group/index.ts"
-    },
-    "./tooltip": {
-      "import": "./dist/tooltip.js",
-      "types": "./src/tooltip/index.ts"
-    }
-  },
   "files": [
     "dist",
     "src"
@@ -135,7 +13,10 @@
     "postinstall": "NODE_ENV=production bun build.ts",
     "preview": "vite preview"
   },
-  "trustedDependencies": ["vitro", "@vitro/zag"],
+  "trustedDependencies": [
+    "vitro",
+    "@vitro/zag"
+  ],
   "dependencies": {
     "@vitro/zag": "github:vitrojs/vitro-zag",
     "fast-equals": "^5.0.1",

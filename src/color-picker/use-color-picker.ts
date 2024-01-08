@@ -1,10 +1,10 @@
 import * as colorPicker from '@zag-js/color-picker'
 
 import {
-  type Observify,
-  type PropTypes,
   normalizeProps,
   useMachine,
+  type Observify,
+  type PropTypes,
 } from '@vitro/zag'
 import { $$, ObservableReadonly, useMemo } from 'vitro'
 import { useEnvironmentContext } from '../environment'
