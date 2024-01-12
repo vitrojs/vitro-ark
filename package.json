@@ -66,10 +66,10 @@
     "@zag-js/utils": "^0.32.0"
   },
   "devDependencies": {
-    "@pandacss/dev": "^0.25.0",
+    "@pandacss/dev": "^0.26.2",
     "@park-ui/panda-preset": "^0.28.0",
     "@zag-js/progress": "^0.32.0",
-    "bun-types": "^1.0.21",
+    "bun-types": "^1.0.22",
     "esbuild": "^0.19.11",
     "prettier": "^3.1.1",
     "vite": "^5.0.11",
