@@ -1,10 +1,10 @@
-import type { OptionItemProps, OptionItemState } from '@zag-js/menu'
-import { useMemo } from 'vitro'
 import type { Observify } from '@vitro/zag'
-import type { Accessor, Assign } from '../types'
-import { applyChildren, copyObservableRecord, mergeProps } from '../utils'
-import { useMenuContext } from './menu-context'
+import type { OptionItemProps, OptionItemState } from '@zag-js/menu'
 import { deepEqual as equals } from 'fast-equals'
+import { $$, useMemo } from 'vitro'
+import type { Accessor, Assign } from '../types'
+import { applyChildren, mergeProps } from '../utils'
+import { useMenuContext } from './menu-context'
 
 export type MenuOptionItemProps = Assign<
   JSX.IntrinsicElements['div'],
@@ -28,19 +28,16 @@ export const MenuOptionItem = ({
   ...props
 }: MenuOptionItemProps) => {
   const menu = useMenuContext()
-
-  const optionProps = () =>
-    copyObservableRecord({
-      id,
-      disabled,
-      valueText,
-      closeOnSelect,
-      name,
-      type,
-      value,
-      onCheckedChange,
-    })
-
+  const optionProps = () => ({
+    id: $$(id),
+    disabled: $$(disabled),
+    valueText: $$(valueText),
+    closeOnSelect: $$(closeOnSelect),
+    name: $$(name),
+    type: $$(type),
+    value: $$(value),
+    onCheckedChange,
+  })
   const mergedProps = mergeProps(props, () =>
     menu().getOptionItemProps(optionProps()),
   )

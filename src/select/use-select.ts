@@ -1,7 +1,12 @@
 import type { CollectionOptions } from '@zag-js/select'
 import * as select from '@zag-js/select'
 
-import { Observify, PropTypes, normalizeProps, useMachine } from '@vitro/zag'
+import {
+  Observify,
+  PropTypes,
+  normalizeProps,
+  useMachine
+} from '@vitro/zag'
 import { $$, useMemo } from 'vitro'
 import { useEnvironmentContext } from '../environment'
 import { Accessor, Optional, type CollectionItem } from '../types'
@@ -20,17 +25,18 @@ export const useSelect = <T extends CollectionItem>({
   items,
   ...props
 }: Observify<UseSelectProps<T>>): UseSelectReturn<T> => {
-  const collection = select.collection({
-    isItemDisabled,
-    itemToValue,
-    itemToString,
-    items: $$(items),
-  })
+  const collection = () =>
+    select.collection({
+      isItemDisabled,
+      itemToValue,
+      itemToString,
+      items: $$(items),
+    })
 
   const getRootNode = useEnvironmentContext()
   const [state, send] = useMachine(
     // @ts-ignore
-    collection,
+    { collection },
     select.machine,
     {
       id: createUniqueId(),

@@ -66,13 +66,13 @@
     "@zag-js/utils": "^0.32.0"
   },
   "devDependencies": {
-    "@pandacss/dev": "^0.26.2",
+    "@pandacss/dev": "^0.27.1",
     "@park-ui/panda-preset": "^0.28.0",
-    "@zag-js/progress": "^0.32.0",
-    "bun-types": "^1.0.22",
+    "@zag-js/progress": "^0.32.1",
+    "bun-types": "^1.0.23",
     "esbuild": "^0.19.11",
-    "prettier": "^3.1.1",
+    "prettier": "^3.2.4",
     "vite": "^5.0.11",
-    "vite-tsconfig-paths": "^4.2.3"
+    "vite-tsconfig-paths": "^4.3.1"
   }
 }
