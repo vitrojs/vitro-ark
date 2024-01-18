@@ -1,4 +1,4 @@
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { useSwitchContext } from './switch-context'
 
 export type SwitchControlProps = JSX.IntrinsicElements['span']

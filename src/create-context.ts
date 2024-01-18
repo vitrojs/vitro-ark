@@ -3,7 +3,8 @@ import {
   useContext as useVitroContext,
 } from 'vitro'
 
-export interface CreateContextOptions<T> {
+export type CreateContextOptions<T> = {
+  strict?: boolean
   hookName?: string
   providerName?: string
   errorMessage?: string
@@ -23,7 +24,7 @@ export function createContext<T>(options: CreateContextOptions<T> = {}) {
 
   const Ctx = createVitroContext<T>()
 
-  function useContext(): T {
+  function useContext() {
     const context = useVitroContext(Ctx)
 
     if (!context) {
@@ -35,7 +36,6 @@ export function createContext<T>(options: CreateContextOptions<T> = {}) {
       Error.captureStackTrace?.(error, useContext)
       throw error
     }
-
     return context
   }
 

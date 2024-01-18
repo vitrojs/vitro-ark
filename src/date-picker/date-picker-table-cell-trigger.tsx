@@ -1,4 +1,4 @@
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { useDatePickerContext } from './date-picker-context'
 import { useDatePickerTableCellContext } from './date-picker-table-cell-context'
 import { useDatePickerViewContext } from './date-picker-view-context'

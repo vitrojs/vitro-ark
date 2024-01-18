@@ -9,7 +9,7 @@ import {
 } from '../presence'
 import type { Assign } from '../types'
 
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { useTabsContext } from './tabs-context'
 
 export type TabContentProps = Assign<

@@ -1,4 +1,4 @@
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { useSliderContext } from './slider-context'
 
 export type SliderTrackProps = JSX.IntrinsicElements['div']

@@ -3,7 +3,7 @@ import { type connect } from '@zag-js/splitter'
 import type { Observify } from '@vitro/zag'
 import { $$ } from 'vitro'
 import type { Assign } from '../types'
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { useSplitterContext } from './splitter-context'
 
 type PanelParams = Parameters<ReturnType<typeof connect>['getPanelProps']>[0]

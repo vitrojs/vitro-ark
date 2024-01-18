@@ -2,7 +2,7 @@ import { type TriggerProps } from '@zag-js/tabs'
 
 import { $$ } from 'vitro'
 import type { Assign } from '../types'
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { useTabsContext } from './tabs-context'
 import type { Observify } from '@vitro/zag'
 

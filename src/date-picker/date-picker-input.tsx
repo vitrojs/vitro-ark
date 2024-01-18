@@ -1,4 +1,4 @@
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { useDatePickerContext } from './date-picker-context'
 
 export type DatePickerInputProps = JSX.IntrinsicElements['input']

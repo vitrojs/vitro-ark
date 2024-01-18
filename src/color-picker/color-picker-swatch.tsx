@@ -4,7 +4,7 @@ import type { Assign } from '../types'
 import { useColorPickerContext } from './color-picker-context'
 import { ColorPickerSwatchProvider } from './color-picker-swatch-context'
 import { $$ } from 'vitro'
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import type { Observify } from '@vitro/zag'
 
 export type ColorPickerSwatchProps = Assign<

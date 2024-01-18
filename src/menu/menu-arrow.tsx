@@ -1,4 +1,4 @@
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { useMenuContext } from './menu-context'
 
 export type MenuArrowProps = JSX.IntrinsicElements['div']

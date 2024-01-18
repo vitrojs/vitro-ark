@@ -3,7 +3,7 @@ import type { ChannelInputProps } from '@zag-js/color-picker'
 import type { Assign } from '../types'
 import { useColorPickerContext } from './color-picker-context'
 import { $$ } from 'vitro'
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 
 export type ColorPickerChannelInputProps = Assign<
   ChannelInputProps,

@@ -2,7 +2,7 @@ import { segmentGroupAnatomy } from '@ark-ui/anatomy'
 
 import type { Observify } from '@vitro/zag'
 import type { Assign } from '../types'
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { SegmentGroupProvider } from './segment-group-context'
 import { useSegmentGroup, type UseSegmentGroupProps } from './use-segment-group'
 

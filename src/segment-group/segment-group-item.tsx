@@ -5,7 +5,8 @@ import { deepEqual as equals } from 'fast-equals'
 import type { Observify } from '@vitro/zag'
 import { ObservableReadonly, useMemo } from 'vitro'
 import type { Assign } from '../types'
-import { applyChildren, copyObservableRecord, mergeProps } from '../utils'
+import { applyChildren } from '../utils'
+import { toRecord, mergeProps } from '@vitro/zag'
 import { useSegmentGroupContext } from './segment-group-context'
 import {
   SegmentGroupItemProvider,
@@ -29,7 +30,7 @@ export const SegmentGroupItem = ({
   children,
   ...props
 }: SegmentGroupItemProps) => {
-  const itemProps = () => copyObservableRecord({ value, disabled, invalid })
+  const itemProps = () => toRecord({ value, disabled, invalid })
 
   const api = useSegmentGroupContext()
   const mergedProps = mergeProps(props, () => api().getItemProps(itemProps()))

@@ -5,7 +5,7 @@ import {
   type DatePickerTableCellContext,
 } from './date-picker-table-cell-context'
 import { useDatePickerViewContext } from './date-picker-view-context'
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { $$, useMemo } from 'vitro'
 import { deepEqual as equals } from 'fast-equals'
 import { Assign } from '../types'

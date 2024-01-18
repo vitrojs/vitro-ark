@@ -1,5 +1,5 @@
 import { segmentGroupAnatomy } from '@ark-ui/anatomy'
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { useSegmentGroupContext } from './segment-group-context'
 
 export type SegmentGroupLabelProps = JSX.IntrinsicElements['label']

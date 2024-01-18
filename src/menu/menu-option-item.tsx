@@ -3,7 +3,8 @@ import type { OptionItemProps, OptionItemState } from '@zag-js/menu'
 import { deepEqual as equals } from 'fast-equals'
 import { $$, useMemo } from 'vitro'
 import type { Accessor, Assign } from '../types'
-import { applyChildren, mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
+import { applyChildren } from '../utils'
 import { useMenuContext } from './menu-context'
 
 export type MenuOptionItemProps = Assign<

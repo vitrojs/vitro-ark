@@ -5,7 +5,8 @@ import { useRatingGroupContext } from './rating-group-context'
 import { RatingGroupItemProvider } from './rating-group-item-context'
 import type { Observify } from '@vitro/zag'
 import { $$, useMemo } from 'vitro'
-import { applyChildren, mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
+import { applyChildren } from '../utils'
 import { deepEqual as equals } from 'fast-equals'
 export type RatingGroupItemProps = Assign<
   JSX.IntrinsicElements['span'],

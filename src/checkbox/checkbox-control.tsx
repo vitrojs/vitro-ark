@@ -1,6 +1,6 @@
 import { useCheckboxContext } from './checkbox-context'
 
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 export type CheckboxControlProps = JSX.IntrinsicElements['div']
 
 export const CheckboxControl = (props: CheckboxControlProps = {}) => {

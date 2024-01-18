@@ -3,7 +3,7 @@ import type { IndicatorProps } from '@zag-js/carousel'
 import type { Assign } from '../types'
 import { useCarouselContext } from './carousel-context'
 import type { Observify } from '@vitro/zag'
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { $$ } from 'vitro'
 
 export type CarouselIndicatorProps = Assign<

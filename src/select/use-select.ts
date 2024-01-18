@@ -25,13 +25,13 @@ export const useSelect = <T extends CollectionItem>({
   items,
   ...props
 }: Observify<UseSelectProps<T>>): UseSelectReturn<T> => {
-  const collection = () =>
-    select.collection({
-      isItemDisabled,
-      itemToValue,
-      itemToString,
-      items: $$(items),
-    })
+  const collection = useMemo(() =>
+  select.collection({
+    isItemDisabled,
+    itemToValue,
+    itemToString,
+    items: $$(items),
+  }))
 
   const getRootNode = useEnvironmentContext()
   const [state, send] = useMachine(

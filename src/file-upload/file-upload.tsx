@@ -1,6 +1,7 @@
 import type { Observify } from '@vitro/zag'
 import type { Assign } from '../types'
-import { applyChildren, mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
+import { applyChildren } from '../utils'
 import { FileUploadProvider } from './file-upload-context'
 import {
   useFileUpload,

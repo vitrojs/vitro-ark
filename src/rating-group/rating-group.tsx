@@ -2,7 +2,7 @@ import type { Observify } from '@vitro/zag'
 import type { Assign } from '../types'
 import { RatingGroupProvider } from './rating-group-context'
 import { useRatingGroup, type UseRatingGroupProps } from './use-rating-group'
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 
 export type RatingGroupProps = Assign<
   JSX.IntrinsicElements['div'],

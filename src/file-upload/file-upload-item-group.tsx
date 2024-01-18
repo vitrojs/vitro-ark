@@ -1,7 +1,8 @@
 import { ObservableReadonly } from 'oby'
 import { useMemo } from 'vitro'
 import type { Assign } from '../types'
-import { applyChildren, mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
+import { applyChildren } from '../utils'
 import { useFileUploadContext } from './file-upload-context'
 export type FileUploadItemGroupProps = Assign<
   JSX.IntrinsicElements['ul'],

@@ -34,6 +34,7 @@ import * as hoverCard from './hover-card/hover-card.stories'
 import * as pagination from './pagination/pagination.stories'
 import * as segmentGroup from './segment-group/segment-group.stories'
 import * as select from './select/select.stories'
+import { Environment } from './environment'
 
 const styles = {
   accordion: accordionRecipe(),
@@ -86,6 +87,7 @@ const Demo = ({
 
 const App = () => {
   return (
+    <Environment value={document}>
     <div
       class={[
         // flex({ direction: 'column', p: '3' })
@@ -385,6 +387,8 @@ const App = () => {
         ]}
       />
     </div>
+    </Environment>
+
   )
 }
 

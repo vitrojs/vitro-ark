@@ -1,6 +1,6 @@
 import { segmentGroupAnatomy } from '@ark-ui/anatomy'
 
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { useSegmentGroupContext } from './segment-group-context'
 import { useSegmentGroupItemContext } from './segment-group-item-context'
 

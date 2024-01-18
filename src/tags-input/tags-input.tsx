@@ -6,7 +6,8 @@ import {
   type UseTagsInputProps,
   type UseTagsInputReturn,
 } from './use-tags-input'
-import { applyChildren, mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
+import { applyChildren } from '../utils'
 
 export type TagsInputProps = Assign<
   JSX.IntrinsicElements['div'],

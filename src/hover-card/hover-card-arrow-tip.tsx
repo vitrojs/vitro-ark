@@ -1,4 +1,4 @@
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { useHoverCardContext } from './hover-card-context'
 
 export type HoverCardArrowTipProps = JSX.IntrinsicElements['div']

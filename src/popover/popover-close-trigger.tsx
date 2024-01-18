@@ -1,4 +1,4 @@
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { usePopoverContext } from './popover-context'
 
 export type PopoverCloseTriggerProps = JSX.IntrinsicElements['button']

@@ -3,7 +3,7 @@ import type { IndicatorProps } from '@zag-js/progress'
 import { Observify } from '@vitro/zag'
 import { $$ } from 'vitro'
 import type { Assign } from '../types'
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { useProgressContext } from './progress-context'
 
 export type ProgressIndicatorProps = Assign<

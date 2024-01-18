@@ -5,7 +5,7 @@ import { useFileUploadContext } from './file-upload-context'
 import { FileUploadItemProvider } from './file-upload-item-context'
 import type { Observify } from '@vitro/zag'
 import { $$ } from 'vitro'
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 
 export type FileUploadItemProps = Assign<
   JSX.IntrinsicElements['li'],

@@ -1,4 +1,4 @@
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { useCheckboxContext } from './checkbox-context'
 
 export type CheckboxIndicatorProps = JSX.IntrinsicElements['div']

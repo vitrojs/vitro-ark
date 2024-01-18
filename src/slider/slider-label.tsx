@@ -1,4 +1,4 @@
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { useSliderContext } from './slider-context'
 
 export type SliderLabelProps = JSX.IntrinsicElements['label']

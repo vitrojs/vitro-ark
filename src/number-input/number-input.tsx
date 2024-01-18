@@ -6,7 +6,8 @@ import {
   type UseNumberInputProps,
   type UseNumberInputReturn,
 } from './use-number-input'
-import { applyChildren, mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
+import { applyChildren } from '../utils'
 
 export type NumberInputProps = Assign<
   JSX.IntrinsicElements['div'],

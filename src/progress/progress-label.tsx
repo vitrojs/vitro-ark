@@ -1,4 +1,4 @@
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { useProgressContext } from './progress-context'
 
 export type ProgressLabelProps = JSX.IntrinsicElements['label']

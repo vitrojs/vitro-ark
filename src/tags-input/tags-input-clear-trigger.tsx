@@ -1,4 +1,4 @@
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { useTagsInputContext } from './tags-input-context'
 
 export type TagsInputClearTriggerProps = JSX.IntrinsicElements['button']

@@ -1,5 +1,5 @@
 import { For, useMemo } from 'vitro'
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { useDatePickerContext } from './date-picker-context'
 import { deepEqual as equals } from 'fast-equals'
 

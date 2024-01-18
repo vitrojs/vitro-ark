@@ -1,5 +1,5 @@
 import { $$, useMemo } from 'vitro'
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { useSliderContext } from './slider-context'
 
 export type SliderValueTextProps = JSX.IntrinsicElements['div']

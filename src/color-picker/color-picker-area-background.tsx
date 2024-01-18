@@ -1,4 +1,4 @@
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { useColorPickerAreaContext } from './color-picker-area-context'
 import { useColorPickerContext } from './color-picker-context'
 

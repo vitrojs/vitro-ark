@@ -21,7 +21,7 @@ export function flexRender<TProps extends {}>(Comp: any, props: TProps) {
   return Comp
 }
 
-export function useVirtoTable<TData extends RowData>(
+export function useVitroTable<TData extends RowData>(
   options: TableOptions<TData>,
 ) {
   const resolvedOptions: TableOptionsResolved<TData> = mergeProxy(

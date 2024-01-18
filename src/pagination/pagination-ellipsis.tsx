@@ -4,7 +4,7 @@ import type { Assign } from '../types'
 import { usePaginationContext } from './pagination-context'
 import type { Observify } from '@vitro/zag'
 import { $$ } from 'vitro'
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 
 export type PaginationEllipsisProps = Assign<
   JSX.IntrinsicElements['div'],

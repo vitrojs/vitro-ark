@@ -1,4 +1,4 @@
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { useTooltipContext } from './tooltip-context'
 
 export type TooltipArrowProps = JSX.IntrinsicElements['div']

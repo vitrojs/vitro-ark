@@ -1,6 +1,6 @@
 import type { Observify } from '@vitro/zag'
 import type { Assign } from '../types'
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { ToggleGroupProvider } from './toggle-group-context'
 import { useToggleGroup, type UseToggleGroupProps } from './use-toggle-group'
 

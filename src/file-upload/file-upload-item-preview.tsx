@@ -1,9 +1,8 @@
-import type { Observify } from '@vitro/zag'
-import { useFileUploadContext } from './file-upload-context'
-import { useFileUploadItemContext } from './file-upload-item-context'
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { If } from 'vitro'
 import { Assign } from '../types'
+import { useFileUploadContext } from './file-upload-context'
+import { useFileUploadItemContext } from './file-upload-item-context'
 
 export type FileUploadItemPreviewProps = Assign<
   JSX.IntrinsicElements['div'],

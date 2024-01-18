@@ -1,6 +1,6 @@
 import type { Observify } from '@vitro/zag'
 import type { Assign } from '../types'
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { PinInputProvider } from './pin-input-context'
 import { usePinInput, type UsePinInputProps } from './use-pin-input'
 

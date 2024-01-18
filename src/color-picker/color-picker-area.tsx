@@ -5,7 +5,7 @@ import { ColorPickerAreaProvider } from './color-picker-area-context'
 import { useColorPickerContext } from './color-picker-context'
 import type { Observify } from '@vitro/zag'
 import { $$ } from 'vitro'
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 
 export type ColorPickerAreaProps = Assign<
   JSX.IntrinsicElements['div'],

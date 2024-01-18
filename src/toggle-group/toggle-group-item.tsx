@@ -2,7 +2,7 @@ import type { ItemProps } from '@zag-js/toggle-group'
 import type { Observify } from '@vitro/zag'
 import { $$ } from 'vitro'
 import type { Assign } from '../types'
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { useToggleGroupContext } from './toggle-group-context'
 
 export type ToggleGroupItemProps = Assign<

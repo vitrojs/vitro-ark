@@ -8,7 +8,8 @@ import {
   usePresencePropsContext,
 } from '../presence'
 import type { Assign } from '../types'
-import { applyChildren, mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
+import { applyChildren } from '../utils'
 import { useAccordionContext } from './accordion-context'
 import { AccordionItemProvider } from './accordion-item-context'
 

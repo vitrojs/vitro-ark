@@ -7,7 +7,8 @@ import {
 
 import { useMemo } from 'vitro'
 import type { Assign } from '../types'
-import { applyChildren, mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
+import { applyChildren } from '../utils'
 import { DatePickerProvider } from './date-picker-context'
 import {
   useDatePicker,

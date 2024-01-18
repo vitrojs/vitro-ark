@@ -1,7 +1,7 @@
 import { $, useEffect } from 'vitro'
 import { useFileUploadContext } from './file-upload-context'
 import { useFileUploadItemContext } from './file-upload-item-context'
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 
 export type FileUploadItemPreviewImageProps = JSX.IntrinsicElements['img']
 

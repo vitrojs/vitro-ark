@@ -1,4 +1,4 @@
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { useFileUploadContext } from './file-upload-context'
 
 export type FileUploadDropzoneProps = JSX.IntrinsicElements['div']

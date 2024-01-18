@@ -2,7 +2,7 @@ import { colorPickerAnatomy } from '@ark-ui/anatomy'
 import type { ColorFormat } from '@zag-js/color-picker'
 
 import { useColorPickerContext } from './color-picker-context'
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { If } from 'vitro'
 
 export interface ColorPickerViewProps {

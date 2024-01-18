@@ -1,4 +1,4 @@
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { useSelectContext } from './select-context'
 
 export type SelectLabelProps = JSX.IntrinsicElements['label']

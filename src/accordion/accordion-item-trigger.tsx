@@ -1,5 +1,5 @@
 import { usePresenceContext } from '../presence'
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { useAccordionContext } from './accordion-context'
 import { useAccordionItemContext } from './accordion-item-context'
 

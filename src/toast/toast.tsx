@@ -1,4 +1,4 @@
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { useToastContext } from './toast-context'
 
 export type ToastProps = JSX.IntrinsicElements['li']

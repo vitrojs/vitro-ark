@@ -26,7 +26,7 @@ export type MenuProps = Observify<UseMenuProps & UsePresenceProps> & {
 export const Menu = ({
   lazyMount,
   onExitComplete,
-  present,
+  // present,
   unmountOnExit,
   // ----
   'aria-label': ariaLabel,
@@ -50,7 +50,7 @@ export const Menu = ({
 
   // ----
   children,
-  ...props
+  // ...props
 }: MenuProps) => {
   const parentMenu = useMenuContext()
   const parentMachine = useMenuMachineContext()
@@ -87,8 +87,8 @@ export const Menu = ({
     menu().api().setParent(parentMachine())
   })
 
-  const triggerItemContext = useMemo(
-    () => parentMenu?.().getTriggerItemProps(menu().api()),
+  const triggerItemContext = useMemo(() =>
+    parentMenu?.().getTriggerItemProps(menu().api()),
   )
   const machineContext = () => menu().machine
 

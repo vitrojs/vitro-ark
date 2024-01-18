@@ -1,4 +1,4 @@
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { useNumberInputContext } from './number-input-context'
 
 export type NumberInputControlProps = JSX.IntrinsicElements['div']

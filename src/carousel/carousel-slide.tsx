@@ -2,7 +2,7 @@ import type { ItemProps } from '@zag-js/carousel'
 import type { Observify } from '@vitro/zag'
 import { $$ } from 'vitro'
 import type { Assign } from '../types'
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { useCarouselContext } from './carousel-context'
 
 export type CarouselItemProps = Assign<

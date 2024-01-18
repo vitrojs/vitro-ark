@@ -1,6 +1,6 @@
 import { If } from 'vitro'
 import { usePresenceContext } from '../presence'
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { useHoverCardContext } from './hover-card-context'
 
 export type HoverCardContentProps = JSX.IntrinsicElements['div']

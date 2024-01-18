@@ -1,4 +1,4 @@
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { useComboboxContext } from './combobox-context'
 import { useComboboxItemContext } from './combobox-item-context'
 

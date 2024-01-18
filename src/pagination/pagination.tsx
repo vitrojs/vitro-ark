@@ -6,7 +6,8 @@ import {
   type UsePaginationProps,
   type UsePaginationReturn,
 } from './use-pagination'
-import { applyChildren, mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
+import { applyChildren } from '../utils'
 
 export type PaginationProps = Assign<
   JSX.IntrinsicElements['nav'],

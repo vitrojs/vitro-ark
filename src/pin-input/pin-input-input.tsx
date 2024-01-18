@@ -1,5 +1,5 @@
 import type { Assign } from '../types'
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { usePinInputContext } from './pin-input-context'
 
 export type PinInputInputProps = Assign<

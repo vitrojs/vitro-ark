@@ -1,4 +1,4 @@
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { useEditableContext } from './editable-context'
 
 export type EditableEditTriggerProps = JSX.IntrinsicElements['button']

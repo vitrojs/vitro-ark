@@ -1,7 +1,7 @@
 import type { Observify } from '@vitro/zag'
 import { If } from 'vitro'
 import type { Assign } from '../types'
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { usePresence, type UsePresenceProps } from './use-presence'
 
 export interface PresenceProps

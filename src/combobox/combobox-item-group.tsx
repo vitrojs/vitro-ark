@@ -1,6 +1,6 @@
 import type { ItemGroupProps } from '@zag-js/combobox'
 import type { Assign } from '../types'
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { useComboboxContext } from './combobox-context'
 import type { Observify } from '@vitro/zag'
 import { $$ } from 'vitro'

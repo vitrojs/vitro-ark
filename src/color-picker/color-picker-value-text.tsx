@@ -1,6 +1,6 @@
 import { colorPickerAnatomy } from '@ark-ui/anatomy'
 import type { Observify } from '@vitro/zag'
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { useColorPickerContext } from './color-picker-context'
 
 export type ColorPickerValueTextProps = JSX.IntrinsicElements['span'] &

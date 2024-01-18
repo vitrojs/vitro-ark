@@ -1,4 +1,4 @@
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { useSelectContext } from './select-context'
 import { useSelectItemContext } from './select-item-context'
 

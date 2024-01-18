@@ -1,4 +1,4 @@
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { useRatingGroupContext } from './rating-group-context'
 
 export type RatingGroupLabelProps = JSX.IntrinsicElements['label']

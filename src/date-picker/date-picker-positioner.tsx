@@ -1,7 +1,7 @@
 import { If } from 'vitro'
 import { usePresenceContext } from '../presence'
 import { useDatePickerContext } from './date-picker-context'
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 
 export type DatePickerPositionerProps = JSX.IntrinsicElements['div']
 

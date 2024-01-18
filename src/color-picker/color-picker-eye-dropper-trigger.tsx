@@ -1,4 +1,4 @@
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { useColorPickerContext } from './color-picker-context'
 
 export type ColorPickerEyeDropperTriggerProps = JSX.IntrinsicElements['button']

@@ -13,7 +13,8 @@ import {
   type UseColorPickerReturn,
 } from './use-color-picker'
 import { useMemo } from 'vitro'
-import { applyChildren, mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
+import { applyChildren } from '../utils'
 
 export type ColorPickerProps = Assign<
   JSX.IntrinsicElements['div'],

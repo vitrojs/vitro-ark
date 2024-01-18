@@ -1,7 +1,7 @@
 import type { Observify } from '@vitro/zag'
 import { PresencePropsProvider, type UsePresenceProps } from '../presence'
 import type { Assign } from '../types'
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { TabsProvider } from './tabs-context'
 import { useTabs, type UseTabsProps } from './use-tabs'
 

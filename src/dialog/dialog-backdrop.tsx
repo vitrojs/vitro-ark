@@ -1,6 +1,6 @@
 import { If, useMemo } from 'vitro'
 import { usePresence, usePresencePropsContext } from '../presence'
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { useDialogContext } from './dialog-context'
 
 export type DialogBackdropProps = JSX.IntrinsicElements['div']

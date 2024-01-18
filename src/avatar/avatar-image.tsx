@@ -1,4 +1,4 @@
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { useAvatarContext } from './avatar-context'
 
 export type AvatarImageProps = JSX.IntrinsicElements['img']

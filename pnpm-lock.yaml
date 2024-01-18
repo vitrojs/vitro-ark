@@ -13,7 +13,7 @@ dependencies:
     version: 8.11.6
   '@vitro/zag':
     specifier: github:vitrojs/vitro-zag
-    version: github.com/vitrojs/vitro-zag/3df053907046cd6afefab740a24f3ab414ffdbbb(@zag-js/core@0.32.1)(@zag-js/types@0.32.1)(@zag-js/utils@0.32.1)(vitro@0.57.2)
+    version: github.com/vitrojs/vitro-zag/8f3e524fa6fe8075451d57d3e652e279b1e4a9c6(@zag-js/core@0.32.1)(@zag-js/types@0.32.1)(@zag-js/utils@0.32.1)(vitro@0.57.2)
   '@zag-js/accordion':
     specifier: ^0.32.1
     version: 0.32.1
@@ -130,6 +130,9 @@ devDependencies:
   '@vitro/lucide':
     specifier: github:vitrojs/vitro-lucide
     version: github.com/vitrojs/vitro-lucide/82c7c0246ea4e4dcb0e84ed190ed921ccabbc17e(vitro@0.57.2)
+  '@vitro/router':
+    specifier: github:vitrojs/vitro-router
+    version: github.com/vitrojs/vitro-router/5767cfc1720afcad1e4cedff23756d75e46dd86c(vitro@0.57.2)
   bun-types:
     specifier: ^1.0.23
     version: 1.0.23
@@ -2239,6 +2242,13 @@ packages:
       '@types/node': 17.0.45
     dev: true
 
+  /crypto-sha@2.1.0:
+    resolution: {integrity: sha512-7lPgPbSt8nuQ/cTjpa2TTYu58c/lpqJMSYrQgSkJKln8bENOcVVAi7oqz5mc7wIkM1TCRduO6Lr868imRwzX5w==}
+    dependencies:
+      tiny-webcrypto: 1.0.1
+      uint8-to-hex: 2.0.0
+    dev: true
+
   /cssesc@3.0.0:
     resolution: {integrity: sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==}
     engines: {node: '>=4'}
@@ -2282,6 +2292,10 @@ packages:
     resolution: {integrity: sha512-pGjwhsmsp4kL2RTz08wcOlGN83otlqHeD/Z5T8GXZB+/YcpQ/dgo+lbU8ZsGxV0HIvqqxo9l7mqYwyYMD9bKDg==}
     engines: {node: '>=0.10'}
     hasBin: true
+    dev: true
+
+  /dettle@1.0.1:
+    resolution: {integrity: sha512-/oD3At60ZfhgzpofJtyClNTrIACyMdRe+ih0YiHzAniN0IZnLdLpEzgR6RtGs3kowxUkTnvV/4t1FBxXMUdusQ==}
     dev: true
 
   /electron-to-chromium@1.4.635:
@@ -2362,6 +2376,12 @@ packages:
 
   /estree-walker@2.0.2:
     resolution: {integrity: sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==}
+    dev: true
+
+  /ext2mime@2.0.0:
+    resolution: {integrity: sha512-InrZM8UUsmMgyBfw4vpPuLG4JlJC0cUkvlS/LIhq1NpGzpifVA2myaONx8TjvPPwyeYVJu8Wj7P9nkfcxmM2DQ==}
+    dependencies:
+      mime-standard: 1.0.2
     dev: true
 
   /fast-equals@5.0.1:
@@ -2471,6 +2491,17 @@ packages:
 
   /graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
+    dev: true
+
+  /grammex@3.1.2:
+    resolution: {integrity: sha512-vAvqD8s6mRbEeUymiRx78Z/QXVFNU3VCsMdkAlxzBMcdXvVVRfB01n+hADQw8fHrk7QxSdKzmmnkOKVjtPnRHg==}
+    dev: true
+
+  /hex-encoding@2.0.2:
+    resolution: {integrity: sha512-NhclxbCmF1NTU9mE0GYEkUrFX5VvnfiHrzcqGbsQJcLT33rE/yqBB+U1bHDuLk86AQyN/hsr+Q/sX3jRxmarhg==}
+    dependencies:
+      node-buffer-encoding: 1.0.1
+      uint8-encoding: 2.0.0
     dev: true
 
   /hookable@5.5.3:
@@ -2715,6 +2746,10 @@ packages:
       picomatch: 2.3.1
     dev: true
 
+  /mime-standard@1.0.2:
+    resolution: {integrity: sha512-xUmjXVgIU9bL370jglTuRunmIJyOx9CKPH5IgaQtfx7IwUmKfMKuJddFXCFALFks/9fZ/zk3/ko9NoTskVx51g==}
+    dev: true
+
   /minimatch@7.4.6:
     resolution: {integrity: sha512-sBz8G/YjVniEz6lKPNpKxXwazJe4c19fEfV2GDMX6AjFz+MX9uDWIZW8XreVhkFW3fkIdTv/gxWr/Kks5FFAVw==}
     engines: {node: '>=10'}
@@ -2747,6 +2782,10 @@ packages:
     hasBin: true
     dev: true
 
+  /node-buffer-encoding@1.0.1:
+    resolution: {integrity: sha512-eklg9A4yXOlIZOIeV8D33gHZjw2g61TREuhucTM+/OR/xn4MXTZaV60fEYP+Lsa7C9bliJvvNrgkC6igafgKrw==}
+    dev: true
+
   /node-eval@2.0.0:
     resolution: {integrity: sha512-Ap+L9HznXAVeJj3TJ1op6M6bg5xtTq8L5CU/PJxtkhea/DrIxdTknGKIECKd/v/Lgql95iuMAYvIzBNd0pmcMg==}
     engines: {node: '>= 4'}
@@ -2756,6 +2795,19 @@ packages:
 
   /node-releases@2.0.14:
     resolution: {integrity: sha512-y10wOWt8yZpqXmOgRo77WaHEmhYQYGNA6y421PKsKYWEK8aW+cqAphborZDhqfyKrbZEN92CN1X2KbafY2s7Yw==}
+    dev: true
+
+  /noren@0.4.7:
+    resolution: {integrity: sha512-5BnO3V7GS8RaYPu4w3q3cqo+XLDloHZf3PCn9k19n7B7QaxfB1A3tYxr36vmY6rd86mlKYtW5iJdk8Gd/i60hA==}
+    dependencies:
+      crypto-sha: 2.1.0
+      ext2mime: 2.0.0
+      grammex: 3.1.2
+      pioppo: 1.1.0
+      promise-make-naked: 2.1.1
+      radix64-encoding: 2.0.1
+      uint8-concat: 1.0.0
+      uint8-encoding: 2.0.0
     dev: true
 
   /normalize-path@3.0.0:
@@ -2847,6 +2899,13 @@ packages:
   /pify@4.0.1:
     resolution: {integrity: sha512-uB80kBFb/tfd68bVleG9T5GGsGPjJrLAUpR5PZIrhBnIaRTQRjqdJSsIKkOP6OAIFbj7GOrcudc5pNjZ+geV2g==}
     engines: {node: '>=6'}
+    dev: true
+
+  /pioppo@1.1.0:
+    resolution: {integrity: sha512-8gZ58S4GBMkCGAEwBi98YgNFfXwcNql2sCXstolxnGUrsBnHA/BrKjsN4EbfCsKjQ4uERrEDfeh444ymGwNMdA==}
+    dependencies:
+      dettle: 1.0.1
+      when-exit: 2.1.2
     dev: true
 
   /pkg-dir@4.2.0:
@@ -2973,11 +3032,22 @@ packages:
     hasBin: true
     dev: true
 
+  /promise-make-naked@2.1.1:
+    resolution: {integrity: sha512-BLvgZSNRkQNM5RGL4Cz8wK76WSb+t3VeMJL+/kxRBHI5+nliqZezranGGtiu/ePeFo5+CaLRvvGMzXrBuu2tAA==}
+    dev: true
+
   /proxy-compare@2.5.1:
     resolution: {integrity: sha512-oyfc0Tx87Cpwva5ZXezSp5V9vht1c7dZBhvuV/y3ctkgMVUmiAGDVeeB0dKhGSyT0v1ZTEQYpe/RXlBVBNuCLA==}
 
   /queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
+    dev: true
+
+  /radix64-encoding@2.0.1:
+    resolution: {integrity: sha512-WfjcGA0SyjS76ab9tI1wS8CUF/YVOjqstRExQJGiubHueNO6sMKHRhadrp1Ufgzm0hF9nGbjYR6HNRne82Qzsg==}
+    dependencies:
+      node-buffer-encoding: 1.0.1
+      uint8-encoding: 2.0.0
     dev: true
 
   /readdirp@3.6.0:
@@ -3041,6 +3111,10 @@ packages:
 
   /tabbable@6.2.0:
     resolution: {integrity: sha512-Cat63mxsVJlzYvN51JmVXIgNoUokrIaT2zLclCXjRd8boZ0004U4KCs/sToJ75C6sdlByWxpYnb5Boif1VSFew==}
+
+  /tiny-webcrypto@1.0.1:
+    resolution: {integrity: sha512-xmRCZrKqgLNfDVjj12Da9l7a/gKyqwIQ0gTIQ2p+/tbosZxFGW41QQ5C6Pwz9tiVO0OTUDh8IcBqncVHbq1RqQ==}
+    dev: true
 
   /to-fast-properties@2.0.0:
     resolution: {integrity: sha512-/OaKK0xYrs3DmxRYqL/yDc+FxFUVYhDlXMhRmv3z915w2HF1tnN1omB354j8VUGO/hbRzyD6Y3sA7v7GS/ceog==}
@@ -3124,6 +3198,20 @@ packages:
     resolution: {integrity: sha512-o+ORpgGwaYQXgqGDwd+hkS4PuZ3QnmqMMxRuajK/a38L6fTpcE5GPIfrf+L/KemFzfUpeUQc1rRS1iDBozvnFA==}
     dev: true
 
+  /uint8-concat@1.0.0:
+    resolution: {integrity: sha512-MuJSZioUpLNzzV7/aojj8EAI9OTe9yNvN2jV7bICLFkkzL1L3vARlpJkzSD8VGqhmKQglYMGgsYOQjo0qDfplg==}
+    dev: true
+
+  /uint8-encoding@2.0.0:
+    resolution: {integrity: sha512-MQcY+mEuLoHBqAawasWrFbZx1SqUoFU/wVYNGO6lsIxczeO+cNjA1djYHQM3GWU3SaEhKTfG3Z5cE2r+zR6tNw==}
+    dev: true
+
+  /uint8-to-hex@2.0.0:
+    resolution: {integrity: sha512-qtUFd8qhwWMZuoRkntbD9UUgNi/BmYR3bVPFAG8w78tGZDzrQjSGMxqL2pAHOshritIWK2fA+XxNhb1aBXURMA==}
+    dependencies:
+      hex-encoding: 2.0.2
+    dev: true
+
   /undici-types@5.26.5:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
     dev: true
@@ -3204,6 +3292,10 @@ packages:
       fsevents: 2.3.3
     dev: true
 
+  /when-exit@2.1.2:
+    resolution: {integrity: sha512-u9J+toaf3CCxCAzM/484qNAxQE75rFdVgiFEEV8Xps2gzYhf0tx73s1WXDQhkwV17E3MxRMz40m7Ekd2/121Lg==}
+    dev: true
+
   /which-pm@2.0.0:
     resolution: {integrity: sha512-Lhs9Pmyph0p5n5Z3mVnN0yWcbQYUAD7rbQUiMsQxOJ3T57k7RFe35SUwWMf7dsbDZks1uOmw4AecB/JMDj3v/w==}
     engines: {node: '>=8.15'}
@@ -3229,11 +3321,24 @@ packages:
       vitro: github.com/vitrojs/vitro/77a1797f4ca5d7e25b015e9d6159b1acbb4aaf34
     dev: true
 
-  github.com/vitrojs/vitro-zag/3df053907046cd6afefab740a24f3ab414ffdbbb(@zag-js/core@0.32.1)(@zag-js/types@0.32.1)(@zag-js/utils@0.32.1)(vitro@0.57.2):
-    resolution: {tarball: https://codeload.github.com/vitrojs/vitro-zag/tar.gz/3df053907046cd6afefab740a24f3ab414ffdbbb}
-    id: github.com/vitrojs/vitro-zag/3df053907046cd6afefab740a24f3ab414ffdbbb
+  github.com/vitrojs/vitro-router/5767cfc1720afcad1e4cedff23756d75e46dd86c(vitro@0.57.2):
+    resolution: {tarball: https://codeload.github.com/vitrojs/vitro-router/tar.gz/5767cfc1720afcad1e4cedff23756d75e46dd86c}
+    id: github.com/vitrojs/vitro-router/5767cfc1720afcad1e4cedff23756d75e46dd86c
+    name: '@vitro/router'
+    version: 0.0.1
+    requiresBuild: true
+    peerDependencies:
+      vitro: github:vitrojs/vitro
+    dependencies:
+      noren: 0.4.7
+      vitro: github.com/vitrojs/vitro/77a1797f4ca5d7e25b015e9d6159b1acbb4aaf34
+    dev: true
+
+  github.com/vitrojs/vitro-zag/8f3e524fa6fe8075451d57d3e652e279b1e4a9c6(@zag-js/core@0.32.1)(@zag-js/types@0.32.1)(@zag-js/utils@0.32.1)(vitro@0.57.2):
+    resolution: {tarball: https://codeload.github.com/vitrojs/vitro-zag/tar.gz/8f3e524fa6fe8075451d57d3e652e279b1e4a9c6}
+    id: github.com/vitrojs/vitro-zag/8f3e524fa6fe8075451d57d3e652e279b1e4a9c6
     name: '@vitro/zag'
-    version: 0.0.0
+    version: 0.0.1
     requiresBuild: true
     peerDependencies:
       '@zag-js/core': ^0.32.0

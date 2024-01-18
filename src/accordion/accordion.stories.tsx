@@ -2,7 +2,7 @@ import { $, For } from 'vitro'
 import { Accordion } from '.'
 
 import { accordion } from 'styled-system/recipes'
-import { LucideChevronDown } from '../../components/icons'
+import { ChevronDown as LucideChevronDown } from '@vitro/lucide'
 
 const styles = accordion()
 

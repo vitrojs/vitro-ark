@@ -1,4 +1,4 @@
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { useRadioGroupContext } from './radio-group-context'
 import { useRadioGroupItemContext } from './radio-group-item-context'
 

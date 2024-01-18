@@ -1,4 +1,4 @@
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { useColorPickerChannelSliderContext } from './color-picker-channel-slider-context'
 import { useColorPickerContext } from './color-picker-context'
 

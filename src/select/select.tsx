@@ -7,7 +7,8 @@ import {
 
 import { useMemo } from 'vitro'
 import type { Assign, CollectionItem } from '../types'
-import { applyChildren, mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
+import { applyChildren } from '../utils'
 import { SelectProvider } from './select-context'
 import {
   useSelect,

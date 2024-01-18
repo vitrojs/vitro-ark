@@ -1,6 +1,6 @@
 import { If } from 'vitro'
 import { usePresenceContext } from '../presence'
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { usePopoverContext } from './popover-context'
 
 export type PopoverPositionerProps = JSX.IntrinsicElements['div']

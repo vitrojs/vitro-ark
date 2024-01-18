@@ -3,7 +3,7 @@ import { connect } from '@zag-js/splitter'
 import { $$ } from 'vitro'
 import type { Observify } from '@vitro/zag'
 import type { Assign } from '../types'
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { useSplitterContext } from './splitter-context'
 
 type TriggerParams = Parameters<

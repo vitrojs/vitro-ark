@@ -24,13 +24,14 @@ export const useCombobox = <T extends CollectionItem>({
   ...props
 }: Observify<UseComboboxProps<T>>): UseComboboxReturn<T> => {
   const getRootNode = useEnvironmentContext()
-  const collection = () =>
+  const collection = useMemo(() =>
     combobox.collection({
       isItemDisabled,
       itemToValue,
       itemToString,
       items: $$(items),
-    })
+    }),
+  )
 
   const [state, send] = useMachine(
     {

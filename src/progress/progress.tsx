@@ -6,7 +6,8 @@ import {
   type UseProgressProps,
   type UseProgressReturn,
 } from './use-progress'
-import { applyChildren, mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
+import { applyChildren } from '../utils'
 
 export type ProgressProps = Assign<
   Assign<

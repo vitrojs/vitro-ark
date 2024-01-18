@@ -7,7 +7,8 @@ import {
 import type { Observify } from '@vitro/zag'
 import { useMemo } from 'vitro'
 import type { Assign, CollectionItem } from '../types'
-import { applyChildren, mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
+import { applyChildren } from '../utils'
 import { ComboboxProvider } from './combobox-context'
 import {
   useCombobox,

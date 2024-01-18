@@ -1,9 +1,10 @@
+import type { Observify } from '@vitro/zag'
+import { mergeProps, toRecord } from '@vitro/zag'
 import type { ItemProps, ItemState } from '@zag-js/radio-group'
 import { deepEqual as equals } from 'fast-equals'
 import { ObservableReadonly, useMemo } from 'vitro'
-import type { Observify } from '@vitro/zag'
 import type { Assign } from '../types'
-import { applyChildren, copyObservableRecord, mergeProps } from '../utils'
+import { applyChildren } from '../utils'
 import { useRadioGroupContext } from './radio-group-context'
 import { RadioGroupItemProvider } from './radio-group-item-context'
 
@@ -23,8 +24,9 @@ export const RadioGroupItem = ({
   children,
   ...props
 }: RadioGroupItemProps) => {
-  const getItemProps = () => copyObservableRecord({ value, disabled, invalid })
+  const getItemProps = () => toRecord({})
   const api = useRadioGroupContext()
+
   const mergedProps = mergeProps(props, () =>
     api().getItemProps(getItemProps()),
   )

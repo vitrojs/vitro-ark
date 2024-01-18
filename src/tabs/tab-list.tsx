@@ -1,4 +1,4 @@
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { useTabsContext } from './tabs-context'
 
 export type TabListProps = JSX.IntrinsicElements['div']

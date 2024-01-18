@@ -2,7 +2,7 @@ import type { Observify } from '@vitro/zag'
 
 import { PresencePropsProvider, type UsePresenceProps } from '../presence'
 import type { Assign } from '../types'
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { AccordionProvider } from './accordion-context'
 import { useAccordion, type UseAccordionProps } from './use-accordion'
 

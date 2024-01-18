@@ -5,7 +5,8 @@ import {
   type UseCheckboxReturn,
 } from './use-checkbox'
 
-import { applyChildren, mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
+import { applyChildren } from '../utils'
 
 export type CheckboxProps = UseCheckboxProps & {
   style?: JSX.Style

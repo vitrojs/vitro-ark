@@ -4,7 +4,7 @@ import { useEnvironmentContext } from '../environment'
 import { $, $$, For, useCleanup, useEffect, useMemo } from 'vitro'
 import { Observify, PropTypes, normalizeProps } from '@vitro/zag'
 import type { Accessor, Optional } from '../types'
-import { copyObservableRecord, mergeProps } from '../utils'
+import { toRecord, mergeProps } from '@vitro/zag'
 import { ToastProvider, type Options } from './toast-context'
 import { ToastGroup } from './toast-group'
 
@@ -25,7 +25,7 @@ export const createToaster = (
   props: Observify<CreateToasterProps>,
 ): CreateToasterReturn => {
   const service = toast.group
-    .machine<Options>(copyObservableRecord(props, { id: '1' }))
+    .machine<Options>(Object.assign(toRecord(props), { id: '1' }))
     .start()
 
   const state = $(service.getState())
@@ -44,7 +44,7 @@ export const createToaster = (
   )
 
   useEffect(() => {
-    const context = copyObservableRecord(props, { id: '1' })
+    const context = Object.assign(toRecord(props), { id: '1' })
     service.setContext(context)
   })
 

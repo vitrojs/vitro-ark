@@ -1,4 +1,4 @@
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { useCarouselContext } from './carousel-context'
 
 export type CarouselIndicatorGroupProps = JSX.IntrinsicElements['div']

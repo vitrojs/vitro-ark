@@ -1,5 +1,6 @@
 import { useMemo } from 'vitro'
-import { applyChildren, mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
+import { applyChildren } from '../utils'
 import { useProgressContext } from './progress-context'
 
 export type ProgressValueTextProps = JSX.IntrinsicElements['span']

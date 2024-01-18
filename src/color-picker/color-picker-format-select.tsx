@@ -1,5 +1,5 @@
 import { For } from 'vitro'
-import { mergeProps } from '../utils'
+import { mergeProps } from '@vitro/zag'
 import { useColorPickerContext } from './color-picker-context'
 
 export type ColorPickerFormatSelectProps = JSX.IntrinsicElements['select']
