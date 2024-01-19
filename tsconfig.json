@@ -25,10 +25,10 @@
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "noEmit": true,
-    "baseUrl": ".",
+    // "baseUrl": ".",
     "paths": {
       "styled-system/*": [
-        "styled-system/*"
+        "./styled-system/*"
       ]
     }
   },

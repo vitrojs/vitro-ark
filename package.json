@@ -14,7 +14,8 @@
     "src"
   ],
   "scripts": {
-    "dev": "panda && vite",
+    "prepare": "panda",
+    "dev": "vite",
     "build": "bun build.ts",
     "postinstall": "NODE_ENV=production bun build.ts",
     "format": "prettier --write src",
