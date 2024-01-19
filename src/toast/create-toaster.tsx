@@ -1,10 +1,15 @@
 import * as toast from '@zag-js/toast'
 import { useEnvironmentContext } from '../environment'
 
-import { $, $$, For, useCleanup, useEffect, useMemo } from 'vitro'
-import { Observify, PropTypes, normalizeProps } from '@vitro/zag'
+import {
+  Observify,
+  PropTypes,
+  mergeProps,
+  normalizeProps,
+  useMachine,
+} from '@vitro/zag'
+import { $, $$, For, useEffect, useMemo } from 'vitro'
 import type { Accessor, Optional } from '../types'
-import { toRecord, mergeProps } from '@vitro/zag'
 import { ToastProvider, type Options } from './toast-context'
 import { ToastGroup } from './toast-group'
 
@@ -24,41 +29,31 @@ export type CreateToasterReturn = [
 export const createToaster = (
   props: Observify<CreateToasterProps>,
 ): CreateToasterReturn => {
-  const service = toast.group
-    .machine<Options>(Object.assign(toRecord(props), { id: '1' }))
-    .start()
+  const getRootNode = $<() => Node | ShadowRoot | Document>()
 
-  const state = $(service.getState())
-
-  useEffect(
-    () => {
-      const unsubscribe = service.subscribe((nextState) => {
-        state(nextState)
-      })
-
-      useCleanup(() => {
-        unsubscribe()
-      })
+  const [state, send] = useMachine(
+    {
+      ...props,
+      getRootNode,
     },
-    { sync: 'init' },
+    // @ts-ignore
+    toast.group.machine,
+    {
+      id: '1',
+    },
   )
-
-  useEffect(() => {
-    const context = Object.assign(toRecord(props), { id: '1' })
-    service.setContext(context)
-  })
 
   const api = useMemo(() =>
-    toast.group.connect(state(), service.send, normalizeProps),
-  )
+    toast.group.connect(
+      // @ts-ignore
+      state(),
+      send,
+      normalizeProps,
+    ),
+  ) as Accessor<toast.GroupApi<PropTypes, Options>>
 
   const Toaster = (toasterProps: JSX.IntrinsicElements['ol']) => {
-    const getRootNode = useEnvironmentContext()
-
-    useEffect(() => {
-      service.setContext({ getRootNode })
-      useCleanup(() => service.stop())
-    })
+    getRootNode(useEnvironmentContext())
 
     const mergedProps = mergeProps(toasterProps, () =>
       api().getGroupProps({ placement: $$(props.placement) }),
