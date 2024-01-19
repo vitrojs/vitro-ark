@@ -69,7 +69,7 @@
     "@zag-js/utils": "^0.32.1"
   },
   "devDependencies": {
-    "@pandacss/dev": "^0.27.2",
+    "@pandacss/dev": "^0.27.3",
     "@park-ui/panda-preset": "^0.28.0",
     "@vitro/lucide": "github:vitrojs/vitro-lucide",
     "@vitro/router": "github:vitrojs/vitro-router",
