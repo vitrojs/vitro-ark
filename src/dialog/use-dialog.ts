@@ -8,17 +8,17 @@ import { createSequenceId } from '../utils'
 
 export interface UseDialogProps extends Optional<dialog.Context, 'id'> {}
 export interface UseDialogReturn
-  extends ObservableReadonly<dialog.Api<PropTypes>> {}
+	extends ObservableReadonly<dialog.Api<PropTypes>> {}
 
 export const useDialog = (
-  props: Observify<UseDialogProps>,
+	props: Observify<UseDialogProps>,
 ): UseDialogReturn => {
-  const getRootNode = useEnvironmentContext()
+	const getRootNode = useEnvironmentContext()
 
-  const [state, send] = useMachine(props, dialog.machine, {
-    id: createSequenceId(),
-    getRootNode,
-  })
+	const [state, send] = useMachine(props, dialog.machine, {
+		id: createSequenceId(),
+		getRootNode,
+	})
 
-  return useMemo(() => dialog.connect(state(), send, normalizeProps))
+	return useMemo(() => dialog.connect(state(), send, normalizeProps))
 }

@@ -6,16 +6,16 @@ import type { Observify } from '@vitro/zag'
 import { $$ } from 'vitro'
 
 export type ComboboxItemGroupProps = Assign<
-  JSX.IntrinsicElements['div'],
-  Observify<ItemGroupProps>
+	JSX.IntrinsicElements['div'],
+	Observify<ItemGroupProps>
 >
 
 export const ComboboxItemGroup = ({ id, ...props }: ComboboxItemGroupProps) => {
-  const groupProps = () => ({ id: $$(id) })
-  const combobox = useComboboxContext()
-  const mergedProps = mergeProps(props, () =>
-    combobox().getItemGroupProps(groupProps()),
-  )
+	const groupProps = () => ({ id: $$(id) })
+	const combobox = useComboboxContext()
+	const mergedProps = mergeProps(props, () =>
+		combobox().getItemGroupProps(groupProps()),
+	)
 
-  return <div {...mergedProps} />
+	return <div {...mergedProps} />
 }

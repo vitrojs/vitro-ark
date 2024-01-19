@@ -8,29 +8,29 @@ import { $$ } from 'vitro'
 import { mergeProps } from '@vitro/zag'
 
 export type ColorPickerAreaProps = Assign<
-  JSX.IntrinsicElements['div'],
-  Observify<AreaProps>
+	JSX.IntrinsicElements['div'],
+	Observify<AreaProps>
 >
 
 export const ColorPickerArea = ({
-  challenge,
-  yChannel,
-  // ----
-  ...props
+	challenge,
+	yChannel,
+	// ----
+	...props
 }: ColorPickerAreaProps) => {
-  const channelProps = () => ({
-    challenge: $$(challenge),
-    yChannel: $$(yChannel),
-  })
+	const channelProps = () => ({
+		challenge: $$(challenge),
+		yChannel: $$(yChannel),
+	})
 
-  const api = useColorPickerContext()
-  const mergedProps = mergeProps(props, () =>
-    api().getAreaProps(channelProps()),
-  )
+	const api = useColorPickerContext()
+	const mergedProps = mergeProps(props, () =>
+		api().getAreaProps(channelProps()),
+	)
 
-  return (
-    <ColorPickerAreaProvider value={channelProps}>
-      <div {...mergedProps} />
-    </ColorPickerAreaProvider>
-  )
+	return (
+		<ColorPickerAreaProvider value={channelProps}>
+			<div {...mergedProps} />
+		</ColorPickerAreaProvider>
+	)
 }

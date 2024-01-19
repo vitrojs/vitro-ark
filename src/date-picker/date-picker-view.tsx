@@ -10,30 +10,30 @@ import { DatePickerViewProvider } from './date-picker-view-context'
 import type { UseDatePickerReturn } from './use-date-picker'
 
 export type DatePickerViewProps = Assign<
-  JSX.IntrinsicElements['div'],
-  Observify<Required<ViewProps>> & {
-    children?: JSX.Element | ((api: UseDatePickerReturn) => JSX.Element)
-  }
+	JSX.IntrinsicElements['div'],
+	Observify<Required<ViewProps>> & {
+		children?: JSX.Element | ((api: UseDatePickerReturn) => JSX.Element)
+	}
 >
 
 export const DatePickerView = ({
-  view,
-  // ----
-  children,
-  ...props
+	view,
+	// ----
+	children,
+	...props
 }: DatePickerViewProps) => {
-  const viewProps = () => ({
-    view: $$(view),
-  })
-  const api = useDatePickerContext()
+	const viewProps = () => ({
+		view: $$(view),
+	})
+	const api = useDatePickerContext()
 
-  const hidden = useMemo(() => api().view !== $$(view))
+	const hidden = useMemo(() => api().view !== $$(view))
 
-  return (
-    <DatePickerViewProvider value={viewProps}>
-      <div {...props} hidden={hidden} {...datePickerAnatomy.build().view.attrs}>
-        {applyChildren(children, api)}
-      </div>
-    </DatePickerViewProvider>
-  )
+	return (
+		<DatePickerViewProvider value={viewProps}>
+			<div {...props} hidden={hidden} {...datePickerAnatomy.build().view.attrs}>
+				{applyChildren(children, api)}
+			</div>
+		</DatePickerViewProvider>
+	)
 }

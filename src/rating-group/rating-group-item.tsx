@@ -9,28 +9,28 @@ import { mergeProps } from '@vitro/zag'
 import { applyChildren } from '../utils'
 import { deepEqual as equals } from 'fast-equals'
 export type RatingGroupItemProps = Assign<
-  JSX.IntrinsicElements['span'],
-  Observify<ItemProps> & {
-    children?: JSX.Element | ((state: Accessor<ItemState>) => JSX.Element)
-  }
+	JSX.IntrinsicElements['span'],
+	Observify<ItemProps> & {
+		children?: JSX.Element | ((state: Accessor<ItemState>) => JSX.Element)
+	}
 >
 
 export const RatingGroupItem = ({
-  index,
+	index,
 
-  children,
-  ...props
+	children,
+	...props
 }: RatingGroupItemProps) => {
-  const itemProps = () => ({ index: $$(index) })
+	const itemProps = () => ({ index: $$(index) })
 
-  const api = useRatingGroupContext()
-  const mergedProps = mergeProps(props, () => api().getItemProps(itemProps()))
+	const api = useRatingGroupContext()
+	const mergedProps = mergeProps(props, () => api().getItemProps(itemProps()))
 
-  const itemState = useMemo(() => api().getItemState(itemProps()), { equals })
+	const itemState = useMemo(() => api().getItemState(itemProps()), { equals })
 
-  return (
-    <RatingGroupItemProvider value={itemProps}>
-      <span {...mergedProps}>{applyChildren(children, itemState)}</span>
-    </RatingGroupItemProvider>
-  )
+	return (
+		<RatingGroupItemProvider value={itemProps}>
+			<span {...mergedProps}>{applyChildren(children, itemState)}</span>
+		</RatingGroupItemProvider>
+	)
 }

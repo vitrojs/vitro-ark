@@ -3,66 +3,66 @@ import { PopoverAnchor, type PopoverAnchorProps } from './popover-anchor'
 import { PopoverArrow, type PopoverArrowProps } from './popover-arrow'
 import { PopoverArrowTip, type PopoverArrowTipProps } from './popover-arrow-tip'
 import {
-  PopoverCloseTrigger,
-  type PopoverCloseTriggerProps,
+	PopoverCloseTrigger,
+	type PopoverCloseTriggerProps,
 } from './popover-close-trigger'
 import { PopoverContent, type PopoverContentProps } from './popover-content'
 import { usePopoverContext, type PopoverContext } from './popover-context'
 import {
-  PopoverDescription,
-  type PopoverDescriptionProps,
+	PopoverDescription,
+	type PopoverDescriptionProps,
 } from './popover-description'
 import {
-  PopoverIndicator,
-  type PopoverIndicatorProps,
+	PopoverIndicator,
+	type PopoverIndicatorProps,
 } from './popover-indicator'
 import {
-  PopoverPositioner,
-  type PopoverPositionerProps,
+	PopoverPositioner,
+	type PopoverPositionerProps,
 } from './popover-positioner'
 import { PopoverTitle, type PopoverTitleProps } from './popover-title'
 import { PopoverTrigger, type PopoverTriggerProps } from './popover-trigger'
 
 const Popover = Object.assign(PopoverRoot, {
-  Root: PopoverRoot,
-  Anchor: PopoverAnchor,
-  Arrow: PopoverArrow,
-  ArrowTip: PopoverArrowTip,
-  CloseTrigger: PopoverCloseTrigger,
-  Content: PopoverContent,
-  Description: PopoverDescription,
-  Indicator: PopoverIndicator,
-  Positioner: PopoverPositioner,
-  Title: PopoverTitle,
-  Trigger: PopoverTrigger,
+	Root: PopoverRoot,
+	Anchor: PopoverAnchor,
+	Arrow: PopoverArrow,
+	ArrowTip: PopoverArrowTip,
+	CloseTrigger: PopoverCloseTrigger,
+	Content: PopoverContent,
+	Description: PopoverDescription,
+	Indicator: PopoverIndicator,
+	Positioner: PopoverPositioner,
+	Title: PopoverTitle,
+	Trigger: PopoverTrigger,
 })
 
 export {
-  Popover,
-  PopoverAnchor,
-  PopoverArrow,
-  PopoverArrowTip,
-  PopoverCloseTrigger,
-  PopoverContent,
-  PopoverDescription,
-  PopoverIndicator,
-  PopoverPositioner,
-  PopoverTitle,
-  PopoverTrigger,
-  usePopoverContext,
+	Popover,
+	PopoverAnchor,
+	PopoverArrow,
+	PopoverArrowTip,
+	PopoverCloseTrigger,
+	PopoverContent,
+	PopoverDescription,
+	PopoverIndicator,
+	PopoverPositioner,
+	PopoverTitle,
+	PopoverTrigger,
+	usePopoverContext,
 }
 
 export type {
-  PopoverAnchorProps,
-  PopoverArrowProps,
-  PopoverArrowTipProps,
-  PopoverCloseTriggerProps,
-  PopoverContentProps,
-  PopoverContext,
-  PopoverDescriptionProps,
-  PopoverIndicatorProps,
-  PopoverPositionerProps,
-  PopoverProps,
-  PopoverTitleProps,
-  PopoverTriggerProps,
+	PopoverAnchorProps,
+	PopoverArrowProps,
+	PopoverArrowTipProps,
+	PopoverCloseTriggerProps,
+	PopoverContentProps,
+	PopoverContext,
+	PopoverDescriptionProps,
+	PopoverIndicatorProps,
+	PopoverPositionerProps,
+	PopoverProps,
+	PopoverTitleProps,
+	PopoverTriggerProps,
 }

@@ -7,18 +7,18 @@ import { $$ } from 'vitro'
 import { mergeProps } from '@vitro/zag'
 
 export type PaginationEllipsisProps = Assign<
-  JSX.IntrinsicElements['div'],
-  Observify<EllipsisProps>
+	JSX.IntrinsicElements['div'],
+	Observify<EllipsisProps>
 >
 
 export const PaginationEllipsis = ({
-  index,
-  ...props
+	index,
+	...props
 }: PaginationEllipsisProps) => {
-  const api = usePaginationContext()
-  const mergedProps = mergeProps(props, () =>
-    api().getEllipsisProps({ index: $$(index) }),
-  )
+	const api = usePaginationContext()
+	const mergedProps = mergeProps(props, () =>
+		api().getEllipsisProps({ index: $$(index) }),
+	)
 
-  return <div {...mergedProps} />
+	return <div {...mergedProps} />
 }

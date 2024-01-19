@@ -1,6 +1,6 @@
 import {
-  ColorPicker as ArkColorPicker,
-  type ColorPickerProps as ArkColorPickerProps,
+	ColorPicker as ArkColorPicker,
+	type ColorPickerProps as ArkColorPickerProps,
 } from '@vitro/ark'
 
 import { colorPicker, ColorPickerVariantProps } from 'styled-system/recipes'
@@ -9,71 +9,71 @@ import { Assign, createStyleContext } from '../lib/create-style-context'
 const { withProvider, withContext } = createStyleContext(colorPicker)
 
 export type ColorPickerProps = Assign<
-  ArkColorPickerProps,
-  ColorPickerVariantProps
+	ArkColorPickerProps,
+	ColorPickerVariantProps
 >
 
 const ColorPicker: JSX.Component<ColorPickerProps> = withProvider(
-  ArkColorPicker.Root,
-  'root',
+	ArkColorPicker.Root,
+	'root',
 )
 const ColorPickerArea = withContext(ArkColorPicker.Area, 'area')
 const ColorPickerAreaBackground = withContext(
-  ArkColorPicker.AreaBackground,
-  'areaBackground',
+	ArkColorPicker.AreaBackground,
+	'areaBackground',
 )
 const ColorPickerAreaThumb = withContext(ArkColorPicker.AreaThumb, 'areaThumb')
 const ColorPickerChannelInput = withContext(
-  ArkColorPicker.ChannelInput,
-  'channelInput',
+	ArkColorPicker.ChannelInput,
+	'channelInput',
 )
 const ColorPickerChannelSlider = withContext(
-  ArkColorPicker.ChannelSlider,
-  'channelSlider',
+	ArkColorPicker.ChannelSlider,
+	'channelSlider',
 )
 const ColorPickerChannelSliderThumb = withContext(
-  ArkColorPicker.ChannelSliderThumb,
-  'channelSliderThumb',
+	ArkColorPicker.ChannelSliderThumb,
+	'channelSliderThumb',
 )
 const ColorPickerChannelSliderTrack = withContext(
-  ArkColorPicker.ChannelSliderTrack,
-  'channelSliderTrack',
+	ArkColorPicker.ChannelSliderTrack,
+	'channelSliderTrack',
 )
 const ColorPickerContent = withContext(ArkColorPicker.Content, 'content')
 const ColorPickerControl = withContext(ArkColorPicker.Control, 'control')
 const ColorPickerEyeDropperTrigger = withContext(
-  ArkColorPicker.EyeDropperTrigger,
-  'eyeDropperTrigger',
+	ArkColorPicker.EyeDropperTrigger,
+	'eyeDropperTrigger',
 )
 const ColorPickerFormatSelect = withContext(
-  ArkColorPicker.FormatSelect,
-  'formatSelect',
+	ArkColorPicker.FormatSelect,
+	'formatSelect',
 )
 const ColorPickerFormatTrigger = withContext(
-  ArkColorPicker.FormatTrigger,
-  'formatTrigger',
+	ArkColorPicker.FormatTrigger,
+	'formatTrigger',
 )
 const ColorPickerLabel = withContext(ArkColorPicker.Label, 'label')
 const ColorPickerPositioner = withContext(
-  ArkColorPicker.Positioner,
-  'positioner',
+	ArkColorPicker.Positioner,
+	'positioner',
 )
 const ColorPickerSwatch = withContext(ArkColorPicker.Swatch, 'swatch')
 const ColorPickerSwatchGroup = withContext(
-  ArkColorPicker.SwatchGroup,
-  'swatchGroup',
+	ArkColorPicker.SwatchGroup,
+	'swatchGroup',
 )
 const ColorPickerSwatchIndicator = withContext(
-  ArkColorPicker.SwatchIndicator,
-  'swatchIndicator',
+	ArkColorPicker.SwatchIndicator,
+	'swatchIndicator',
 )
 const ColorPickerSwatchTrigger = withContext(
-  ArkColorPicker.SwatchTrigger,
-  'swatchTrigger',
+	ArkColorPicker.SwatchTrigger,
+	'swatchTrigger',
 )
 const ColorPickerTransparencyGrid = withContext(
-  ArkColorPicker.TransparencyGrid,
-  'transparencyGrid',
+	ArkColorPicker.TransparencyGrid,
+	'transparencyGrid',
 )
 const ColorPickerTrigger = withContext(ArkColorPicker.Trigger, 'trigger')
 const ColorPickerValueText = withContext(ArkColorPicker.ValueText, 'valueText')
@@ -104,51 +104,51 @@ const ValueText = ColorPickerValueText
 const View = ColorPickerView
 
 export {
-  // ColorPicker,
-  // ColorPickerArea,
-  // ColorPickerAreaBackground,
-  // ColorPickerAreaThumb,
-  // ColorPickerChannelInput,
-  // ColorPickerChannelSlider,
-  // ColorPickerChannelSliderThumb,
-  // ColorPickerChannelSliderTrack,
-  // ColorPickerContent,
-  // ColorPickerControl,
-  // ColorPickerEyeDropperTrigger,
-  // ColorPickerFormatSelect,
-  // ColorPickerFormatTrigger,
-  // ColorPickerLabel,
-  // ColorPickerPositioner,
-  // ColorPickerSwatch,
-  // ColorPickerSwatchGroup,
-  // ColorPickerSwatchIndicator,
-  // ColorPickerSwatchTrigger,
-  // ColorPickerTransparencyGrid,
-  // ColorPickerTrigger,
-  // ColorPickerValueText,
-  // ColorPickerView,
+	// ColorPicker,
+	// ColorPickerArea,
+	// ColorPickerAreaBackground,
+	// ColorPickerAreaThumb,
+	// ColorPickerChannelInput,
+	// ColorPickerChannelSlider,
+	// ColorPickerChannelSliderThumb,
+	// ColorPickerChannelSliderTrack,
+	// ColorPickerContent,
+	// ColorPickerControl,
+	// ColorPickerEyeDropperTrigger,
+	// ColorPickerFormatSelect,
+	// ColorPickerFormatTrigger,
+	// ColorPickerLabel,
+	// ColorPickerPositioner,
+	// ColorPickerSwatch,
+	// ColorPickerSwatchGroup,
+	// ColorPickerSwatchIndicator,
+	// ColorPickerSwatchTrigger,
+	// ColorPickerTransparencyGrid,
+	// ColorPickerTrigger,
+	// ColorPickerValueText,
+	// ColorPickerView,
 
-  Area,
-  AreaBackground,
-  AreaThumb,
-  ChannelInput,
-  ChannelSlider,
-  ChannelSliderThumb,
-  ChannelSliderTrack,
-  Content,
-  Control,
-  EyeDropperTrigger,
-  FormatSelect,
-  FormatTrigger,
-  Label,
-  Positioner,
-  Root,
-  Swatch,
-  SwatchGroup,
-  SwatchIndicator,
-  SwatchTrigger,
-  TransparencyGrid,
-  Trigger,
-  ValueText,
-  View,
+	Area,
+	AreaBackground,
+	AreaThumb,
+	ChannelInput,
+	ChannelSlider,
+	ChannelSliderThumb,
+	ChannelSliderTrack,
+	Content,
+	Control,
+	EyeDropperTrigger,
+	FormatSelect,
+	FormatTrigger,
+	Label,
+	Positioner,
+	Root,
+	Swatch,
+	SwatchGroup,
+	SwatchIndicator,
+	SwatchTrigger,
+	TransparencyGrid,
+	Trigger,
+	ValueText,
+	View,
 }

@@ -6,8 +6,8 @@ import { Accessor } from '../types'
 export interface AccordionItemContext extends ItemProps {}
 
 export const [AccordionItemProvider, useAccordionItemContext] = createContext<
-  Accessor<AccordionItemContext>
+	Accessor<AccordionItemContext>
 >({
-  hookName: 'useAccordionItemContext',
-  providerName: '<AccordionItemProvider />',
+	hookName: 'useAccordionItemContext',
+	providerName: '<AccordionItemProvider />',
 })

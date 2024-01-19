@@ -4,15 +4,15 @@ import { AvatarFallback, type AvatarFallbackProps } from './avatar-fallback'
 import { AvatarImage, type AvatarImageProps } from './avatar-image'
 
 const Avatar = Object.assign(AvatarRoot, {
-  Root: AvatarRoot,
-  Fallback: AvatarFallback,
-  Image: AvatarImage,
+	Root: AvatarRoot,
+	Fallback: AvatarFallback,
+	Image: AvatarImage,
 })
 
 export { Avatar, AvatarFallback, AvatarImage, useAvatarContext }
 export type {
-  AvatarContext,
-  AvatarFallbackProps,
-  AvatarImageProps,
-  AvatarProps,
+	AvatarContext,
+	AvatarFallbackProps,
+	AvatarImageProps,
+	AvatarProps,
 }

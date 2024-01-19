@@ -1,6 +1,6 @@
 import {
-  Dialog as ArkDialog,
-  type DialogProps as ArkDialogProps,
+	Dialog as ArkDialog,
+	type DialogProps as ArkDialogProps,
 } from '@vitro/ark'
 
 import { dialog, type DialogVariantProps } from 'styled-system/recipes'
@@ -27,20 +27,20 @@ const Title = DialogTitle
 const Trigger = DialogTrigger
 
 export {
-  // Dialog,
-  // DialogBackdrop,
-  // DialogCloseTrigger,
-  // DialogContent,
-  // DialogDescription,
-  // DialogPositioner,
-  // DialogTitle,
-  // DialogTrigger,
-  Backdrop,
-  CloseTrigger,
-  Content,
-  Description,
-  Positioner,
-  Root,
-  Title,
-  Trigger,
+	// Dialog,
+	// DialogBackdrop,
+	// DialogCloseTrigger,
+	// DialogContent,
+	// DialogDescription,
+	// DialogPositioner,
+	// DialogTitle,
+	// DialogTrigger,
+	Backdrop,
+	CloseTrigger,
+	Content,
+	Description,
+	Positioner,
+	Root,
+	Title,
+	Trigger,
 }

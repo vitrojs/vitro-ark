@@ -8,17 +8,17 @@ import { createSequenceId } from '../utils'
 
 export interface UseRatingGroupProps extends Optional<rating.Context, 'id'> {}
 export interface UseRatingGroupReturn
-  extends ObservableReadonly<rating.Api<PropTypes>> {}
+	extends ObservableReadonly<rating.Api<PropTypes>> {}
 
 export const useRatingGroup = (
-  props: Observify<UseRatingGroupProps>,
+	props: Observify<UseRatingGroupProps>,
 ): UseRatingGroupReturn => {
-  const getRootNode = useEnvironmentContext()
+	const getRootNode = useEnvironmentContext()
 
-  const [state, send] = useMachine(props, rating.machine, {
-    id: createSequenceId(),
-    getRootNode,
-  })
+	const [state, send] = useMachine(props, rating.machine, {
+		id: createSequenceId(),
+		getRootNode,
+	})
 
-  return useMemo(() => rating.connect(state(), send, normalizeProps))
+	return useMemo(() => rating.connect(state(), send, normalizeProps))
 }

@@ -8,17 +8,17 @@ import { createSequenceId } from '../utils'
 
 export interface UseTagsInputProps extends Optional<tagsInput.Context, 'id'> {}
 export interface UseTagsInputReturn
-  extends Accessor<tagsInput.Api<PropTypes>> {}
+	extends Accessor<tagsInput.Api<PropTypes>> {}
 
 export const useTagsInput = (
-  props: Observify<UseTagsInputProps>,
+	props: Observify<UseTagsInputProps>,
 ): UseTagsInputReturn => {
-  const getRootNode = useEnvironmentContext()
+	const getRootNode = useEnvironmentContext()
 
-  const [state, send] = useMachine(props, tagsInput.machine, {
-    id: createSequenceId(),
-    getRootNode,
-  })
+	const [state, send] = useMachine(props, tagsInput.machine, {
+		id: createSequenceId(),
+		getRootNode,
+	})
 
-  return useMemo(() => tagsInput.connect(state(), send, normalizeProps))
+	return useMemo(() => tagsInput.connect(state(), send, normalizeProps))
 }

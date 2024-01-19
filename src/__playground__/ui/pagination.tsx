@@ -1,6 +1,6 @@
 import {
-  Pagination as ArkPagination,
-  type PaginationProps as ArkPaginationProps,
+	Pagination as ArkPagination,
+	type PaginationProps as ArkPaginationProps,
 } from '@vitro/ark'
 
 import { PaginationVariantProps, pagination } from 'styled-system/recipes'
@@ -13,12 +13,12 @@ const Pagination = withProvider(ArkPagination.Root, 'root')
 const PaginationEllipsis = withContext(ArkPagination.Ellipsis, 'ellipsis')
 const PaginationItem = withContext(ArkPagination.Item, 'item')
 const PaginationNextTrigger = withContext(
-  ArkPagination.NextTrigger,
-  'nextTrigger',
+	ArkPagination.NextTrigger,
+	'nextTrigger',
 )
 const PaginationPrevTrigger = withContext(
-  ArkPagination.PrevTrigger,
-  'prevTrigger',
+	ArkPagination.PrevTrigger,
+	'prevTrigger',
 )
 
 const Root = Pagination
@@ -28,15 +28,15 @@ const NextTrigger = PaginationNextTrigger
 const PrevTrigger = PaginationPrevTrigger
 
 export {
-  // Pagination,
-  // PaginationEllipsis,
-  // PaginationItem,
-  // PaginationNextTrigger,
-  // PaginationPrevTrigger,
+	// Pagination,
+	// PaginationEllipsis,
+	// PaginationItem,
+	// PaginationNextTrigger,
+	// PaginationPrevTrigger,
 
-  Ellipsis,
-  Item,
-  NextTrigger,
-  PrevTrigger,
-  Root,
+	Ellipsis,
+	Item,
+	NextTrigger,
+	PrevTrigger,
+	Root,
 }

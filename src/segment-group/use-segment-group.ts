@@ -9,14 +9,14 @@ export type UseSegmentGroupProps = Optional<segment.Context, 'id'>
 export type UseSegmentGroupReturn = Accessor<segment.Api<PropTypes>>
 
 export const useSegmentGroup = (
-  props: Observify<UseSegmentGroupProps>,
+	props: Observify<UseSegmentGroupProps>,
 ): UseSegmentGroupReturn => {
-  const getRootNode = useEnvironmentContext()
+	const getRootNode = useEnvironmentContext()
 
-  const [state, send] = useMachine(props, segment.machine, {
-    id: createSequenceId(),
-    getRootNode,
-  })
+	const [state, send] = useMachine(props, segment.machine, {
+		id: createSequenceId(),
+		getRootNode,
+	})
 
-  return useMemo(() => segment.connect(state(), send, normalizeProps))
+	return useMemo(() => segment.connect(state(), send, normalizeProps))
 }

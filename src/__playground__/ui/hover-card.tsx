@@ -1,6 +1,6 @@
 import {
-  HoverCard as ArkHoverCard,
-  type HoverCardProps as ArkHoverCardProps,
+	HoverCard as ArkHoverCard,
+	type HoverCardProps as ArkHoverCardProps,
 } from '@vitro/ark'
 
 import { hoverCard, type HoverCardVariantProps } from 'styled-system/recipes'
@@ -23,17 +23,17 @@ const Positioner = HoverCardPositioner
 const Trigger = HoverCardTrigger
 
 export {
-  // HoverCard,
-  // HoverCardArrow,
-  // HoverCardArrowTip,
-  // HoverCardContent,
-  // HoverCardPositioner,
-  // HoverCardTrigger,
+	// HoverCard,
+	// HoverCardArrow,
+	// HoverCardArrowTip,
+	// HoverCardContent,
+	// HoverCardPositioner,
+	// HoverCardTrigger,
 
-  Arrow,
-  ArrowTip,
-  Content,
-  Positioner,
-  Root,
-  Trigger,
+	Arrow,
+	ArrowTip,
+	Content,
+	Positioner,
+	Root,
+	Trigger,
 }

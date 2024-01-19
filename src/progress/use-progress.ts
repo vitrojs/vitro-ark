@@ -10,12 +10,12 @@ export interface UseProgressProps extends Optional<progress.Context, 'id'> {}
 export interface UseProgressReturn extends Accessor<progress.Api<PropTypes>> {}
 
 export const useProgress = (props: UseProgressProps): UseProgressReturn => {
-  const getRootNode = useEnvironmentContext()
+	const getRootNode = useEnvironmentContext()
 
-  const [state, send] = useMachine(props, progress.machine, {
-    id: createSequenceId(),
-    getRootNode,
-  })
+	const [state, send] = useMachine(props, progress.machine, {
+		id: createSequenceId(),
+		getRootNode,
+	})
 
-  return useMemo(() => progress.connect(state(), send, normalizeProps))
+	return useMemo(() => progress.connect(state(), send, normalizeProps))
 }

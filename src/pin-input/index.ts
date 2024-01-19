@@ -5,24 +5,24 @@ import { PinInputInput, type PinInputInputProps } from './pin-input-input'
 import { PinInputLabel, type PinInputLabelProps } from './pin-input-label'
 
 const PinInput = Object.assign(PinInputRoot, {
-  Root: PinInputRoot,
-  Control: PinInputControl,
-  Input: PinInputInput,
-  Label: PinInputLabel,
+	Root: PinInputRoot,
+	Control: PinInputControl,
+	Input: PinInputInput,
+	Label: PinInputLabel,
 })
 
 export {
-  PinInput,
-  PinInputControl,
-  PinInputInput,
-  PinInputLabel,
-  usePinInputContext,
+	PinInput,
+	PinInputControl,
+	PinInputInput,
+	PinInputLabel,
+	usePinInputContext,
 }
 
 export type {
-  PinInputContext,
-  PinInputControlProps,
-  PinInputInputProps,
-  PinInputLabelProps,
-  PinInputProps,
+	PinInputContext,
+	PinInputControlProps,
+	PinInputInputProps,
+	PinInputLabelProps,
+	PinInputProps,
 }

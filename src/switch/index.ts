@@ -5,18 +5,18 @@ import { SwitchLabel, type SwitchLabelProps } from './switch-label'
 import { SwitchThumb, type SwitchThumbProps } from './switch-thumb'
 
 const Switch = Object.assign(SwitchRoot, {
-  Root: SwitchRoot,
-  Control: SwitchControl,
-  Label: SwitchLabel,
-  Thumb: SwitchThumb,
+	Root: SwitchRoot,
+	Control: SwitchControl,
+	Label: SwitchLabel,
+	Thumb: SwitchThumb,
 })
 
 export { Switch, SwitchControl, SwitchLabel, SwitchThumb, useSwitchContext }
 
 export type {
-  SwitchContext,
-  SwitchControlProps,
-  SwitchLabelProps,
-  SwitchProps,
-  SwitchThumbProps,
+	SwitchContext,
+	SwitchControlProps,
+	SwitchLabelProps,
+	SwitchProps,
+	SwitchThumbProps,
 }

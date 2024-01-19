@@ -1,6 +1,6 @@
 import {
-  FileUpload as ArkFileUpload,
-  type FileUploadProps as ArkFileUploadProps,
+	FileUpload as ArkFileUpload,
+	type FileUploadProps as ArkFileUploadProps,
 } from '@vitro/ark'
 
 import { fileUpload, type FileUploadVariantProps } from 'styled-system/recipes'
@@ -13,22 +13,22 @@ const FileUpload = withProvider(ArkFileUpload.Root, 'root')
 const FileUploadDropzone = withContext(ArkFileUpload.Dropzone, 'dropzone')
 const FileUploadItem = withContext(ArkFileUpload.Item, 'item')
 const FileUploadItemDeleteTrigger = withContext(
-  ArkFileUpload.ItemDeleteTrigger,
-  'itemDeleteTrigger',
+	ArkFileUpload.ItemDeleteTrigger,
+	'itemDeleteTrigger',
 )
 const FileUploadItemGroup = withContext(ArkFileUpload.ItemGroup, 'itemGroup')
 const FileUploadItemName = withContext(ArkFileUpload.ItemName, 'itemName')
 const FileUploadItemPreview = withContext(
-  ArkFileUpload.ItemPreview,
-  'itemPreview',
+	ArkFileUpload.ItemPreview,
+	'itemPreview',
 )
 const FileUploadItemPreviewImage = withContext(
-  ArkFileUpload.ItemPreviewImage,
-  'itemPreviewImage',
+	ArkFileUpload.ItemPreviewImage,
+	'itemPreviewImage',
 )
 const FileUploadItemSizeText = withContext(
-  ArkFileUpload.ItemSizeText,
-  'itemSizeText',
+	ArkFileUpload.ItemSizeText,
+	'itemSizeText',
 )
 const FileUploadLabel = withContext(ArkFileUpload.Label, 'label')
 const FileUploadTrigger = withContext(ArkFileUpload.Trigger, 'trigger')
@@ -46,26 +46,26 @@ const Label = FileUploadLabel
 const Trigger = FileUploadTrigger
 
 export {
-  Dropzone,
-  FileUpload,
-  FileUploadDropzone,
-  FileUploadItem,
-  FileUploadItemDeleteTrigger,
-  FileUploadItemGroup,
-  FileUploadItemName,
-  FileUploadItemPreview,
-  FileUploadItemPreviewImage,
-  FileUploadItemSizeText,
-  FileUploadLabel,
-  FileUploadTrigger,
-  Item,
-  ItemDeleteTrigger,
-  ItemGroup,
-  ItemName,
-  ItemPreview,
-  ItemPreviewImage,
-  ItemSizeText,
-  Label,
-  Root,
-  Trigger,
+	Dropzone,
+	FileUpload,
+	FileUploadDropzone,
+	FileUploadItem,
+	FileUploadItemDeleteTrigger,
+	FileUploadItemGroup,
+	FileUploadItemName,
+	FileUploadItemPreview,
+	FileUploadItemPreviewImage,
+	FileUploadItemSizeText,
+	FileUploadLabel,
+	FileUploadTrigger,
+	Item,
+	ItemDeleteTrigger,
+	ItemGroup,
+	ItemName,
+	ItemPreview,
+	ItemPreviewImage,
+	ItemSizeText,
+	Label,
+	Root,
+	Trigger,
 }

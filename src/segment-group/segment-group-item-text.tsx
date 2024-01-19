@@ -7,13 +7,13 @@ import { useSegmentGroupItemContext } from './segment-group-item-context'
 export type SegmentGroupItemTextProps = JSX.IntrinsicElements['span']
 
 export const SegmentGroupItemText = (props: SegmentGroupItemTextProps) => {
-  const api = useSegmentGroupContext()
-  const itemProps = useSegmentGroupItemContext()
-  const mergedProps = mergeProps(props, () =>
-    api().getItemTextProps(itemProps()),
-  )
+	const api = useSegmentGroupContext()
+	const itemProps = useSegmentGroupItemContext()
+	const mergedProps = mergeProps(props, () =>
+		api().getItemTextProps(itemProps()),
+	)
 
-  return (
-    <span {...mergedProps} {...segmentGroupAnatomy.build().itemText.attrs} />
-  )
+	return (
+		<span {...mergedProps} {...segmentGroupAnatomy.build().itemText.attrs} />
+	)
 }

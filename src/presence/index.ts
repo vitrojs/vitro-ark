@@ -1,37 +1,37 @@
 import { Presence as PresenceRoot, type PresenceProps } from './presence'
 import {
-  PresenceProvider,
-  usePresenceContext,
-  type PresenceContext,
+	PresenceProvider,
+	usePresenceContext,
+	type PresenceContext,
 } from './presence-context'
 import {
-  PresencePropsProvider,
-  usePresencePropsContext,
-  type PresencePropsContext,
+	PresencePropsProvider,
+	usePresencePropsContext,
+	type PresencePropsContext,
 } from './presence-props-context'
 import {
-  usePresence,
-  type UsePresenceProps,
-  type UsePresenceReturn,
+	usePresence,
+	type UsePresenceProps,
+	type UsePresenceReturn,
 } from './use-presence'
 
 const Presence = Object.assign(PresenceRoot, {
-  Root: PresenceRoot,
+	Root: PresenceRoot,
 })
 
 export {
-  Presence,
-  PresencePropsProvider,
-  PresenceProvider,
-  usePresence,
-  usePresenceContext,
-  usePresencePropsContext,
+	Presence,
+	PresencePropsProvider,
+	PresenceProvider,
+	usePresence,
+	usePresenceContext,
+	usePresencePropsContext,
 }
 
 export type {
-  PresenceContext,
-  PresenceProps,
-  PresencePropsContext,
-  UsePresenceProps,
-  UsePresenceReturn,
+	PresenceContext,
+	PresenceProps,
+	PresencePropsContext,
+	UsePresenceProps,
+	UsePresenceReturn,
 }

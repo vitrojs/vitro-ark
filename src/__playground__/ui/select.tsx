@@ -1,7 +1,7 @@
 import {
-  Select as ArkSelect,
-  CollectionItem,
-  type SelectProps as ArkSelectProps,
+	Select as ArkSelect,
+	CollectionItem,
+	type SelectProps as ArkSelectProps,
 } from '@vitro/ark'
 
 import { select, type SelectVariantProps } from 'styled-system/recipes'
@@ -10,8 +10,8 @@ import { Assign, createStyleContext } from '../lib/create-style-context'
 const { withProvider, withContext } = createStyleContext(select)
 
 export type SelectProps = Assign<
-  ArkSelectProps<CollectionItem>,
-  SelectVariantProps
+	ArkSelectProps<CollectionItem>,
+	SelectVariantProps
 >
 
 const Select: JSX.Component<SelectProps> = withProvider(ArkSelect.Root, 'root')
@@ -22,12 +22,12 @@ const SelectIndicator = withContext(ArkSelect.Indicator, 'indicator')
 const SelectItem = withContext(ArkSelect.Item, 'item')
 const SelectItemGroup = withContext(ArkSelect.ItemGroup, 'itemGroup')
 const SelectItemGroupLabel = withContext(
-  ArkSelect.ItemGroupLabel,
-  'itemGroupLabel',
+	ArkSelect.ItemGroupLabel,
+	'itemGroupLabel',
 )
 const SelectItemIndicator = withContext(
-  ArkSelect.ItemIndicator,
-  'itemIndicator',
+	ArkSelect.ItemIndicator,
+	'itemIndicator',
 )
 const SelectItemText = withContext(ArkSelect.ItemText, 'itemText')
 const SelectLabel = withContext(ArkSelect.Label, 'label')
@@ -51,33 +51,33 @@ const Trigger = SelectTrigger
 const ValueText = SelectValueText
 
 export {
-  // Select,
-  // SelectClearTrigger,
-  // SelectContent,
-  // SelectControl,
-  // SelectIndicator,
-  // SelectItem,
-  // SelectItemGroup,
-  // SelectItemGroupLabel,
-  // SelectItemIndicator,
-  // SelectItemText,
-  // SelectLabel,
-  // SelectPositioner,
-  // SelectTrigger,
-  // SelectValueText,
+	// Select,
+	// SelectClearTrigger,
+	// SelectContent,
+	// SelectControl,
+	// SelectIndicator,
+	// SelectItem,
+	// SelectItemGroup,
+	// SelectItemGroupLabel,
+	// SelectItemIndicator,
+	// SelectItemText,
+	// SelectLabel,
+	// SelectPositioner,
+	// SelectTrigger,
+	// SelectValueText,
 
-  ClearTrigger,
-  Content,
-  Control,
-  Indicator,
-  Item,
-  ItemGroup,
-  ItemGroupLabel,
-  ItemIndicator,
-  ItemText,
-  Label,
-  Positioner,
-  Root,
-  Trigger,
-  ValueText,
+	ClearTrigger,
+	Content,
+	Control,
+	Indicator,
+	Item,
+	ItemGroup,
+	ItemGroupLabel,
+	ItemIndicator,
+	ItemText,
+	Label,
+	Positioner,
+	Root,
+	Trigger,
+	ValueText,
 }

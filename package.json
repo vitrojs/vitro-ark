@@ -18,7 +18,7 @@
     "dev": "vite",
     "build": "bun build.ts",
     "postinstall": "NODE_ENV=production bun build.ts",
-    "format": "prettier --write src",
+    "fmt": "biome format ./src --write",
     "ts:check": "tsc --noEmit",
     "preview": "vite preview"
   },
@@ -70,13 +70,13 @@
     "@zag-js/utils": "^0.32.1"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.5.2",
     "@pandacss/dev": "^0.27.3",
     "@park-ui/panda-preset": "^0.28.0",
     "@vitro/lucide": "github:vitrojs/vitro-lucide",
     "@vitro/router": "github:vitrojs/vitro-router",
     "bun-types": "^1.0.23",
     "esbuild": "^0.19.11",
-    "prettier": "^3.2.4",
     "vite": "^5.0.11",
     "vite-tsconfig-paths": "^4.3.1"
   }

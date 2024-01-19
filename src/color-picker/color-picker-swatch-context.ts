@@ -5,7 +5,7 @@ import { Accessor } from '../types'
 export interface ColorPickerSwatchContext extends SwatchProps {}
 
 export const [ColorPickerSwatchProvider, useColorPickerSwatchContext] =
-  createContext<Accessor<ColorPickerSwatchContext>>({
-    hookName: 'useColorPickerSwatchContext',
-    providerName: '<ColorPickerSwatchProvider />',
-  })
+	createContext<Accessor<ColorPickerSwatchContext>>({
+		hookName: 'useColorPickerSwatchContext',
+		providerName: '<ColorPickerSwatchProvider />',
+	})

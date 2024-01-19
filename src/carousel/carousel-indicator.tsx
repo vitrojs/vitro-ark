@@ -7,23 +7,23 @@ import { mergeProps } from '@vitro/zag'
 import { $$ } from 'vitro'
 
 export type CarouselIndicatorProps = Assign<
-  JSX.IntrinsicElements['button'],
-  Observify<IndicatorProps>
+	JSX.IntrinsicElements['button'],
+	Observify<IndicatorProps>
 >
 
 export const CarouselIndicator = ({
-  index,
-  readOnly,
-  // ----
-  ...props
+	index,
+	readOnly,
+	// ----
+	...props
 }: CarouselIndicatorProps) => {
-  const api = useCarouselContext()
-  const mergedProps = mergeProps(props, () =>
-    api().getIndicatorProps({
-      index: $$(index),
-      readOnly: $$(readOnly),
-    }),
-  )
+	const api = useCarouselContext()
+	const mergedProps = mergeProps(props, () =>
+		api().getIndicatorProps({
+			index: $$(index),
+			readOnly: $$(readOnly),
+		}),
+	)
 
-  return <button {...mergedProps} />
+	return <button {...mergedProps} />
 }

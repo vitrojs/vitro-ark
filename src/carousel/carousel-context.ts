@@ -4,7 +4,7 @@ import { type UseCarouselReturn } from './use-carousel'
 export interface CarouselContext extends UseCarouselReturn {}
 
 export const [CarouselProvider, useCarouselContext] =
-  createContext<CarouselContext>({
-    hookName: 'useCarouselContext',
-    providerName: '<CarouselProvider />',
-  })
+	createContext<CarouselContext>({
+		hookName: 'useCarouselContext',
+		providerName: '<CarouselProvider />',
+	})

@@ -1,6 +1,6 @@
 import {
-  Slider as ArkSlider,
-  type SliderProps as ArkSliderProps,
+	Slider as ArkSlider,
+	type SliderProps as ArkSliderProps,
 } from '@vitro/ark'
 
 import { SliderVariantProps, slider } from 'styled-system/recipes'
@@ -30,23 +30,23 @@ const Track = SliderTrack
 const ValueText = SliderValueText
 
 export {
-  // Slider,
-  // SliderControl,
-  // SliderLabel,
-  // SliderMarker,
-  // SliderMarkerGroup,
-  // SliderRange,
-  // SliderThumb,
-  // SliderTrack,
-  // SliderValueText,
+	// Slider,
+	// SliderControl,
+	// SliderLabel,
+	// SliderMarker,
+	// SliderMarkerGroup,
+	// SliderRange,
+	// SliderThumb,
+	// SliderTrack,
+	// SliderValueText,
 
-  Control,
-  Label,
-  Marker,
-  MarkerGroup,
-  Range,
-  Root,
-  Thumb,
-  Track,
-  ValueText,
+	Control,
+	Label,
+	Marker,
+	MarkerGroup,
+	Range,
+	Root,
+	Thumb,
+	Track,
+	ValueText,
 }

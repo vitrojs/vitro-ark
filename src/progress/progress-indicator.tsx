@@ -7,18 +7,18 @@ import { mergeProps } from '@vitro/zag'
 import { useProgressContext } from './progress-context'
 
 export type ProgressIndicatorProps = Assign<
-  JSX.IntrinsicElements['span'],
-  Observify<IndicatorProps>
+	JSX.IntrinsicElements['span'],
+	Observify<IndicatorProps>
 >
 
 export const ProgressIndicator = ({
-  state,
-  ...props
+	state,
+	...props
 }: ProgressIndicatorProps) => {
-  const api = useProgressContext()
-  const mergedProps = mergeProps(props, () =>
-    api().getIndicatorProps({ state: $$(state) }),
-  )
+	const api = useProgressContext()
+	const mergedProps = mergeProps(props, () =>
+		api().getIndicatorProps({ state: $$(state) }),
+	)
 
-  return <span {...mergedProps} />
+	return <span {...mergedProps} />
 }

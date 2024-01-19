@@ -7,18 +7,18 @@ import { type Optional } from '../types'
 import { createSequenceId } from '../utils'
 
 export interface UsePaginationProps
-  extends Optional<pagination.Context, 'id'> {}
+	extends Optional<pagination.Context, 'id'> {}
 export interface UsePaginationReturn
-  extends ObservableReadonly<pagination.Api<PropTypes>> {}
+	extends ObservableReadonly<pagination.Api<PropTypes>> {}
 
 export const usePagination = (
-  props: Observify<UsePaginationProps>,
+	props: Observify<UsePaginationProps>,
 ): UsePaginationReturn => {
-  const getRootNode = useEnvironmentContext()
+	const getRootNode = useEnvironmentContext()
 
-  const [state, send] = useMachine(props, pagination.machine, {
-    id: createSequenceId(),
-    getRootNode,
-  })
-  return useMemo(() => pagination.connect(state(), send, normalizeProps))
+	const [state, send] = useMachine(props, pagination.machine, {
+		id: createSequenceId(),
+		getRootNode,
+	})
+	return useMemo(() => pagination.connect(state(), send, normalizeProps))
 }

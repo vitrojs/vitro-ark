@@ -5,43 +5,43 @@ import { ToggleGroupProvider } from './toggle-group-context'
 import { useToggleGroup, type UseToggleGroupProps } from './use-toggle-group'
 
 export type ToggleGroupProps = Assign<
-  JSX.IntrinsicElements['div'],
-  Observify<UseToggleGroupProps>
+	JSX.IntrinsicElements['div'],
+	Observify<UseToggleGroupProps>
 >
 
 export const ToggleGroup = ({
-  dir,
-  disabled,
-  getRootNode,
-  id,
-  ids,
-  loop,
-  multiple,
-  onValueChange,
-  orientation,
-  rovingFocus,
-  value,
-  // ----
-  ...props
+	dir,
+	disabled,
+	getRootNode,
+	id,
+	ids,
+	loop,
+	multiple,
+	onValueChange,
+	orientation,
+	rovingFocus,
+	value,
+	// ----
+	...props
 }: ToggleGroupProps) => {
-  const api = useToggleGroup({
-    dir,
-    disabled,
-    getRootNode,
-    id,
-    ids,
-    loop,
-    multiple,
-    onValueChange,
-    orientation,
-    rovingFocus,
-    value,
-  })
-  const mergedProps = mergeProps(props, () => api().rootProps)
+	const api = useToggleGroup({
+		dir,
+		disabled,
+		getRootNode,
+		id,
+		ids,
+		loop,
+		multiple,
+		onValueChange,
+		orientation,
+		rovingFocus,
+		value,
+	})
+	const mergedProps = mergeProps(props, () => api().rootProps)
 
-  return (
-    <ToggleGroupProvider value={api}>
-      <div {...mergedProps} />
-    </ToggleGroupProvider>
-  )
+	return (
+		<ToggleGroupProvider value={api}>
+			<div {...mergedProps} />
+		</ToggleGroupProvider>
+	)
 }

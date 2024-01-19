@@ -8,29 +8,29 @@ import { mergeProps } from '@vitro/zag'
 import type { Observify } from '@vitro/zag'
 
 export type ColorPickerSwatchProps = Assign<
-  JSX.IntrinsicElements['div'],
-  Observify<SwatchProps>
+	JSX.IntrinsicElements['div'],
+	Observify<SwatchProps>
 >
 
 export const ColorPickerSwatch = ({
-  respectAlpha,
-  value,
+	respectAlpha,
+	value,
 
-  // ----
-  ...props
+	// ----
+	...props
 }: ColorPickerSwatchProps) => {
-  const api = useColorPickerContext()
-  const swatchProps = () => ({
-    respectAlpha: $$(respectAlpha),
-    value: $$(value),
-  })
-  const mergedProps = mergeProps(props, () =>
-    api().getSwatchProps(swatchProps()),
-  )
+	const api = useColorPickerContext()
+	const swatchProps = () => ({
+		respectAlpha: $$(respectAlpha),
+		value: $$(value),
+	})
+	const mergedProps = mergeProps(props, () =>
+		api().getSwatchProps(swatchProps()),
+	)
 
-  return (
-    <ColorPickerSwatchProvider value={swatchProps}>
-      <div {...mergedProps} />
-    </ColorPickerSwatchProvider>
-  )
+	return (
+		<ColorPickerSwatchProvider value={swatchProps}>
+			<div {...mergedProps} />
+		</ColorPickerSwatchProvider>
+	)
 }

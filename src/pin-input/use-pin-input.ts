@@ -10,14 +10,14 @@ export interface UsePinInputProps extends Optional<pinInput.Context, 'id'> {}
 export interface UsePinInputReturn extends Accessor<pinInput.Api<PropTypes>> {}
 
 export const usePinInput = (
-  props: Observify<UsePinInputProps>,
+	props: Observify<UsePinInputProps>,
 ): UsePinInputReturn => {
-  const getRootNode = useEnvironmentContext()
+	const getRootNode = useEnvironmentContext()
 
-  const [state, send] = useMachine(props, pinInput.machine, {
-    id: createSequenceId(),
-    getRootNode,
-  })
+	const [state, send] = useMachine(props, pinInput.machine, {
+		id: createSequenceId(),
+		getRootNode,
+	})
 
-  return useMemo(() => pinInput.connect(state(), send, normalizeProps))
+	return useMemo(() => pinInput.connect(state(), send, normalizeProps))
 }

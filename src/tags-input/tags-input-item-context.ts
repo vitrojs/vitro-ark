@@ -5,8 +5,8 @@ import { Accessor } from '../types'
 export interface TagsInputItemContext extends ItemProps {}
 
 export const [TagsInputItemProvider, useTagsInputItemContext] = createContext<
-  Accessor<TagsInputItemContext>
+	Accessor<TagsInputItemContext>
 >({
-  hookName: 'useTagsInputItemContext',
-  providerName: '<TagsInputItemProvider />',
+	hookName: 'useTagsInputItemContext',
+	providerName: '<TagsInputItemProvider />',
 })

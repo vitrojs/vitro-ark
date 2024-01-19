@@ -5,9 +5,9 @@ import { Accessor } from '../types'
 export interface ColorPickerChannelSliderContext extends ChannelProps {}
 
 export const [
-  ColorPickerChannelSliderProvider,
-  useColorPickerChannelSliderContext,
+	ColorPickerChannelSliderProvider,
+	useColorPickerChannelSliderContext,
 ] = createContext<Accessor<ColorPickerChannelSliderContext>>({
-  hookName: 'useColorPickerChannelSliderContext',
-  providerName: '<ColorPickerChannelSliderProvider />',
+	hookName: 'useColorPickerChannelSliderContext',
+	providerName: '<ColorPickerChannelSliderProvider />',
 })

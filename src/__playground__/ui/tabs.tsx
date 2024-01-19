@@ -17,15 +17,15 @@ const List = TabsList
 const Trigger = TabsTrigger
 
 export {
-  // Tabs,
-  // TabsContent,
-  // TabsIndicator,
-  // TabsList,
-  // TabsTrigger,
+	// Tabs,
+	// TabsContent,
+	// TabsIndicator,
+	// TabsList,
+	// TabsTrigger,
 
-  Content,
-  Indicator,
-  List,
-  Root,
-  Trigger,
+	Content,
+	Indicator,
+	List,
+	Root,
+	Trigger,
 }

@@ -6,17 +6,17 @@ import { useProgressContext } from './progress-context'
 export type ProgressValueTextProps = JSX.IntrinsicElements['span']
 
 export const ProgressValueText = ({
-  children,
-  ...props
+	children,
+	...props
 }: ProgressValueTextProps) => {
-  const api = useProgressContext()
-  const mergedProps = mergeProps(props, () => api().valueTextProps)
+	const api = useProgressContext()
+	const mergedProps = mergeProps(props, () => api().valueTextProps)
 
-  const valueAsString = useMemo(() => api().valueAsString)
+	const valueAsString = useMemo(() => api().valueAsString)
 
-  return (
-    <span {...mergedProps}>
-      {children ? applyChildren(children, valueAsString) : valueAsString}
-    </span>
-  )
+	return (
+		<span {...mergedProps}>
+			{children ? applyChildren(children, valueAsString) : valueAsString}
+		</span>
+	)
 }

@@ -3,8 +3,8 @@ import { Assign, createStyleContext } from '../lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(table)
 export type TableProps = Assign<
-  JSX.IntrinsicElements['table'],
-  TableVariantProps
+	JSX.IntrinsicElements['table'],
+	TableVariantProps
 >
 
 const Table: JSX.Component<TableProps> = withProvider('table', 'root')
@@ -26,21 +26,21 @@ const Header = TableHeader
 const Row = TableRow
 
 export {
-  // Table,
-  // TableBody,
-  // TableCaption,
-  // TableCell,
-  // TableFooter,
-  // TableHead,
-  // TableHeader,
-  // TableRow,
+	// Table,
+	// TableBody,
+	// TableCaption,
+	// TableCell,
+	// TableFooter,
+	// TableHead,
+	// TableHeader,
+	// TableRow,
 
-  Body,
-  Caption,
-  Cell,
-  Footer,
-  Head,
-  Header,
-  Root,
-  Row,
+	Body,
+	Caption,
+	Cell,
+	Footer,
+	Head,
+	Header,
+	Root,
+	Row,
 }

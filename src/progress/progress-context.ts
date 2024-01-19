@@ -4,7 +4,7 @@ import { type UseProgressReturn } from './use-progress'
 export interface ProgressContext extends UseProgressReturn {}
 
 export const [ProgressProvider, useProgressContext] =
-  createContext<ProgressContext>({
-    hookName: 'useProgressContext',
-    providerName: '<ProgressProvider />',
-  })
+	createContext<ProgressContext>({
+		hookName: 'useProgressContext',
+		providerName: '<ProgressProvider />',
+	})

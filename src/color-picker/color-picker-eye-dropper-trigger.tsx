@@ -4,10 +4,10 @@ import { useColorPickerContext } from './color-picker-context'
 export type ColorPickerEyeDropperTriggerProps = JSX.IntrinsicElements['button']
 
 export const ColorPickerEyeDropperTrigger = (
-  props: ColorPickerEyeDropperTriggerProps,
+	props: ColorPickerEyeDropperTriggerProps,
 ) => {
-  const api = useColorPickerContext()
-  const mergedProps = mergeProps(props, () => api().eyeDropperTriggerProps)
+	const api = useColorPickerContext()
+	const mergedProps = mergeProps(props, () => api().eyeDropperTriggerProps)
 
-  return <button {...mergedProps} />
+	return <button {...mergedProps} />
 }

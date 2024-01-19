@@ -7,24 +7,24 @@ import { $$ } from 'vitro'
 import { mergeProps } from '@vitro/zag'
 
 export type ColorPickerSwatchTriggerProps = Assign<
-  JSX.IntrinsicElements['button'],
-  Observify<SwatchTriggerProps>
+	JSX.IntrinsicElements['button'],
+	Observify<SwatchTriggerProps>
 >
 
 export const ColorPickerSwatchTrigger = ({
-  value,
-  disabled,
-  // ----
-  ...props
+	value,
+	disabled,
+	// ----
+	...props
 }: ColorPickerSwatchTriggerProps) => {
-  const triggerProps = () => ({
-    value: $$(value),
-    disabled: $$(disabled),
-  })
-  const api = useColorPickerContext()
-  const mergedProps = mergeProps(props, () =>
-    api().getSwatchTriggerProps(triggerProps()),
-  )
+	const triggerProps = () => ({
+		value: $$(value),
+		disabled: $$(disabled),
+	})
+	const api = useColorPickerContext()
+	const mergedProps = mergeProps(props, () =>
+		api().getSwatchTriggerProps(triggerProps()),
+	)
 
-  return <button {...mergedProps} />
+	return <button {...mergedProps} />
 }

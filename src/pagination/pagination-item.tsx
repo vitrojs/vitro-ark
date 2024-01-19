@@ -7,21 +7,21 @@ import { $$ } from 'vitro'
 import { mergeProps } from '@vitro/zag'
 
 export type PaginationItemProps = Assign<
-  JSX.IntrinsicElements['button'],
-  Observify<ItemProps>
+	JSX.IntrinsicElements['button'],
+	Observify<ItemProps>
 >
 
 export const PaginationItem = ({
-  value,
-  type,
-  ...props
+	value,
+	type,
+	...props
 }: PaginationItemProps) => {
-  const itemProps = () => ({
-    value: $$(value),
-    type: $$(type),
-  })
-  const api = usePaginationContext()
-  const mergedProps = mergeProps(props, () => api().getItemProps(itemProps()))
+	const itemProps = () => ({
+		value: $$(value),
+		type: $$(type),
+	})
+	const api = usePaginationContext()
+	const mergedProps = mergeProps(props, () => api().getItemProps(itemProps()))
 
-  return <button {...mergedProps} />
+	return <button {...mergedProps} />
 }

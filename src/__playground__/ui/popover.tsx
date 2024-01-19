@@ -1,6 +1,6 @@
 import {
-  Popover as ArkPopover,
-  type PopoverProps as ArkPopoverProps,
+	Popover as ArkPopover,
+	type PopoverProps as ArkPopoverProps,
 } from '@vitro/ark'
 
 import { PopoverVariantProps, popover } from 'styled-system/recipes'
@@ -33,27 +33,27 @@ const Title = PopoverTitle
 const Trigger = PopoverTrigger
 
 export {
-  // Popover,
-  // PopoverAnchor,
-  // PopoverArrow,
-  // PopoverArrowTip,
-  // PopoverCloseTrigger,
-  // PopoverContent,
-  // PopoverDescription,
-  // PopoverIndicator,
-  // PopoverPositioner,
-  // PopoverTitle,
-  // PopoverTrigger,
+	// Popover,
+	// PopoverAnchor,
+	// PopoverArrow,
+	// PopoverArrowTip,
+	// PopoverCloseTrigger,
+	// PopoverContent,
+	// PopoverDescription,
+	// PopoverIndicator,
+	// PopoverPositioner,
+	// PopoverTitle,
+	// PopoverTrigger,
 
-  Anchor,
-  Arrow,
-  ArrowTip,
-  CloseTrigger,
-  Content,
-  Description,
-  Indicator,
-  Positioner,
-  Root,
-  Title,
-  Trigger,
+	Anchor,
+	Arrow,
+	ArrowTip,
+	CloseTrigger,
+	Content,
+	Description,
+	Indicator,
+	Positioner,
+	Root,
+	Title,
+	Trigger,
 }

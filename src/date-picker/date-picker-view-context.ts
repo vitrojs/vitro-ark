@@ -5,8 +5,8 @@ import { Accessor } from '../types'
 export interface DatePickerViewContext extends Required<ViewProps> {}
 
 export const [DatePickerViewProvider, useDatePickerViewContext] = createContext<
-  Accessor<DatePickerViewContext>
+	Accessor<DatePickerViewContext>
 >({
-  hookName: 'useDatePickerViewContext',
-  providerName: '<DatePickerViewProvider />',
+	hookName: 'useDatePickerViewContext',
+	providerName: '<DatePickerViewProvider />',
 })

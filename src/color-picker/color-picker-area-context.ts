@@ -5,7 +5,7 @@ import { Accessor } from '../types'
 export interface ColorPickerAreaContext extends AreaProps {}
 
 export const [ColorPickerAreaProvider, useColorPickerAreaContext] =
-  createContext<Accessor<ColorPickerAreaContext>>({
-    hookName: 'useColorPickerAreaContext',
-    providerName: '<ColorPickerAreaProvider />',
-  })
+	createContext<Accessor<ColorPickerAreaContext>>({
+		hookName: 'useColorPickerAreaContext',
+		providerName: '<ColorPickerAreaProvider />',
+	})

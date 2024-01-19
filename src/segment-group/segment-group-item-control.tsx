@@ -7,21 +7,21 @@ import { useSegmentGroupItemContext } from './segment-group-item-context'
 export type SegmentGroupItemControlProps = JSX.IntrinsicElements['div']
 
 export const SegmentGroupItemControl = (
-  props: SegmentGroupItemControlProps,
+	props: SegmentGroupItemControlProps,
 ) => {
-  const api = useSegmentGroupContext()
-  const getItemProps = useSegmentGroupItemContext()
-  const mergedProps = mergeProps(props, () =>
-    api().getItemControlProps(getItemProps()),
-  )
+	const api = useSegmentGroupContext()
+	const getItemProps = useSegmentGroupItemContext()
+	const mergedProps = mergeProps(props, () =>
+		api().getItemControlProps(getItemProps()),
+	)
 
-  return (
-    <>
-      <div
-        {...mergedProps}
-        {...segmentGroupAnatomy.build().itemControl.attrs}
-      />
-      <input {...api().getItemHiddenInputProps(getItemProps())} />
-    </>
-  )
+	return (
+		<>
+			<div
+				{...mergedProps}
+				{...segmentGroupAnatomy.build().itemControl.attrs}
+			/>
+			<input {...api().getItemHiddenInputProps(getItemProps())} />
+		</>
+	)
 }

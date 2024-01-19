@@ -9,49 +9,49 @@ import type { Accessor, CollectionItem, Optional } from '../types'
 import { createSequenceId } from '../utils'
 
 export type UseComboboxProps<T extends CollectionItem> = CollectionOptions<T> &
-  Omit<Optional<combobox.Context<T>, 'id'>, 'collection'>
+	Omit<Optional<combobox.Context<T>, 'id'>, 'collection'>
 
 export type UseComboboxReturn<T extends CollectionItem> = Accessor<
-  combobox.Api<PropTypes, T>
+	combobox.Api<PropTypes, T>
 >
 
 export const useCombobox = <T extends CollectionItem>({
-  isItemDisabled,
-  itemToValue,
-  itemToString,
-  items,
+	isItemDisabled,
+	itemToValue,
+	itemToString,
+	items,
 
-  ...props
+	...props
 }: Observify<UseComboboxProps<T>>): UseComboboxReturn<T> => {
-  const getRootNode = useEnvironmentContext()
-  const collection = useMemo(() =>
-    combobox.collection({
-      isItemDisabled,
-      itemToValue,
-      itemToString,
-      items: $$(items),
-    }),
-  )
+	const getRootNode = useEnvironmentContext()
+	const collection = useMemo(() =>
+		combobox.collection({
+			isItemDisabled,
+			itemToValue,
+			itemToString,
+			items: $$(items),
+		}),
+	)
 
-  const [state, send] = useMachine(
-    {
-      ...props,
-      collection,
-    },
-    // @ts-ignore
-    combobox.machine,
-    {
-      id: createSequenceId(),
-      getRootNode,
-    },
-  )
+	const [state, send] = useMachine(
+		{
+			...props,
+			collection,
+		},
+		// @ts-ignore
+		combobox.machine,
+		{
+			id: createSequenceId(),
+			getRootNode,
+		},
+	)
 
-  return useMemo(() =>
-    combobox.connect<PropTypes, T>(
-      // @ts-ignore
-      state(),
-      send,
-      normalizeProps,
-    ),
-  )
+	return useMemo(() =>
+		combobox.connect<PropTypes, T>(
+			// @ts-ignore
+			state(),
+			send,
+			normalizeProps,
+		),
+	)
 }

@@ -6,22 +6,22 @@ import { mergeProps } from '@vitro/zag'
 export type FileUploadItemPreviewImageProps = JSX.IntrinsicElements['img']
 
 export const FileUploadItemPreviewImage = (
-  props: FileUploadItemPreviewImageProps,
+	props: FileUploadItemPreviewImageProps,
 ) => {
-  const api = useFileUploadContext()
-  const item = useFileUploadItemContext()
-  const url = $<string>('')
+	const api = useFileUploadContext()
+	const item = useFileUploadItemContext()
+	const url = $<string>('')
 
-  useEffect(
-    () => {
-      api().createFileUrl(item().file, (it) => url(it))
-    },
-    { sync: 'init' },
-  )
+	useEffect(
+		() => {
+			api().createFileUrl(item().file, (it) => url(it))
+		},
+		{ sync: 'init' },
+	)
 
-  const mergedProps = mergeProps(props, () =>
-    api().getItemPreviewImageProps({ ...item(), url: url() }),
-  )
+	const mergedProps = mergeProps(props, () =>
+		api().getItemPreviewImageProps({ ...item(), url: url() }),
+	)
 
-  return <img {...mergedProps} />
+	return <img {...mergedProps} />
 }

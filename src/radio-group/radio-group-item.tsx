@@ -9,35 +9,35 @@ import { useRadioGroupContext } from './radio-group-context'
 import { RadioGroupItemProvider } from './radio-group-item-context'
 
 export type RadioGroupItemProps = Assign<
-  JSX.IntrinsicElements['label'],
-  Observify<ItemProps> & {
-    children?:
-      | ((state: ObservableReadonly<ItemState>) => JSX.Element)
-      | JSX.Element
-  }
+	JSX.IntrinsicElements['label'],
+	Observify<ItemProps> & {
+		children?:
+			| ((state: ObservableReadonly<ItemState>) => JSX.Element)
+			| JSX.Element
+	}
 >
 
 export const RadioGroupItem = ({
-  value,
-  disabled,
-  invalid,
-  children,
-  ...props
+	value,
+	disabled,
+	invalid,
+	children,
+	...props
 }: RadioGroupItemProps) => {
-  const getItemProps = () => toRecord({})
-  const api = useRadioGroupContext()
+	const getItemProps = () => toRecord({})
+	const api = useRadioGroupContext()
 
-  const mergedProps = mergeProps(props, () =>
-    api().getItemProps(getItemProps()),
-  )
+	const mergedProps = mergeProps(props, () =>
+		api().getItemProps(getItemProps()),
+	)
 
-  const itemState = useMemo(() => api().getItemState(getItemProps()), {
-    equals,
-  })
+	const itemState = useMemo(() => api().getItemState(getItemProps()), {
+		equals,
+	})
 
-  return (
-    <RadioGroupItemProvider value={getItemProps}>
-      <label {...mergedProps}>{applyChildren(children, itemState)}</label>
-    </RadioGroupItemProvider>
-  )
+	return (
+		<RadioGroupItemProvider value={getItemProps}>
+			<label {...mergedProps}>{applyChildren(children, itemState)}</label>
+		</RadioGroupItemProvider>
+	)
 }

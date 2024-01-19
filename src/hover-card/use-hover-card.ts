@@ -8,16 +8,16 @@ import { Accessor, Optional } from '../types'
 import { createSequenceId } from '../utils'
 export interface UseHoverCardProps extends Optional<hoverCard.Context, 'id'> {}
 export interface UseHoverCardReturn
-  extends Accessor<hoverCard.Api<PropTypes>> {}
+	extends Accessor<hoverCard.Api<PropTypes>> {}
 
 export const useHoverCard = (
-  props: Observify<UseHoverCardProps>,
+	props: Observify<UseHoverCardProps>,
 ): UseHoverCardReturn => {
-  const getRootNode = useEnvironmentContext()
-  const [state, send] = useMachine(props, hoverCard.machine, {
-    id: createSequenceId(),
-    getRootNode,
-  })
+	const getRootNode = useEnvironmentContext()
+	const [state, send] = useMachine(props, hoverCard.machine, {
+		id: createSequenceId(),
+		getRootNode,
+	})
 
-  return useMemo(() => hoverCard.connect(state(), send, normalizeProps))
+	return useMemo(() => hoverCard.connect(state(), send, normalizeProps))
 }

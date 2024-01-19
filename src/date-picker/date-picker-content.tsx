@@ -6,17 +6,17 @@ import { mergeProps } from '@vitro/zag'
 export type DatePickerContentProps = JSX.IntrinsicElements['div']
 
 export const DatePickerContent = (props: DatePickerContentProps) => {
-  const api = useDatePickerContext()
-  const presenceApi = usePresenceContext()
-  const mergedProps = mergeProps(
-    props,
-    () => api().contentProps,
-    () => presenceApi().presenceProps,
-  )
+	const api = useDatePickerContext()
+	const presenceApi = usePresenceContext()
+	const mergedProps = mergeProps(
+		props,
+		() => api().contentProps,
+		() => presenceApi().presenceProps,
+	)
 
-  return (
-    <If when={() => !presenceApi().isUnmounted}>
-      <div {...mergedProps} />
-    </If>
-  )
+	return (
+		<If when={() => !presenceApi().isUnmounted}>
+			<div {...mergedProps} />
+		</If>
+	)
 }

@@ -16,19 +16,19 @@ const Icon = AlertIcon
 const Title = AlertTitle
 
 export {
-  // Alert,
-  // AlertContent,
-  // AlertDescription,
-  // AlertIcon,
-  // AlertTitle,
-  Content,
-  Description,
-  Icon,
-  Root,
-  Title,
+	// Alert,
+	// AlertContent,
+	// AlertDescription,
+	// AlertIcon,
+	// AlertTitle,
+	Content,
+	Description,
+	Icon,
+	Root,
+	Title,
 }
 
 export type AlertProps = Assign<
-  JSX.HTMLAttributes<HTMLDivElement>,
-  AlertVariantProps
+	JSX.HTMLAttributes<HTMLDivElement>,
+	AlertVariantProps
 >

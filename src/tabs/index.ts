@@ -6,20 +6,20 @@ import { Tabs as TabsRoot, type TabsProps } from './tabs'
 import { useTabsContext, type TabsContext } from './tabs-context'
 
 const Tabs = Object.assign(TabsRoot, {
-  Root: TabsRoot,
-  Content: TabContent,
-  Indicator: TabIndicator,
-  List: TabList,
-  Trigger: TabTrigger,
+	Root: TabsRoot,
+	Content: TabContent,
+	Indicator: TabIndicator,
+	List: TabList,
+	Trigger: TabTrigger,
 })
 
 export { TabContent, TabIndicator, TabList, TabTrigger, Tabs, useTabsContext }
 
 export type {
-  TabContentProps,
-  TabIndicatorProps,
-  TabListProps,
-  TabTriggerProps,
-  TabsContext,
-  TabsProps,
+	TabContentProps,
+	TabIndicatorProps,
+	TabListProps,
+	TabTriggerProps,
+	TabsContext,
+	TabsProps,
 }

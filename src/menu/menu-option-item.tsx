@@ -8,43 +8,43 @@ import { applyChildren } from '../utils'
 import { useMenuContext } from './menu-context'
 
 export type MenuOptionItemProps = Assign<
-  JSX.IntrinsicElements['div'],
-  Observify<OptionItemProps> & {
-    children?: JSX.Element | ((state: Accessor<OptionItemState>) => JSX.Element)
-  }
+	JSX.IntrinsicElements['div'],
+	Observify<OptionItemProps> & {
+		children?: JSX.Element | ((state: Accessor<OptionItemState>) => JSX.Element)
+	}
 >
 
 export const MenuOptionItem = ({
-  id,
-  disabled,
-  valueText,
-  closeOnSelect,
-  name,
-  type,
-  value,
-  onCheckedChange,
+	id,
+	disabled,
+	valueText,
+	closeOnSelect,
+	name,
+	type,
+	value,
+	onCheckedChange,
 
-  // ----
-  children,
-  ...props
+	// ----
+	children,
+	...props
 }: MenuOptionItemProps) => {
-  const menu = useMenuContext()
-  const optionProps = () => ({
-    id: $$(id),
-    disabled: $$(disabled),
-    valueText: $$(valueText),
-    closeOnSelect: $$(closeOnSelect),
-    name: $$(name),
-    type: $$(type),
-    value: $$(value),
-    onCheckedChange,
-  })
-  const mergedProps = mergeProps(props, () =>
-    menu().getOptionItemProps(optionProps()),
-  )
-  const itemState = useMemo(() => menu().getOptionItemState(optionProps()), {
-    equals,
-  })
+	const menu = useMenuContext()
+	const optionProps = () => ({
+		id: $$(id),
+		disabled: $$(disabled),
+		valueText: $$(valueText),
+		closeOnSelect: $$(closeOnSelect),
+		name: $$(name),
+		type: $$(type),
+		value: $$(value),
+		onCheckedChange,
+	})
+	const mergedProps = mergeProps(props, () =>
+		menu().getOptionItemProps(optionProps()),
+	)
+	const itemState = useMemo(() => menu().getOptionItemState(optionProps()), {
+		equals,
+	})
 
-  return <div {...mergedProps}>{applyChildren(children, itemState)}</div>
+	return <div {...mergedProps}>{applyChildren(children, itemState)}</div>
 }

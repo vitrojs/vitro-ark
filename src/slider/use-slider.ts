@@ -10,14 +10,14 @@ export interface UseSliderProps extends Optional<slider.Context, 'id'> {}
 export interface UseSliderReturn extends Accessor<slider.Api<PropTypes>> {}
 
 export const useSlider = (
-  props: Observify<UseSliderProps>,
+	props: Observify<UseSliderProps>,
 ): UseSliderReturn => {
-  const getRootNode = useEnvironmentContext()
+	const getRootNode = useEnvironmentContext()
 
-  const [state, send] = useMachine(props, slider.machine, {
-    id: createSequenceId(),
-    getRootNode,
-  })
+	const [state, send] = useMachine(props, slider.machine, {
+		id: createSequenceId(),
+		getRootNode,
+	})
 
-  return useMemo(() => slider.connect(state(), send, normalizeProps))
+	return useMemo(() => slider.connect(state(), send, normalizeProps))
 }

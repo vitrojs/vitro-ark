@@ -9,32 +9,32 @@ import { DatePickerTableProvider } from './date-picker-table-context'
 import { useDatePickerViewContext } from './date-picker-view-context'
 
 export type DatePickerTableProps = Assign<
-  JSX.IntrinsicElements['table'],
-  Observify<Pick<TableProps, 'columns'>>
+	JSX.IntrinsicElements['table'],
+	Observify<Pick<TableProps, 'columns'>>
 >
 
 export const DatePickerTable = ({
-  columns,
-  ...props
+	columns,
+	...props
 }: DatePickerTableProps) => {
-  const api = useDatePickerContext()
-  const viewProps = useDatePickerViewContext()
-  const tableProps = useMemo(
-    () => {
-      return {
-        id: createSequenceId(),
-        columns: $$(columns),
-        ...viewProps(),
-      }
-    },
-    { equals },
-  )
+	const api = useDatePickerContext()
+	const viewProps = useDatePickerViewContext()
+	const tableProps = useMemo(
+		() => {
+			return {
+				id: createSequenceId(),
+				columns: $$(columns),
+				...viewProps(),
+			}
+		},
+		{ equals },
+	)
 
-  const mergedProps = mergeProps(props, () => api().getTableProps(tableProps()))
+	const mergedProps = mergeProps(props, () => api().getTableProps(tableProps()))
 
-  return (
-    <DatePickerTableProvider value={tableProps}>
-      <table {...mergedProps} />
-    </DatePickerTableProvider>
-  )
+	return (
+		<DatePickerTableProvider value={tableProps}>
+			<table {...mergedProps} />
+		</DatePickerTableProvider>
+	)
 }

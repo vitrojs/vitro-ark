@@ -7,43 +7,43 @@ import { SegmentGroupProvider } from './segment-group-context'
 import { useSegmentGroup, type UseSegmentGroupProps } from './use-segment-group'
 
 export type SegmentGroupProps = Assign<
-  JSX.IntrinsicElements['div'],
-  Observify<UseSegmentGroupProps>
+	JSX.IntrinsicElements['div'],
+	Observify<UseSegmentGroupProps>
 >
 
 export const SegmentGroup = ({
-  // ----
-  dir,
-  disabled,
-  form,
-  getRootNode,
-  id,
-  ids,
-  name,
-  onValueChange,
-  orientation,
-  value,
-  // ---
+	// ----
+	dir,
+	disabled,
+	form,
+	getRootNode,
+	id,
+	ids,
+	name,
+	onValueChange,
+	orientation,
+	value,
+	// ---
 
-  ...props
+	...props
 }: SegmentGroupProps) => {
-  const api = useSegmentGroup({
-    dir,
-    disabled,
-    form,
-    getRootNode,
-    id,
-    ids,
-    name,
-    onValueChange,
-    orientation,
-    value,
-  })
-  const mergedProps = mergeProps(props, () => api().rootProps)
+	const api = useSegmentGroup({
+		dir,
+		disabled,
+		form,
+		getRootNode,
+		id,
+		ids,
+		name,
+		onValueChange,
+		orientation,
+		value,
+	})
+	const mergedProps = mergeProps(props, () => api().rootProps)
 
-  return (
-    <SegmentGroupProvider value={api}>
-      <div {...mergedProps} {...segmentGroupAnatomy.build().root.attrs} />
-    </SegmentGroupProvider>
-  )
+	return (
+		<SegmentGroupProvider value={api}>
+			<div {...mergedProps} {...segmentGroupAnatomy.build().root.attrs} />
+		</SegmentGroupProvider>
+	)
 }

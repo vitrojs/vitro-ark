@@ -9,24 +9,24 @@ import { useSplitterContext } from './splitter-context'
 type PanelParams = Parameters<ReturnType<typeof connect>['getPanelProps']>[0]
 
 export type SplitterPanelProps = Assign<
-  JSX.IntrinsicElements['div'],
-  Observify<PanelParams>
+	JSX.IntrinsicElements['div'],
+	Observify<PanelParams>
 >
 
 export const SplitterPanel = ({
-  id,
-  snapSize,
+	id,
+	snapSize,
 
-  ...props
+	...props
 }: SplitterPanelProps) => {
-  const panelParams = () => ({
-    id: $$(id),
-    snapSize: $$(snapSize),
-  })
-  const api = useSplitterContext()
-  const mergedProps = mergeProps(props, () =>
-    api().getPanelProps(panelParams()),
-  )
+	const panelParams = () => ({
+		id: $$(id),
+		snapSize: $$(snapSize),
+	})
+	const api = useSplitterContext()
+	const mergedProps = mergeProps(props, () =>
+		api().getPanelProps(panelParams()),
+	)
 
-  return <div {...mergedProps} />
+	return <div {...mergedProps} />
 }

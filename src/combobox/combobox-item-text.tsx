@@ -5,11 +5,11 @@ import { useComboboxItemContext } from './combobox-item-context'
 export type ComboboxItemTextProps = JSX.IntrinsicElements['span']
 
 export const ComboboxItemText = (props: ComboboxItemTextProps) => {
-  const api = useComboboxContext()
-  const itemProps = useComboboxItemContext()
-  const mergedProps = mergeProps(props, () =>
-    api().getItemTextProps(itemProps()),
-  )
+	const api = useComboboxContext()
+	const itemProps = useComboboxItemContext()
+	const mergedProps = mergeProps(props, () =>
+		api().getItemTextProps(itemProps()),
+	)
 
-  return <span {...mergedProps} />
+	return <span {...mergedProps} />
 }

@@ -6,24 +6,24 @@ import { $$ } from 'vitro'
 import { mergeProps } from '@vitro/zag'
 
 export type ColorPickerChannelInputProps = Assign<
-  ChannelInputProps,
-  JSX.IntrinsicElements['input']
+	ChannelInputProps,
+	JSX.IntrinsicElements['input']
 >
 
 export const ColorPickerChannelInput = ({
-  channel,
-  orientation,
-  // ----
-  ...props
+	channel,
+	orientation,
+	// ----
+	...props
 }: ColorPickerChannelInputProps) => {
-  const channelProps = () => ({
-    channel: $$(channel),
-    orientation: $$(orientation),
-  })
-  const api = useColorPickerContext()
-  const mergedProps = mergeProps(props, () =>
-    api().getChannelInputProps(channelProps()),
-  )
+	const channelProps = () => ({
+		channel: $$(channel),
+		orientation: $$(orientation),
+	})
+	const api = useColorPickerContext()
+	const mergedProps = mergeProps(props, () =>
+		api().getChannelInputProps(channelProps()),
+	)
 
-  return <input {...mergedProps} />
+	return <input {...mergedProps} />
 }

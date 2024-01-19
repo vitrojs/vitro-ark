@@ -1,6 +1,6 @@
 import {
-  Tooltip as ArkTooltip,
-  type TooltipProps as ArkTooltipProps,
+	Tooltip as ArkTooltip,
+	type TooltipProps as ArkTooltipProps,
 } from '@vitro/ark'
 
 import { tooltip, type TooltipVariantProps } from 'styled-system/recipes'
@@ -24,16 +24,16 @@ const Positioner = TooltipPositioner
 const Trigger = TooltipTrigger
 
 export {
-  // Tooltip,
-  // TooltipArrow,
-  // TooltipArrowTip,
-  // TooltipContent,
-  // TooltipPositioner,
-  // TooltipTrigger,
-  Arrow,
-  ArrowTip,
-  Content,
-  Positioner,
-  Root,
-  Trigger,
+	// Tooltip,
+	// TooltipArrow,
+	// TooltipArrowTip,
+	// TooltipContent,
+	// TooltipPositioner,
+	// TooltipTrigger,
+	Arrow,
+	ArrowTip,
+	Content,
+	Positioner,
+	Root,
+	Trigger,
 }

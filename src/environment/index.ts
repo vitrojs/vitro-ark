@@ -1,14 +1,14 @@
 import {
-  Environment as EnvironmentRoot,
-  type EnvironmentProps,
+	Environment as EnvironmentRoot,
+	type EnvironmentProps,
 } from './environment'
 import {
-  useEnvironmentContext,
-  type EnvironmentContext,
+	useEnvironmentContext,
+	type EnvironmentContext,
 } from './environment-context'
 
 const Environment = Object.assign(EnvironmentRoot, {
-  Root: EnvironmentRoot,
+	Root: EnvironmentRoot,
 })
 
 export { Environment, useEnvironmentContext }

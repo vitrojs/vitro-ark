@@ -6,8 +6,8 @@ import { Accessor } from '../types'
 export interface SelectItemContext extends ItemProps {}
 
 export const [SelectItemProvider, useSelectItemContext] = createContext<
-  Accessor<SelectItemContext>
+	Accessor<SelectItemContext>
 >({
-  hookName: 'useSelectItemContext',
-  providerName: '<SelectItemProvider />',
+	hookName: 'useSelectItemContext',
+	providerName: '<SelectItemProvider />',
 })

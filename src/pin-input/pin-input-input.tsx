@@ -3,13 +3,13 @@ import { mergeProps } from '@vitro/zag'
 import { usePinInputContext } from './pin-input-context'
 
 export type PinInputInputProps = Assign<
-  JSX.IntrinsicElements['input'],
-  { index: number }
+	JSX.IntrinsicElements['input'],
+	{ index: number }
 >
 
 export const PinInputInput = ({ index, ...props }: PinInputInputProps) => {
-  const api = usePinInputContext()
-  const mergedProps = mergeProps(props, () => api().getInputProps({ index }))
-  console.log(api().getInputProps({ index }))
-  return <input {...mergedProps} />
+	const api = usePinInputContext()
+	const mergedProps = mergeProps(props, () => api().getInputProps({ index }))
+	console.log(api().getInputProps({ index }))
+	return <input {...mergedProps} />
 }

@@ -20,15 +20,15 @@ const Group = ToastGroup
 const Title = ToastTitle
 
 export {
-  // Toast,
-  // ToastCloseTrigger,
-  // ToastDescription,
-  // ToastGroup,
-  // ToastTitle,
+	// Toast,
+	// ToastCloseTrigger,
+	// ToastDescription,
+	// ToastGroup,
+	// ToastTitle,
 
-  CloseTrigger,
-  Description,
-  Group,
-  Root,
-  Title,
+	CloseTrigger,
+	Description,
+	Group,
+	Root,
+	Title,
 }

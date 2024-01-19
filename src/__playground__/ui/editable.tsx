@@ -1,6 +1,6 @@
 import {
-  Editable as ArkEditable,
-  type EditableProps as ArkEditableProps,
+	Editable as ArkEditable,
+	type EditableProps as ArkEditableProps,
 } from '@vitro/ark'
 
 import { editable, type EditableVariantProps } from 'styled-system/recipes'
@@ -11,13 +11,13 @@ const { withProvider, withContext } = createStyleContext(editable)
 export type EditableProps = Assign<ArkEditableProps, EditableVariantProps>
 
 const Editable: JSX.Component<EditableProps> = withProvider(
-  ArkEditable.Root,
-  'root',
+	ArkEditable.Root,
+	'root',
 )
 const EditableArea = withContext(ArkEditable.Area, 'area')
 const EditableCancelTrigger = withContext(
-  ArkEditable.CancelTrigger,
-  'cancelTrigger',
+	ArkEditable.CancelTrigger,
+	'cancelTrigger',
 )
 const EditableControl = withContext(ArkEditable.Control, 'control')
 const EditableEditTrigger = withContext(ArkEditable.EditTrigger, 'editTrigger')
@@ -25,8 +25,8 @@ const EditableInput = withContext(ArkEditable.Input, 'input')
 const EditableLabel = withContext(ArkEditable.Label, 'label')
 const EditablePreview = withContext(ArkEditable.Preview, 'preview')
 const EditableSubmitTrigger = withContext(
-  ArkEditable.SubmitTrigger,
-  'submitTrigger',
+	ArkEditable.SubmitTrigger,
+	'submitTrigger',
 )
 
 const Root = Editable
@@ -40,23 +40,23 @@ const Preview = EditablePreview
 const SubmitTrigger = EditableSubmitTrigger
 
 export {
-  // Editable,
-  // EditableArea,
-  // EditableCancelTrigger,
-  // EditableControl,
-  // EditableEditTrigger,
-  // EditableInput,
-  // EditableLabel,
-  // EditablePreview,
-  // EditableSubmitTrigger,
+	// Editable,
+	// EditableArea,
+	// EditableCancelTrigger,
+	// EditableControl,
+	// EditableEditTrigger,
+	// EditableInput,
+	// EditableLabel,
+	// EditablePreview,
+	// EditableSubmitTrigger,
 
-  Area,
-  CancelTrigger,
-  Control,
-  EditTrigger,
-  Input,
-  Label,
-  Preview,
-  Root,
-  SubmitTrigger,
+	Area,
+	CancelTrigger,
+	Control,
+	EditTrigger,
+	Input,
+	Label,
+	Preview,
+	Root,
+	SubmitTrigger,
 }

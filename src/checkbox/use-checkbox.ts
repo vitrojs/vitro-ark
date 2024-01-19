@@ -8,17 +8,17 @@ import { createSequenceId } from '../utils'
 
 export type UseCheckboxProps = Observify<Optional<checkbox.Context, 'id'>>
 export interface UseCheckboxReturn
-  extends ObservableReadonly<checkbox.Api<PropTypes>> {}
+	extends ObservableReadonly<checkbox.Api<PropTypes>> {}
 
 export const useCheckbox = (
-  props: Observify<UseCheckboxProps>,
+	props: Observify<UseCheckboxProps>,
 ): UseCheckboxReturn => {
-  const getRootNode = useEnvironmentContext()
+	const getRootNode = useEnvironmentContext()
 
-  const [state, send] = useMachine(props, checkbox.machine, {
-    id: createSequenceId(),
-    getRootNode,
-  })
+	const [state, send] = useMachine(props, checkbox.machine, {
+		id: createSequenceId(),
+		getRootNode,
+	})
 
-  return useMemo(() => checkbox.connect(state(), send, normalizeProps))
+	return useMemo(() => checkbox.connect(state(), send, normalizeProps))
 }

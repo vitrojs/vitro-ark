@@ -7,20 +7,20 @@ import { type Optional } from '../types'
 import { createSequenceId } from '../utils'
 
 export interface UseNumberInputProps
-  extends Optional<numberInput.Context, 'id'> {}
+	extends Optional<numberInput.Context, 'id'> {}
 export type UseNumberInputReturn = ObservableReadonly<
-  numberInput.Api<PropTypes>
+	numberInput.Api<PropTypes>
 >
 
 export const useNumberInput = (
-  props: Observify<UseNumberInputProps>,
+	props: Observify<UseNumberInputProps>,
 ): UseNumberInputReturn => {
-  const getRootNode = useEnvironmentContext()
+	const getRootNode = useEnvironmentContext()
 
-  const [state, send] = useMachine(props, numberInput.machine, {
-    id: createSequenceId(),
-    getRootNode,
-  })
+	const [state, send] = useMachine(props, numberInput.machine, {
+		id: createSequenceId(),
+		getRootNode,
+	})
 
-  return useMemo(() => numberInput.connect(state(), send, normalizeProps))
+	return useMemo(() => numberInput.connect(state(), send, normalizeProps))
 }

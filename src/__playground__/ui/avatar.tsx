@@ -1,6 +1,6 @@
 import {
-  Avatar as ArkAvatar,
-  type AvatarProps as ArkAvatarProps,
+	Avatar as ArkAvatar,
+	type AvatarProps as ArkAvatarProps,
 } from '@vitro/ark'
 
 import { type AvatarVariantProps, avatar } from 'styled-system/recipes'
@@ -19,11 +19,11 @@ const Fallback = AvatarFallback
 const Image = AvatarImage
 
 export {
-  // Avatar,
-  // AvatarFallback,
-  // AvatarImage,
+	// Avatar,
+	// AvatarFallback,
+	// AvatarImage,
 
-  Fallback,
-  Image,
-  Root,
+	Fallback,
+	Image,
+	Root,
 }

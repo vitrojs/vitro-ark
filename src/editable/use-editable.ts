@@ -10,12 +10,12 @@ export interface UseEditableProps extends Optional<editable.Context, 'id'> {}
 export interface UseEditableReturn extends Accessor<editable.Api<PropTypes>> {}
 
 export const useEditable = (props: Observify<UseEditableProps>) => {
-  const getRootNode = useEnvironmentContext()
+	const getRootNode = useEnvironmentContext()
 
-  const [state, send] = useMachine(props, editable.machine, {
-    id: createSequenceId(),
-    getRootNode,
-  })
+	const [state, send] = useMachine(props, editable.machine, {
+		id: createSequenceId(),
+		getRootNode,
+	})
 
-  return useMemo(() => editable.connect(state(), send, normalizeProps))
+	return useMemo(() => editable.connect(state(), send, normalizeProps))
 }

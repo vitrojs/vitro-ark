@@ -6,19 +6,19 @@ import { Accessor, type Optional } from '../types'
 import { createSequenceId } from '../utils'
 
 export interface UseFileUploadProps
-  extends Optional<fileUpload.Context, 'id'> {}
+	extends Optional<fileUpload.Context, 'id'> {}
 export interface UseFileUploadReturn
-  extends Accessor<fileUpload.Api<PropTypes>> {}
+	extends Accessor<fileUpload.Api<PropTypes>> {}
 
 export const useFileUpload = (
-  props: Observify<UseFileUploadProps>,
+	props: Observify<UseFileUploadProps>,
 ): UseFileUploadReturn => {
-  const getRootNode = useEnvironmentContext()
+	const getRootNode = useEnvironmentContext()
 
-  const [state, send] = useMachine(props, fileUpload.machine, {
-    id: createSequenceId(),
-    getRootNode,
-  })
+	const [state, send] = useMachine(props, fileUpload.machine, {
+		id: createSequenceId(),
+		getRootNode,
+	})
 
-  return useMemo(() => fileUpload.connect(state(), send, normalizeProps))
+	return useMemo(() => fileUpload.connect(state(), send, normalizeProps))
 }

@@ -6,21 +6,20 @@ import { useMenuContext } from './menu-context'
 import { type UseMenuReturn } from './use-menu'
 
 type MenuItemGroupParams = Parameters<
-  ReturnType<ReturnType<UseMenuReturn>['api']>['getItemGroupProps']
+	ReturnType<ReturnType<UseMenuReturn>['api']>['getItemGroupProps']
 >[0]
 
 export type MenuItemGroupProps = Assign<
-  JSX.IntrinsicElements['div'],
-  Observify<MenuItemGroupParams>
+	JSX.IntrinsicElements['div'],
+	Observify<MenuItemGroupParams>
 >
 
 export const MenuItemGroup = ({ id, ...props }: MenuItemGroupProps) => {
-  const menu = useMenuContext()
+	const menu = useMenuContext()
 
-  const mergedProps = mergeProps(
-    props,
-    () => menu?.().getItemGroupProps({ id: $$(id) }),
-  )
+	const mergedProps = mergeProps(props, () =>
+		menu?.().getItemGroupProps({ id: $$(id) }),
+	)
 
-  return <div {...mergedProps} />
+	return <div {...mergedProps} />
 }

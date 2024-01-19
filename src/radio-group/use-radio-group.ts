@@ -10,14 +10,14 @@ export interface UseRadioGroupProps extends Optional<radio.Context, 'id'> {}
 export interface UseRadioGroupReturn extends Accessor<radio.Api<PropTypes>> {}
 
 export const useRadioGroup = (
-  props: Observify<UseRadioGroupProps>,
+	props: Observify<UseRadioGroupProps>,
 ): UseRadioGroupReturn => {
-  const getRootNode = useEnvironmentContext()
+	const getRootNode = useEnvironmentContext()
 
-  const [state, send] = useMachine(props, radio.machine, {
-    id: createSequenceId(),
-    getRootNode,
-  })
+	const [state, send] = useMachine(props, radio.machine, {
+		id: createSequenceId(),
+		getRootNode,
+	})
 
-  return useMemo(() => radio.connect(state(), send, normalizeProps))
+	return useMemo(() => radio.connect(state(), send, normalizeProps))
 }

@@ -1,63 +1,63 @@
 import {
-  SegmentGroup as SegmentGroupRoot,
-  type SegmentGroupProps,
+	SegmentGroup as SegmentGroupRoot,
+	type SegmentGroupProps,
 } from './segment-group'
 import {
-  useSegmentGroupContext,
-  type SegmentGroupContext,
+	useSegmentGroupContext,
+	type SegmentGroupContext,
 } from './segment-group-context'
 import {
-  SegmentGroupIndicator,
-  type SegmentGroupIndicatorProps,
+	SegmentGroupIndicator,
+	type SegmentGroupIndicatorProps,
 } from './segment-group-indicator'
 import {
-  SegmentGroupItem,
-  type SegmentGroupItemProps,
+	SegmentGroupItem,
+	type SegmentGroupItemProps,
 } from './segment-group-item'
 import {
-  useSegmentGroupItemContext,
-  type SegmentGroupItemContext,
+	useSegmentGroupItemContext,
+	type SegmentGroupItemContext,
 } from './segment-group-item-context'
 import {
-  SegmentGroupItemControl,
-  type SegmentGroupItemControlProps,
+	SegmentGroupItemControl,
+	type SegmentGroupItemControlProps,
 } from './segment-group-item-control'
 import {
-  SegmentGroupItemText,
-  type SegmentGroupItemTextProps,
+	SegmentGroupItemText,
+	type SegmentGroupItemTextProps,
 } from './segment-group-item-text'
 import {
-  SegmentGroupLabel,
-  type SegmentGroupLabelProps,
+	SegmentGroupLabel,
+	type SegmentGroupLabelProps,
 } from './segment-group-label'
 
 const SegmentGroup = Object.assign(SegmentGroupRoot, {
-  Root: SegmentGroupRoot,
-  Indicator: SegmentGroupIndicator,
-  Item: SegmentGroupItem,
-  ItemControl: SegmentGroupItemControl,
-  ItemText: SegmentGroupItemText,
-  Label: SegmentGroupLabel,
+	Root: SegmentGroupRoot,
+	Indicator: SegmentGroupIndicator,
+	Item: SegmentGroupItem,
+	ItemControl: SegmentGroupItemControl,
+	ItemText: SegmentGroupItemText,
+	Label: SegmentGroupLabel,
 })
 
 export {
-  SegmentGroup,
-  SegmentGroupIndicator,
-  SegmentGroupItem,
-  SegmentGroupItemControl,
-  SegmentGroupItemText,
-  SegmentGroupLabel,
-  useSegmentGroupContext,
-  useSegmentGroupItemContext,
+	SegmentGroup,
+	SegmentGroupIndicator,
+	SegmentGroupItem,
+	SegmentGroupItemControl,
+	SegmentGroupItemText,
+	SegmentGroupLabel,
+	useSegmentGroupContext,
+	useSegmentGroupItemContext,
 }
 
 export type {
-  SegmentGroupContext,
-  SegmentGroupIndicatorProps,
-  SegmentGroupItemContext,
-  SegmentGroupItemControlProps,
-  SegmentGroupItemProps,
-  SegmentGroupItemTextProps,
-  SegmentGroupLabelProps,
-  SegmentGroupProps,
+	SegmentGroupContext,
+	SegmentGroupIndicatorProps,
+	SegmentGroupItemContext,
+	SegmentGroupItemControlProps,
+	SegmentGroupItemProps,
+	SegmentGroupItemTextProps,
+	SegmentGroupLabelProps,
+	SegmentGroupProps,
 }

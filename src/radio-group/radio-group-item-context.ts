@@ -6,8 +6,8 @@ import { Accessor } from '../types'
 export interface RadioGroupItemContext extends ItemProps {}
 
 export const [RadioGroupItemProvider, useRadioGroupItemContext] = createContext<
-  Accessor<RadioGroupItemContext>
+	Accessor<RadioGroupItemContext>
 >({
-  hookName: 'useRadioGroupItemContext',
-  providerName: '<RadioGroupItemProvider />',
+	hookName: 'useRadioGroupItemContext',
+	providerName: '<RadioGroupItemProvider />',
 })

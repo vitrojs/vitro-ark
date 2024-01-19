@@ -6,7 +6,7 @@ import { Accessor } from '../types'
 export type SegmentGroupItemContext = ItemProps
 
 export const [SegmentGroupItemProvider, useSegmentGroupItemContext] =
-  createContext<Accessor<SegmentGroupItemContext>>({
-    hookName: 'useSegmentGroupItemContext',
-    providerName: '<SegmentGroupItemProvider />',
-  })
+	createContext<Accessor<SegmentGroupItemContext>>({
+		hookName: 'useSegmentGroupItemContext',
+		providerName: '<SegmentGroupItemProvider />',
+	})

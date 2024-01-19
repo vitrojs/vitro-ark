@@ -8,28 +8,28 @@ import { mergeProps } from '@vitro/zag'
 import { $$ } from 'vitro'
 
 export type ColorPickerChannelSliderProps = Assign<
-  JSX.IntrinsicElements['div'],
-  Observify<ChannelProps>
+	JSX.IntrinsicElements['div'],
+	Observify<ChannelProps>
 >
 
 export const ColorPickerChannelSlider = ({
-  channel,
-  orientation,
-  // ----
-  ...props
+	channel,
+	orientation,
+	// ----
+	...props
 }: ColorPickerChannelSliderProps) => {
-  const api = useColorPickerContext()
-  const channelProps = () => ({
-    channel: $$(channel),
-    orientation: $$(orientation),
-  })
-  const mergedProps = mergeProps(props, () =>
-    api().getChannelSliderProps(channelProps()),
-  )
+	const api = useColorPickerContext()
+	const channelProps = () => ({
+		channel: $$(channel),
+		orientation: $$(orientation),
+	})
+	const mergedProps = mergeProps(props, () =>
+		api().getChannelSliderProps(channelProps()),
+	)
 
-  return (
-    <ColorPickerChannelSliderProvider value={channelProps}>
-      <div {...mergedProps} />
-    </ColorPickerChannelSliderProvider>
-  )
+	return (
+		<ColorPickerChannelSliderProvider value={channelProps}>
+			<div {...mergedProps} />
+		</ColorPickerChannelSliderProvider>
+	)
 }

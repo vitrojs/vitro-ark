@@ -8,16 +8,16 @@ import { createSequenceId } from '../utils'
 
 export interface UseAccordionProps extends Optional<accordion.Context, 'id'> {}
 export interface UseAccordionReturn
-  extends ObservableReadonly<accordion.Api<PropTypes>> {}
+	extends ObservableReadonly<accordion.Api<PropTypes>> {}
 
 export const useAccordion = (
-  props: Observify<UseAccordionProps>,
+	props: Observify<UseAccordionProps>,
 ): UseAccordionReturn => {
-  const getRootNode = useEnvironmentContext()
-  const [state, send] = useMachine(props, accordion.machine, {
-    id: createSequenceId(),
-    getRootNode,
-  })
+	const getRootNode = useEnvironmentContext()
+	const [state, send] = useMachine(props, accordion.machine, {
+		id: createSequenceId(),
+		getRootNode,
+	})
 
-  return useMemo(() => accordion.connect(state(), send, normalizeProps))
+	return useMemo(() => accordion.connect(state(), send, normalizeProps))
 }

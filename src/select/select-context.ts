@@ -6,8 +6,8 @@ export type SelectContext<T extends CollectionItem> = UseSelectReturn<T>
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const [SelectProvider, useSelectContext] = createContext<
-  SelectContext<any>
+	SelectContext<any>
 >({
-  hookName: 'useSelectContext',
-  providerName: '<SelectProvider />',
+	hookName: 'useSelectContext',
+	providerName: '<SelectProvider />',
 })

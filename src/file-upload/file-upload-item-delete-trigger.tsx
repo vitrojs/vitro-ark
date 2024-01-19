@@ -5,13 +5,13 @@ import { useFileUploadItemContext } from './file-upload-item-context'
 export type FileUploadItemDeleteTriggerProps = JSX.IntrinsicElements['button']
 
 export const FileUploadItemDeleteTrigger = (
-  props: FileUploadItemDeleteTriggerProps,
+	props: FileUploadItemDeleteTriggerProps,
 ) => {
-  const api = useFileUploadContext()
-  const item = useFileUploadItemContext()
-  const mergedProps = mergeProps(props, () =>
-    api().getItemDeleteTriggerProps(item()),
-  )
+	const api = useFileUploadContext()
+	const item = useFileUploadItemContext()
+	const mergedProps = mergeProps(props, () =>
+		api().getItemDeleteTriggerProps(item()),
+	)
 
-  return <button {...mergedProps} />
+	return <button {...mergedProps} />
 }

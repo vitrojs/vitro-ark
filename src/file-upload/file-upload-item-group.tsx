@@ -5,21 +5,21 @@ import { mergeProps } from '@vitro/zag'
 import { applyChildren } from '../utils'
 import { useFileUploadContext } from './file-upload-context'
 export type FileUploadItemGroupProps = Assign<
-  JSX.IntrinsicElements['ul'],
-  {
-    children?:
-      | JSX.Element
-      | ((state: ObservableReadonly<File[]>) => JSX.Element)
-  }
+	JSX.IntrinsicElements['ul'],
+	{
+		children?:
+			| JSX.Element
+			| ((state: ObservableReadonly<File[]>) => JSX.Element)
+	}
 >
 
 export const FileUploadItemGroup = ({
-  children,
-  ...props
+	children,
+	...props
 }: FileUploadItemGroupProps) => {
-  const api = useFileUploadContext()
-  const mergedProps = mergeProps(props, () => api().itemGroupProps)
-  const files = useMemo(() => api().files)
+	const api = useFileUploadContext()
+	const mergedProps = mergeProps(props, () => api().itemGroupProps)
+	const files = useMemo(() => api().files)
 
-  return <ul {...mergedProps}>{applyChildren(children, files)}</ul>
+	return <ul {...mergedProps}>{applyChildren(children, files)}</ul>
 }

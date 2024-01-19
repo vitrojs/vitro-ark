@@ -5,7 +5,7 @@ import { Accessor } from '../types'
 export interface RatingGroupItemContext extends ItemProps {}
 
 export const [RatingGroupItemProvider, useRatingGroupItemContext] =
-  createContext<Accessor<RatingGroupItemContext>>({
-    hookName: 'useRatingGroupItemContext',
-    providerName: '<RatingGroupItemProvider />',
-  })
+	createContext<Accessor<RatingGroupItemContext>>({
+		hookName: 'useRatingGroupItemContext',
+		providerName: '<RatingGroupItemProvider />',
+	})

@@ -1,6 +1,6 @@
 import {
-  Splitter as ArkSplitter,
-  type SplitterProps as ArkSplitterProps,
+	Splitter as ArkSplitter,
+	type SplitterProps as ArkSplitterProps,
 } from '@vitro/ark'
 
 import { splitter, SplitterVariantProps } from 'styled-system/recipes'
@@ -10,13 +10,13 @@ const { withProvider, withContext } = createStyleContext(splitter)
 export type SplitterProps = Assign<ArkSplitterProps, SplitterVariantProps>
 
 const Splitter: JSX.Component<SplitterProps> = withProvider(
-  ArkSplitter.Root,
-  'root',
+	ArkSplitter.Root,
+	'root',
 )
 const SplitterPanel = withContext(ArkSplitter.Panel, 'panel')
 const SplitterResizeTrigger = withContext(
-  ArkSplitter.ResizeTrigger,
-  'resizeTrigger',
+	ArkSplitter.ResizeTrigger,
+	'resizeTrigger',
 )
 
 const Root = Splitter
@@ -24,11 +24,11 @@ const Panel = SplitterPanel
 const ResizeTrigger = SplitterResizeTrigger
 
 export {
-  // Splitter,
-  // SplitterPanel,
-  // SplitterResizeTrigger,
+	// Splitter,
+	// SplitterPanel,
+	// SplitterResizeTrigger,
 
-  Panel,
-  ResizeTrigger,
-  Root,
+	Panel,
+	ResizeTrigger,
+	Root,
 }

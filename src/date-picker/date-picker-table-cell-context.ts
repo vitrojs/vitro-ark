@@ -3,7 +3,7 @@ import { ObservableReadonly } from 'vitro'
 import { createContext } from '../create-context'
 
 type Union<T, U> = {
-  [K in keyof T]: K extends keyof U ? U[K] | T[K] : T[K]
+	[K in keyof T]: K extends keyof U ? U[K] | T[K] : T[K]
 } & Omit<U, keyof T>
 
 type CellProps = Union<DayTableCellProps, TableCellProps>
@@ -11,7 +11,7 @@ type CellProps = Union<DayTableCellProps, TableCellProps>
 export interface DatePickerTableCellContext extends CellProps {}
 
 export const [DatePickerTableCellProvider, useDatePickerTableCellContext] =
-  createContext<ObservableReadonly<DatePickerTableCellContext>>({
-    hookName: 'useDatePickerTableCellContext',
-    providerName: '<DatePickerTableCellProvider />',
-  })
+	createContext<ObservableReadonly<DatePickerTableCellContext>>({
+		hookName: 'useDatePickerTableCellContext',
+		providerName: '<DatePickerTableCellProvider />',
+	})

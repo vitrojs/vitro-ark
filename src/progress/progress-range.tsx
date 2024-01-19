@@ -4,8 +4,8 @@ import { useProgressContext } from './progress-context'
 export type ProgressRangeProps = JSX.IntrinsicElements['div']
 
 export const ProgressRange = (props: ProgressRangeProps) => {
-  const api = useProgressContext()
-  const mergedProps = mergeProps(props, () => api().rangeProps)
+	const api = useProgressContext()
+	const mergedProps = mergeProps(props, () => api().rangeProps)
 
-  return <div {...mergedProps} />
+	return <div {...mergedProps} />
 }

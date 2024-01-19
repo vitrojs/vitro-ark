@@ -8,25 +8,25 @@ import { $$ } from 'vitro'
 import { mergeProps } from '@vitro/zag'
 
 export type FileUploadItemProps = Assign<
-  JSX.IntrinsicElements['li'],
-  Observify<ItemProps>
+	JSX.IntrinsicElements['li'],
+	Observify<ItemProps>
 >
 
 export const FileUploadItem = ({
-  file,
-  // ----
-  children,
-  ...props
+	file,
+	// ----
+	children,
+	...props
 }: FileUploadItemProps) => {
-  const api = useFileUploadContext()
+	const api = useFileUploadContext()
 
-  const itemProps = () => ({
-    file: $$(file),
-  })
-  const mergedProps = mergeProps(props, () => api().getItemProps(itemProps()))
-  return (
-    <FileUploadItemProvider value={itemProps}>
-      <li {...mergedProps}>{children}</li>
-    </FileUploadItemProvider>
-  )
+	const itemProps = () => ({
+		file: $$(file),
+	})
+	const mergedProps = mergeProps(props, () => api().getItemProps(itemProps()))
+	return (
+		<FileUploadItemProvider value={itemProps}>
+			<li {...mergedProps}>{children}</li>
+		</FileUploadItemProvider>
+	)
 }

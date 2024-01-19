@@ -5,14 +5,14 @@ import { createContext } from '../create-context'
 import { Accessor } from '../types'
 
 export interface Options {
-  render: (api: Accessor<toast.Api<PropTypes, Options>>) => JSX.Element
-  title: JSX.Element
-  description: JSX.Element
+	render: (api: Accessor<toast.Api<PropTypes, Options>>) => JSX.Element
+	title: JSX.Element
+	description: JSX.Element
 }
 
 export interface ToastContext extends Accessor<toast.Api<PropTypes, Options>> {}
 
 export const [ToastProvider, useToastContext] = createContext<ToastContext>({
-  hookName: 'useToastContext',
-  providerName: '<ToastProvider />',
+	hookName: 'useToastContext',
+	providerName: '<ToastProvider />',
 })

@@ -9,33 +9,33 @@ import { applyChildren } from '../utils'
 import { $$, useMemo } from 'vitro'
 import { deepEqual as equals } from 'fast-equals'
 export type TagsInputItemProps = Assign<
-  JSX.IntrinsicElements['div'],
-  Observify<ItemProps> & {
-    children?: JSX.Element | ((state: Accessor<ItemState>) => JSX.Element)
-  }
+	JSX.IntrinsicElements['div'],
+	Observify<ItemProps> & {
+		children?: JSX.Element | ((state: Accessor<ItemState>) => JSX.Element)
+	}
 >
 
 export const TagsInputItem = ({
-  disabled,
-  index,
-  value,
-  // ----
-  children,
-  ...props
+	disabled,
+	index,
+	value,
+	// ----
+	children,
+	...props
 }: TagsInputItemProps) => {
-  const itemProps = () => ({
-    disabled: $$(disabled),
-    index: $$(index),
-    value: $$(value),
-  })
+	const itemProps = () => ({
+		disabled: $$(disabled),
+		index: $$(index),
+		value: $$(value),
+	})
 
-  const api = useTagsInputContext()
-  const mergedProps = mergeProps(props, () => api().getItemProps(itemProps()))
+	const api = useTagsInputContext()
+	const mergedProps = mergeProps(props, () => api().getItemProps(itemProps()))
 
-  const childrenApi = useMemo(() => api().getItemState(itemProps()), { equals })
-  return (
-    <TagsInputItemProvider value={itemProps}>
-      <div {...mergedProps}>{applyChildren(children, childrenApi)}</div>
-    </TagsInputItemProvider>
-  )
+	const childrenApi = useMemo(() => api().getItemState(itemProps()), { equals })
+	return (
+		<TagsInputItemProvider value={itemProps}>
+			<div {...mergedProps}>{applyChildren(children, childrenApi)}</div>
+		</TagsInputItemProvider>
+	)
 }

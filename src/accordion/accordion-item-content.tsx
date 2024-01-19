@@ -7,19 +7,19 @@ import { useAccordionItemContext } from './accordion-item-context'
 export type AccordionItemContentProps = JSX.IntrinsicElements['div']
 
 export const AccordionItemContent = (props: AccordionItemContentProps) => {
-  const api = useAccordionContext()
-  const accordionItem = useAccordionItemContext()
-  const presenceApi = usePresenceContext()
+	const api = useAccordionContext()
+	const accordionItem = useAccordionItemContext()
+	const presenceApi = usePresenceContext()
 
-  const mergedProps = mergeProps(
-    props,
-    () => api().getItemContentProps(accordionItem()),
-    () => presenceApi().presenceProps,
-  )
+	const mergedProps = mergeProps(
+		props,
+		() => api().getItemContentProps(accordionItem()),
+		() => presenceApi().presenceProps,
+	)
 
-  return (
-    <If when={() => !presenceApi().isUnmounted}>
-      <div {...mergedProps} />
-    </If>
-  )
+	return (
+		<If when={() => !presenceApi().isUnmounted}>
+			<div {...mergedProps} />
+		</If>
+	)
 }

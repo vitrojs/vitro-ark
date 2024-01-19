@@ -5,7 +5,7 @@ import { createContext } from '../create-context'
 export interface DatePickerTableContext extends TableProps {}
 
 export const [DatePickerTableProvider, useDatePickerTableContext] =
-  createContext<ObservableReadonly<DatePickerTableContext>>({
-    hookName: 'useDatePickerTableContext',
-    providerName: '<DatePickerTableProvider />',
-  })
+	createContext<ObservableReadonly<DatePickerTableContext>>({
+		hookName: 'useDatePickerTableContext',
+		providerName: '<DatePickerTableProvider />',
+	})

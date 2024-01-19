@@ -1,11 +1,11 @@
 import {
-  Switch as ArkSwitch,
-  type SwitchProps as ArkSwitchProps,
+	Switch as ArkSwitch,
+	type SwitchProps as ArkSwitchProps,
 } from '@vitro/ark'
 
 import {
-  switchRecipe,
-  type SwitchRecipeVariantProps,
+	switchRecipe,
+	type SwitchRecipeVariantProps,
 } from 'styled-system/recipes'
 import { Assign, createStyleContext } from '../lib/create-style-context'
 
@@ -23,13 +23,13 @@ const Label = SwitchLabel
 const Thumb = SwitchThumb
 
 export {
-  // Switch,
-  // SwitchControl,
-  // SwitchLabel,
-  // SwitchThumb,
+	// Switch,
+	// SwitchControl,
+	// SwitchLabel,
+	// SwitchThumb,
 
-  Control,
-  Label,
-  Root,
-  Thumb,
+	Control,
+	Label,
+	Root,
+	Thumb,
 }

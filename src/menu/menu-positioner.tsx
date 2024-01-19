@@ -6,13 +6,13 @@ import { useMenuContext } from './menu-context'
 export type MenuPositionerProps = JSX.IntrinsicElements['div']
 
 export const MenuPositioner = (props: MenuPositionerProps) => {
-  const api = useMenuContext()
-  const presenceApi = usePresenceContext()
-  const mergedProps = mergeProps(props, () => api().positionerProps)
+	const api = useMenuContext()
+	const presenceApi = usePresenceContext()
+	const mergedProps = mergeProps(props, () => api().positionerProps)
 
-  return (
-    <If when={!presenceApi().isUnmounted}>
-      <div {...mergedProps} />
-    </If>
-  )
+	return (
+		<If when={!presenceApi().isUnmounted}>
+			<div {...mergedProps} />
+		</If>
+	)
 }

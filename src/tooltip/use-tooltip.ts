@@ -10,13 +10,13 @@ export interface UseTooltipProps extends Optional<tooltip.Context, 'id'> {}
 export interface UseTooltipReturn extends Accessor<tooltip.Api<PropTypes>> {}
 
 export const useTooltip = (
-  props: Observify<UseTooltipProps>,
+	props: Observify<UseTooltipProps>,
 ): UseTooltipReturn => {
-  const getRootNode = useEnvironmentContext()
+	const getRootNode = useEnvironmentContext()
 
-  const [state, send] = useMachine(props, tooltip.machine, {
-    id: createSequenceId(),
-    getRootNode,
-  })
-  return useMemo(() => tooltip.connect(state(), send, normalizeProps))
+	const [state, send] = useMachine(props, tooltip.machine, {
+		id: createSequenceId(),
+		getRootNode,
+	})
+	return useMemo(() => tooltip.connect(state(), send, normalizeProps))
 }

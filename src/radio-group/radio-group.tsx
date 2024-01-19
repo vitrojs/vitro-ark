@@ -5,41 +5,41 @@ import { RadioGroupProvider } from './radio-group-context'
 import { useRadioGroup, type UseRadioGroupProps } from './use-radio-group'
 
 export type RadioGroupProps = Assign<
-  JSX.IntrinsicElements['div'],
-  Observify<UseRadioGroupProps>
+	JSX.IntrinsicElements['div'],
+	Observify<UseRadioGroupProps>
 >
 
 export const RadioGroup = ({
-  dir,
-  disabled,
-  form,
-  getRootNode,
-  id,
-  ids,
-  name,
-  onValueChange,
-  orientation,
-  value,
+	dir,
+	disabled,
+	form,
+	getRootNode,
+	id,
+	ids,
+	name,
+	onValueChange,
+	orientation,
+	value,
 
-  ...props
+	...props
 }: RadioGroupProps) => {
-  const api = useRadioGroup({
-    dir,
-    disabled,
-    form,
-    getRootNode,
-    id,
-    ids,
-    name,
-    onValueChange,
-    orientation,
-    value,
-  })
-  const mergedProps = mergeProps(props, () => api().rootProps)
+	const api = useRadioGroup({
+		dir,
+		disabled,
+		form,
+		getRootNode,
+		id,
+		ids,
+		name,
+		onValueChange,
+		orientation,
+		value,
+	})
+	const mergedProps = mergeProps(props, () => api().rootProps)
 
-  return (
-    <RadioGroupProvider value={api}>
-      <div {...mergedProps} />
-    </RadioGroupProvider>
-  )
+	return (
+		<RadioGroupProvider value={api}>
+			<div {...mergedProps} />
+		</RadioGroupProvider>
+	)
 }

@@ -4,7 +4,7 @@ import { type UseSegmentGroupReturn } from './use-segment-group'
 export interface SegmentGroupContext extends UseSegmentGroupReturn {}
 
 export const [SegmentGroupProvider, useSegmentGroupContext] =
-  createContext<SegmentGroupContext>({
-    hookName: 'useSegmentGroupContext',
-    providerName: '<SegmentGroupProvider />',
-  })
+	createContext<SegmentGroupContext>({
+		hookName: 'useSegmentGroupContext',
+		providerName: '<SegmentGroupProvider />',
+	})

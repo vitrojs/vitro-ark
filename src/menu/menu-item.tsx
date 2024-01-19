@@ -7,31 +7,31 @@ import { mergeProps } from '@vitro/zag'
 import { useMenuContext } from './menu-context'
 
 export type MenuItemProps = Assign<
-  JSX.IntrinsicElements['div'],
-  Observify<ItemProps>
+	JSX.IntrinsicElements['div'],
+	Observify<ItemProps>
 >
 
 export const MenuItem = ({
-  id,
-  disabled,
-  valueText,
-  closeOnSelect,
-  // ----
-  ...props
+	id,
+	disabled,
+	valueText,
+	closeOnSelect,
+	// ----
+	...props
 }: MenuItemProps) => {
-  const menu = useMenuContext()
+	const menu = useMenuContext()
 
-  const mergedProps = mergeProps(
-    props,
+	const mergedProps = mergeProps(
+		props,
 
-    () =>
-      menu?.().getItemProps({
-        id: $$(id),
-        disabled: $$(disabled),
-        valueText: $$(valueText),
-        closeOnSelect: $$(closeOnSelect),
-      }),
-  )
+		() =>
+			menu?.().getItemProps({
+				id: $$(id),
+				disabled: $$(disabled),
+				valueText: $$(valueText),
+				closeOnSelect: $$(closeOnSelect),
+			}),
+	)
 
-  return <div {...mergedProps} />
+	return <div {...mergedProps} />
 }

@@ -2,20 +2,20 @@ import { Splitter as SplitterRoot, type SplitterProps } from './splitter'
 import { useSplitterContext, type SplitterContext } from './splitter-context'
 import { SplitterPanel, type SplitterPanelProps } from './splitter-panel'
 import {
-  SplitterResizeTrigger,
-  type SplitterResizeTriggerProps,
+	SplitterResizeTrigger,
+	type SplitterResizeTriggerProps,
 } from './splitter-resize-trigger'
 
 const Splitter = Object.assign(SplitterRoot, {
-  Root: SplitterRoot,
-  Panel: SplitterPanel,
-  ResizeTrigger: SplitterResizeTrigger,
+	Root: SplitterRoot,
+	Panel: SplitterPanel,
+	ResizeTrigger: SplitterResizeTrigger,
 })
 
 export { Splitter, SplitterPanel, SplitterResizeTrigger, useSplitterContext }
 export type {
-  SplitterContext,
-  SplitterPanelProps,
-  SplitterProps,
-  SplitterResizeTriggerProps,
+	SplitterContext,
+	SplitterPanelProps,
+	SplitterProps,
+	SplitterResizeTriggerProps,
 }

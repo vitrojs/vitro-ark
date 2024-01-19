@@ -1,6 +1,6 @@
 import {
-  RadioGroup as ArkRadioGroup,
-  type RadioGroupProps as ArkRadioGroupProps,
+	RadioGroup as ArkRadioGroup,
+	type RadioGroupProps as ArkRadioGroupProps,
 } from '@vitro/ark'
 
 import { radioGroup, type RadioGroupVariantProps } from 'styled-system/recipes'
@@ -13,8 +13,8 @@ const RadioGroup = withProvider(ArkRadioGroup.Root, 'root')
 const RadioGroupIndicator = withContext(ArkRadioGroup.Indicator, 'indicator')
 const RadioGroupItem = withContext(ArkRadioGroup.Item, 'item')
 const RadioGroupItemControl = withContext(
-  ArkRadioGroup.ItemControl,
-  'itemControl',
+	ArkRadioGroup.ItemControl,
+	'itemControl',
 )
 const RadioGroupItemText = withContext(ArkRadioGroup.ItemText, 'itemText')
 const RadioGroupLabel = withContext(ArkRadioGroup.Label, 'label')
@@ -27,17 +27,17 @@ const ItemText = RadioGroupItemText
 const Label = RadioGroupLabel
 
 export {
-  // RadioGroup,
-  // RadioGroupIndicator,
-  // RadioGroupItem,
-  // RadioGroupItemControl,
-  // RadioGroupItemText,
-  // RadioGroupLabel,
+	// RadioGroup,
+	// RadioGroupIndicator,
+	// RadioGroupItem,
+	// RadioGroupItemControl,
+	// RadioGroupItemText,
+	// RadioGroupLabel,
 
-  Indicator,
-  Item,
-  ItemControl,
-  ItemText,
-  Label,
-  Root,
+	Indicator,
+	Item,
+	ItemControl,
+	ItemText,
+	Label,
+	Root,
 }

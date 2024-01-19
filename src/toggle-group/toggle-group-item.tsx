@@ -6,25 +6,25 @@ import { mergeProps } from '@vitro/zag'
 import { useToggleGroupContext } from './toggle-group-context'
 
 export type ToggleGroupItemProps = Assign<
-  JSX.IntrinsicElements['button'],
-  Observify<ItemProps>
+	JSX.IntrinsicElements['button'],
+	Observify<ItemProps>
 >
 
 export const ToggleGroupItem = ({
-  value,
-  disabled,
+	value,
+	disabled,
 
-  ...props
+	...props
 }: ToggleGroupItemProps) => {
-  const getToggleProps = () => ({
-    value: $$(value),
-    disabled: $$(disabled),
-  })
+	const getToggleProps = () => ({
+		value: $$(value),
+		disabled: $$(disabled),
+	})
 
-  const api = useToggleGroupContext()
-  const mergedProps = mergeProps(props, () =>
-    api().getItemProps(getToggleProps()),
-  )
+	const api = useToggleGroupContext()
+	const mergedProps = mergeProps(props, () =>
+		api().getItemProps(getToggleProps()),
+	)
 
-  return <button {...mergedProps} />
+	return <button {...mergedProps} />
 }

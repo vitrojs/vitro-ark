@@ -8,16 +8,16 @@ import { createSequenceId } from '../utils'
 
 export interface UseCarouselProps extends Optional<carousel.Context, 'id'> {}
 export interface UseCarouselReturn
-  extends ObservableReadonly<carousel.Api<PropTypes>> {}
+	extends ObservableReadonly<carousel.Api<PropTypes>> {}
 
 export const useCarousel = (
-  props: Observify<UseCarouselProps>,
+	props: Observify<UseCarouselProps>,
 ): UseCarouselReturn => {
-  const getRootNode = useEnvironmentContext()
+	const getRootNode = useEnvironmentContext()
 
-  const [state, send] = useMachine(props, carousel.machine, {
-    id: createSequenceId(),
-    getRootNode,
-  })
-  return useMemo(() => carousel.connect(state(), send, normalizeProps))
+	const [state, send] = useMachine(props, carousel.machine, {
+		id: createSequenceId(),
+		getRootNode,
+	})
+	return useMemo(() => carousel.connect(state(), send, normalizeProps))
 }

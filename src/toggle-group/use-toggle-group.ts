@@ -8,19 +8,19 @@ import { Accessor, Optional } from '../types'
 import { createSequenceId } from '../utils'
 
 export interface UseToggleGroupProps
-  extends Optional<toggleGroup.Context, 'id'> {}
+	extends Optional<toggleGroup.Context, 'id'> {}
 export interface UseToggleGroupReturn
-  extends Accessor<toggleGroup.Api<PropTypes>> {}
+	extends Accessor<toggleGroup.Api<PropTypes>> {}
 
 export const useToggleGroup = (
-  props: Observify<UseToggleGroupProps>,
+	props: Observify<UseToggleGroupProps>,
 ): UseToggleGroupReturn => {
-  const getRootNode = useEnvironmentContext()
+	const getRootNode = useEnvironmentContext()
 
-  const [state, send] = useMachine(props, toggleGroup.machine, {
-    id: createSequenceId(),
-    getRootNode,
-  })
+	const [state, send] = useMachine(props, toggleGroup.machine, {
+		id: createSequenceId(),
+		getRootNode,
+	})
 
-  return useMemo(() => toggleGroup.connect(state(), send, normalizeProps))
+	return useMemo(() => toggleGroup.connect(state(), send, normalizeProps))
 }

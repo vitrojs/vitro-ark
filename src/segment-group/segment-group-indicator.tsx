@@ -6,10 +6,10 @@ import { useSegmentGroupContext } from './segment-group-context'
 export type SegmentGroupIndicatorProps = JSX.IntrinsicElements['div']
 
 export const SegmentGroupIndicator = (props: SegmentGroupIndicatorProps) => {
-  const api = useSegmentGroupContext()
-  const mergedProps = mergeProps(props, () => api().indicatorProps)
+	const api = useSegmentGroupContext()
+	const mergedProps = mergeProps(props, () => api().indicatorProps)
 
-  return (
-    <div {...mergedProps} {...segmentGroupAnatomy.build().indicator.attrs} />
-  )
+	return (
+		<div {...mergedProps} {...segmentGroupAnatomy.build().indicator.attrs} />
+	)
 }

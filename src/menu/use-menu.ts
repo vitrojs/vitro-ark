@@ -10,20 +10,20 @@ import { createSequenceId } from '../utils'
 export interface UseMenuProps extends Optional<menu.Context, 'id'> {}
 
 export type UseMenuReturn = () => {
-  machine: ReturnType<typeof menu.machine>
-  api: Accessor<menu.Api<PropTypes>>
+	machine: ReturnType<typeof menu.machine>
+	api: Accessor<menu.Api<PropTypes>>
 }
 
 export const useMenu = (props: Observify<UseMenuProps>): UseMenuReturn => {
-  const getRootNode = useEnvironmentContext()
+	const getRootNode = useEnvironmentContext()
 
-  const [state, send, machine] = useMachine(props, menu.machine, {
-    id: createSequenceId(),
-    getRootNode,
-  })
+	const [state, send, machine] = useMachine(props, menu.machine, {
+		id: createSequenceId(),
+		getRootNode,
+	})
 
-  return useMemo(() => ({
-    api: () => menu.connect(state(), send, normalizeProps),
-    machine: machine,
-  }))
+	return useMemo(() => ({
+		api: () => menu.connect(state(), send, normalizeProps),
+		machine: machine,
+	}))
 }

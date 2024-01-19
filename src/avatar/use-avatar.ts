@@ -9,14 +9,14 @@ export type UseAvatarProps = Optional<avatar.Context, 'id'>
 export type UseAvatarReturn = Accessor<avatar.Api<PropTypes>>
 
 export const useAvatar = (
-  props: Observify<UseAvatarProps>,
+	props: Observify<UseAvatarProps>,
 ): UseAvatarReturn => {
-  const getRootNode = useEnvironmentContext()
+	const getRootNode = useEnvironmentContext()
 
-  const [state, send] = useMachine(props, avatar.machine, {
-    id: createSequenceId(),
-    getRootNode,
-  })
+	const [state, send] = useMachine(props, avatar.machine, {
+		id: createSequenceId(),
+		getRootNode,
+	})
 
-  return useMemo(() => avatar.connect(state(), send, normalizeProps))
+	return useMemo(() => avatar.connect(state(), send, normalizeProps))
 }

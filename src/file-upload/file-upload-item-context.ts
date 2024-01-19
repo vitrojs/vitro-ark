@@ -5,8 +5,8 @@ import { Accessor } from '../types'
 export interface FileUploadItemContext extends ItemProps {}
 
 export const [FileUploadItemProvider, useFileUploadItemContext] = createContext<
-  Accessor<FileUploadItemContext>
+	Accessor<FileUploadItemContext>
 >({
-  hookName: 'useFileUploadItemContext',
-  providerName: '<FileUploadItemProvider />',
+	hookName: 'useFileUploadItemContext',
+	providerName: '<FileUploadItemProvider />',
 })

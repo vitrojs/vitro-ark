@@ -5,8 +5,8 @@ import { Accessor } from '../types'
 export interface ComboboxItemContext extends ItemProps {}
 
 export const [ComboboxItemProvider, useComboboxItemContext] = createContext<
-  Accessor<ComboboxItemContext>
+	Accessor<ComboboxItemContext>
 >({
-  hookName: 'useComboboxItemContext',
-  providerName: '<ComboboxItemProvider />',
+	hookName: 'useComboboxItemContext',
+	providerName: '<ComboboxItemProvider />',
 })

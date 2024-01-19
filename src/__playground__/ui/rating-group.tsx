@@ -1,6 +1,6 @@
 import {
-  RatingGroup as ArkRatingGroup,
-  type RatingGroupProps as ArkRatingGroupProps,
+	RatingGroup as ArkRatingGroup,
+	type RatingGroupProps as ArkRatingGroupProps,
 } from '@vitro/ark'
 
 import { RatingGroupVariantProps, ratingGroup } from 'styled-system/recipes'
@@ -8,13 +8,13 @@ import { Assign, createStyleContext } from '../lib/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(ratingGroup)
 export type RatingGroupProps = Assign<
-  ArkRatingGroupProps,
-  RatingGroupVariantProps
+	ArkRatingGroupProps,
+	RatingGroupVariantProps
 >
 
 const RatingGroup: JSX.Component<RatingGroupProps> = withProvider(
-  ArkRatingGroup.Root,
-  'root',
+	ArkRatingGroup.Root,
+	'root',
 )
 const RatingGroupControl = withContext(ArkRatingGroup.Control, 'control')
 const RatingGroupItem = withContext(ArkRatingGroup.Item, 'item')
@@ -26,13 +26,13 @@ const Item = RatingGroupItem
 const Label = RatingGroupLabel
 
 export {
-  // RatingGroup,
-  // RatingGroupControl,
-  // RatingGroupItem,
-  // RatingGroupLabel,
+	// RatingGroup,
+	// RatingGroupControl,
+	// RatingGroupItem,
+	// RatingGroupLabel,
 
-  Control,
-  Item,
-  Label,
-  Root,
+	Control,
+	Item,
+	Label,
+	Root,
 }
