@@ -4,7 +4,7 @@ import { Observify, PropTypes, normalizeProps, useMachine } from '@vitro/zag'
 import { $$, ObservableReadonly, useMemo } from 'vitro'
 import { useEnvironmentContext } from '../environment'
 import { type Optional } from '../types'
-import { createUniqueId } from '../utils'
+import { createSequenceId } from '../utils'
 
 export interface UseDatePickerProps
   extends Optional<Omit<datePicker.Context, 'value' | 'focusedValue'>, 'id'> {
@@ -41,7 +41,7 @@ export const useDatePicker = ({
     },
     datePicker.machine,
     {
-      id: createUniqueId(),
+      id: createSequenceId(),
       getRootNode,
     },
   )

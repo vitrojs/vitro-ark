@@ -4,7 +4,7 @@ import { Observify, PropTypes, normalizeProps, useMachine } from '@vitro/zag'
 import { ObservableReadonly, useMemo } from 'vitro'
 import { useEnvironmentContext } from '../environment'
 import { type Optional } from '../types'
-import { createUniqueId } from '../utils'
+import { createSequenceId } from '../utils'
 
 export interface UseCarouselProps extends Optional<carousel.Context, 'id'> {}
 export interface UseCarouselReturn
@@ -16,7 +16,7 @@ export const useCarousel = (
   const getRootNode = useEnvironmentContext()
 
   const [state, send] = useMachine(props, carousel.machine, {
-    id: createUniqueId(),
+    id: createSequenceId(),
     getRootNode,
   })
   return useMemo(() => carousel.connect(state(), send, normalizeProps))

@@ -5,7 +5,7 @@ function createCounter(prefix: string = 'v', start = 0) {
   }
 }
 
-export const createUniqueId = createCounter()
+export const createSequenceId = createCounter()
 
 export function applyChildren(
   children: JSX.Child | ((arg: any) => JSX.Child) | undefined,

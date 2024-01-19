@@ -3,7 +3,7 @@ import * as segment from '@zag-js/radio-group'
 import { useMemo } from 'vitro'
 import { useEnvironmentContext } from '../environment'
 import { Accessor, Optional } from '../types'
-import { createUniqueId } from '../utils'
+import { createSequenceId } from '../utils'
 
 export type UseSegmentGroupProps = Optional<segment.Context, 'id'>
 export type UseSegmentGroupReturn = Accessor<segment.Api<PropTypes>>
@@ -14,7 +14,7 @@ export const useSegmentGroup = (
   const getRootNode = useEnvironmentContext()
 
   const [state, send] = useMachine(props, segment.machine, {
-    id: createUniqueId(),
+    id: createSequenceId(),
     getRootNode,
   })
 

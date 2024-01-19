@@ -10,7 +10,7 @@ import {
 import { $$, useMemo } from 'vitro'
 import { useEnvironmentContext } from '../environment'
 import { Accessor, Optional, type CollectionItem } from '../types'
-import { createUniqueId } from '../utils'
+import { createSequenceId } from '../utils'
 
 export type UseSelectProps<T extends CollectionItem> = CollectionOptions<T> &
   Omit<Optional<select.Context<T>, 'id'>, 'collection'>
@@ -39,7 +39,7 @@ export const useSelect = <T extends CollectionItem>({
     { collection },
     select.machine,
     {
-      id: createUniqueId(),
+      id: createSequenceId(),
       getRootNode,
       ...props,
     },

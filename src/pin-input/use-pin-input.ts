@@ -4,7 +4,7 @@ import { Observify, PropTypes, normalizeProps, useMachine } from '@vitro/zag'
 import { useMemo } from 'vitro'
 import { useEnvironmentContext } from '../environment'
 import { Accessor, type Optional } from '../types'
-import { createUniqueId } from '../utils'
+import { createSequenceId } from '../utils'
 
 export interface UsePinInputProps extends Optional<pinInput.Context, 'id'> {}
 export interface UsePinInputReturn extends Accessor<pinInput.Api<PropTypes>> {}
@@ -15,7 +15,7 @@ export const usePinInput = (
   const getRootNode = useEnvironmentContext()
 
   const [state, send] = useMachine(props, pinInput.machine, {
-    id: createUniqueId(),
+    id: createSequenceId(),
     getRootNode,
   })
 

@@ -4,7 +4,7 @@ import { Observify, PropTypes, normalizeProps, useMachine } from '@vitro/zag'
 import { useMemo } from 'vitro'
 import { useEnvironmentContext } from '../environment'
 import { Accessor, type Optional } from '../types'
-import { createUniqueId } from '../utils'
+import { createSequenceId } from '../utils'
 
 export interface UseTagsInputProps extends Optional<tagsInput.Context, 'id'> {}
 export interface UseTagsInputReturn
@@ -16,7 +16,7 @@ export const useTagsInput = (
   const getRootNode = useEnvironmentContext()
 
   const [state, send] = useMachine(props, tagsInput.machine, {
-    id: createUniqueId(),
+    id: createSequenceId(),
     getRootNode,
   })
 

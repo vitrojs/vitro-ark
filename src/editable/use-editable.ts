@@ -1,7 +1,7 @@
 import type { Observify } from '@vitro/zag'
 import * as editable from '@zag-js/editable'
 import { useEnvironmentContext } from '../environment'
-import { createUniqueId } from '../utils'
+import { createSequenceId } from '../utils'
 
 import { normalizeProps, useMachine, type PropTypes } from '@vitro/zag'
 import { useMemo } from 'vitro'
@@ -13,7 +13,7 @@ export const useEditable = (props: Observify<UseEditableProps>) => {
   const getRootNode = useEnvironmentContext()
 
   const [state, send] = useMachine(props, editable.machine, {
-    id: createUniqueId(),
+    id: createSequenceId(),
     getRootNode,
   })
 

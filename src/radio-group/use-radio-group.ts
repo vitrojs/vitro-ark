@@ -4,7 +4,7 @@ import { Observify, PropTypes, normalizeProps, useMachine } from '@vitro/zag'
 import { useMemo } from 'vitro'
 import { useEnvironmentContext } from '../environment'
 import { Accessor, Optional } from '../types'
-import { createUniqueId } from '../utils'
+import { createSequenceId } from '../utils'
 
 export interface UseRadioGroupProps extends Optional<radio.Context, 'id'> {}
 export interface UseRadioGroupReturn extends Accessor<radio.Api<PropTypes>> {}
@@ -15,7 +15,7 @@ export const useRadioGroup = (
   const getRootNode = useEnvironmentContext()
 
   const [state, send] = useMachine(props, radio.machine, {
-    id: createUniqueId(),
+    id: createSequenceId(),
     getRootNode,
   })
 

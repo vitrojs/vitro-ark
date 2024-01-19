@@ -5,7 +5,7 @@ import { normalizeProps, useMachine, type PropTypes } from '@vitro/zag'
 import { useMemo } from 'vitro'
 import { useEnvironmentContext } from '../environment'
 import { Accessor, Optional } from '../types'
-import { createUniqueId } from '../utils'
+import { createSequenceId } from '../utils'
 export interface UseSliderProps extends Optional<slider.Context, 'id'> {}
 export interface UseSliderReturn extends Accessor<slider.Api<PropTypes>> {}
 
@@ -15,7 +15,7 @@ export const useSlider = (
   const getRootNode = useEnvironmentContext()
 
   const [state, send] = useMachine(props, slider.machine, {
-    id: createUniqueId(),
+    id: createSequenceId(),
     getRootNode,
   })
 

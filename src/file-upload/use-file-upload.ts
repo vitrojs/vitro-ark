@@ -3,7 +3,7 @@ import * as fileUpload from '@zag-js/file-upload'
 import { useMemo } from 'vitro'
 import { useEnvironmentContext } from '../environment'
 import { Accessor, type Optional } from '../types'
-import { createUniqueId } from '../utils'
+import { createSequenceId } from '../utils'
 
 export interface UseFileUploadProps
   extends Optional<fileUpload.Context, 'id'> {}
@@ -16,7 +16,7 @@ export const useFileUpload = (
   const getRootNode = useEnvironmentContext()
 
   const [state, send] = useMachine(props, fileUpload.machine, {
-    id: createUniqueId(),
+    id: createSequenceId(),
     getRootNode,
   })
 

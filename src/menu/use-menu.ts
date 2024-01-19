@@ -5,7 +5,7 @@ import { normalizeProps, useMachine, type PropTypes } from '@vitro/zag'
 import { useMemo } from 'vitro'
 import { useEnvironmentContext } from '../environment'
 import { Accessor, Optional } from '../types'
-import { createUniqueId } from '../utils'
+import { createSequenceId } from '../utils'
 
 export interface UseMenuProps extends Optional<menu.Context, 'id'> {}
 
@@ -18,7 +18,7 @@ export const useMenu = (props: Observify<UseMenuProps>): UseMenuReturn => {
   const getRootNode = useEnvironmentContext()
 
   const [state, send, machine] = useMachine(props, menu.machine, {
-    id: createUniqueId(),
+    id: createSequenceId(),
     getRootNode,
   })
 

@@ -5,7 +5,7 @@ import { normalizeProps, useMachine, type PropTypes } from '@vitro/zag'
 import { useMemo } from 'vitro'
 import { useEnvironmentContext } from '../environment'
 import { Accessor, Optional } from '../types'
-import { createUniqueId } from '../utils'
+import { createSequenceId } from '../utils'
 export interface UseHoverCardProps extends Optional<hoverCard.Context, 'id'> {}
 export interface UseHoverCardReturn
   extends Accessor<hoverCard.Api<PropTypes>> {}
@@ -15,7 +15,7 @@ export const useHoverCard = (
 ): UseHoverCardReturn => {
   const getRootNode = useEnvironmentContext()
   const [state, send] = useMachine(props, hoverCard.machine, {
-    id: createUniqueId(),
+    id: createSequenceId(),
     getRootNode,
   })
 

@@ -1,15 +1,15 @@
 import * as colorPicker from '@zag-js/color-picker'
 
 import {
-  normalizeProps,
-  useMachine,
-  type Observify,
-  type PropTypes,
+    normalizeProps,
+    useMachine,
+    type Observify,
+    type PropTypes,
 } from '@vitro/zag'
 import { $$, ObservableReadonly, useMemo } from 'vitro'
 import { useEnvironmentContext } from '../environment'
 import { type Optional } from '../types'
-import { createUniqueId } from '../utils'
+import { createSequenceId } from '../utils'
 
 export interface UseColorPickerProps
   extends Optional<Omit<colorPicker.Context, 'value'>, 'id'> {
@@ -37,7 +37,7 @@ export const useColorPicker = ({
     }),
 
     colorPicker.machine,
-    { id: createUniqueId(), getRootNode },
+    { id: createSequenceId(), getRootNode },
   )
 
   return useMemo(() => colorPicker.connect(state(), send, normalizeProps))

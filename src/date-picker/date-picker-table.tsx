@@ -3,7 +3,7 @@ import type { TableProps } from '@zag-js/date-picker'
 import { deepEqual as equals } from 'fast-equals'
 import { $$, useMemo } from 'vitro'
 import type { Assign } from '../types'
-import { createUniqueId } from '../utils'
+import { createSequenceId } from '../utils'
 import { useDatePickerContext } from './date-picker-context'
 import { DatePickerTableProvider } from './date-picker-table-context'
 import { useDatePickerViewContext } from './date-picker-view-context'
@@ -22,7 +22,7 @@ export const DatePickerTable = ({
   const tableProps = useMemo(
     () => {
       return {
-        id: createUniqueId(),
+        id: createSequenceId(),
         columns: $$(columns),
         ...viewProps(),
       }

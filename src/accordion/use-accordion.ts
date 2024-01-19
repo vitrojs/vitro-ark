@@ -4,7 +4,7 @@ import { ObservableReadonly, useMemo } from 'vitro'
 
 import { useEnvironmentContext } from '../environment'
 import type { Optional } from '../types'
-import { createUniqueId } from '../utils'
+import { createSequenceId } from '../utils'
 
 export interface UseAccordionProps extends Optional<accordion.Context, 'id'> {}
 export interface UseAccordionReturn
@@ -15,7 +15,7 @@ export const useAccordion = (
 ): UseAccordionReturn => {
   const getRootNode = useEnvironmentContext()
   const [state, send] = useMachine(props, accordion.machine, {
-    id: createUniqueId(),
+    id: createSequenceId(),
     getRootNode,
   })
 

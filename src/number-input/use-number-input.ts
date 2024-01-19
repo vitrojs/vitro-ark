@@ -4,7 +4,7 @@ import { Observify, PropTypes, normalizeProps, useMachine } from '@vitro/zag'
 import { ObservableReadonly, useMemo } from 'vitro'
 import { useEnvironmentContext } from '../environment'
 import { type Optional } from '../types'
-import { createUniqueId } from '../utils'
+import { createSequenceId } from '../utils'
 
 export interface UseNumberInputProps
   extends Optional<numberInput.Context, 'id'> {}
@@ -18,7 +18,7 @@ export const useNumberInput = (
   const getRootNode = useEnvironmentContext()
 
   const [state, send] = useMachine(props, numberInput.machine, {
-    id: createUniqueId(),
+    id: createSequenceId(),
     getRootNode,
   })
 

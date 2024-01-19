@@ -6,7 +6,7 @@ import { $$, useMemo } from 'vitro'
 import { Observify, PropTypes, normalizeProps, useMachine } from '@vitro/zag'
 import { useEnvironmentContext } from '../environment'
 import type { Accessor, CollectionItem, Optional } from '../types'
-import { createUniqueId } from '../utils'
+import { createSequenceId } from '../utils'
 
 export type UseComboboxProps<T extends CollectionItem> = CollectionOptions<T> &
   Omit<Optional<combobox.Context<T>, 'id'>, 'collection'>
@@ -41,7 +41,7 @@ export const useCombobox = <T extends CollectionItem>({
     // @ts-ignore
     combobox.machine,
     {
-      id: createUniqueId(),
+      id: createSequenceId(),
       getRootNode,
     },
   )

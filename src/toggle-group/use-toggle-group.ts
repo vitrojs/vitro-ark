@@ -5,7 +5,7 @@ import { normalizeProps, useMachine, type PropTypes } from '@vitro/zag'
 import { useMemo } from 'vitro'
 import { useEnvironmentContext } from '../environment'
 import { Accessor, Optional } from '../types'
-import { createUniqueId } from '../utils'
+import { createSequenceId } from '../utils'
 
 export interface UseToggleGroupProps
   extends Optional<toggleGroup.Context, 'id'> {}
@@ -18,7 +18,7 @@ export const useToggleGroup = (
   const getRootNode = useEnvironmentContext()
 
   const [state, send] = useMachine(props, toggleGroup.machine, {
-    id: createUniqueId(),
+    id: createSequenceId(),
     getRootNode,
   })
 

@@ -4,7 +4,7 @@ import { Observify, PropTypes, normalizeProps, useMachine } from '@vitro/zag'
 import { ObservableReadonly, useMemo } from 'vitro'
 import { useEnvironmentContext } from '../environment'
 import { type Optional } from '../types'
-import { createUniqueId } from '../utils'
+import { createSequenceId } from '../utils'
 
 export interface UseRatingGroupProps extends Optional<rating.Context, 'id'> {}
 export interface UseRatingGroupReturn
@@ -16,7 +16,7 @@ export const useRatingGroup = (
   const getRootNode = useEnvironmentContext()
 
   const [state, send] = useMachine(props, rating.machine, {
-    id: createUniqueId(),
+    id: createSequenceId(),
     getRootNode,
   })
 

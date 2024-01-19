@@ -1,15 +1,15 @@
 import * as zagSwitch from '@zag-js/switch'
 
 import {
-  Observify,
-  normalizeProps,
-  useMachine,
-  type PropTypes,
+    Observify,
+    normalizeProps,
+    useMachine,
+    type PropTypes,
 } from '@vitro/zag'
 import { useMemo } from 'vitro'
 import { useEnvironmentContext } from '../environment'
 import { Accessor, Optional } from '../types'
-import { createUniqueId } from '../utils'
+import { createSequenceId } from '../utils'
 
 export type UseSwitchProps = Optional<zagSwitch.Context, 'id'>
 export type UseSwitchReturn = Accessor<zagSwitch.Api<PropTypes>>
@@ -20,7 +20,7 @@ export const useSwitch = (
   const getRootNode = useEnvironmentContext()
 
   const [state, send] = useMachine(props, zagSwitch.machine, {
-    id: createUniqueId(),
+    id: createSequenceId(),
     getRootNode,
   })
 
