@@ -1,4 +1,4 @@
-import { useMemo, $, If, FunctionMaybe, $$ } from 'vitro'
+import { $, $$, FunctionMaybe, If, useMemo } from 'vitro'
 import { EnvironmentProvider } from './environment-context'
 
 export interface EnvironmentProps {
@@ -6,7 +6,7 @@ export interface EnvironmentProps {
 	value?: FunctionMaybe<ShadowRoot | Document | Node>
 }
 
-export const Environment = (props: EnvironmentProps) => {
+export const Environment: JSX.Component<EnvironmentProps> = (props) => {
 	// eslint-disable-next-line prefer-const
 	const spanRef = $<HTMLSpanElement>()
 

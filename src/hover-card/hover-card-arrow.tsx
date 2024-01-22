@@ -3,7 +3,7 @@ import { useHoverCardContext } from './hover-card-context'
 
 export type HoverCardArrowProps = JSX.IntrinsicElements['div']
 
-export const HoverCardArrow = (props: HoverCardArrowProps) => {
+export const HoverCardArrow:JSX.Component<HoverCardArrowProps> = (props) => {
 	const hoverCard = useHoverCardContext()
 	const mergedProps = mergeProps(props, () => hoverCard().arrowProps)
 

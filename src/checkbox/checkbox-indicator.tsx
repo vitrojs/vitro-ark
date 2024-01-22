@@ -3,7 +3,9 @@ import { useCheckboxContext } from './checkbox-context'
 
 export type CheckboxIndicatorProps = JSX.IntrinsicElements['div']
 
-export const CheckboxIndicator = (props: CheckboxIndicatorProps) => {
+export const CheckboxIndicator: JSX.Component<CheckboxIndicatorProps> = (
+	props,
+) => {
 	const api = useCheckboxContext()
 	const mergedProps = mergeProps(props, () => api().indicatorProps)
 

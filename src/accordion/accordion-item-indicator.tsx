@@ -4,7 +4,9 @@ import { useAccordionItemContext } from './accordion-item-context'
 
 export type AccordionItemIndicatorProps = JSX.IntrinsicElements['div']
 
-export const AccordionItemIndicator = (props: AccordionItemIndicatorProps) => {
+export const AccordionItemIndicator: JSX.Component<
+	AccordionItemIndicatorProps
+> = (props) => {
 	const api = useAccordionContext()
 	const itemParams = useAccordionItemContext()
 

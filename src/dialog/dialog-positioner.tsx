@@ -1,11 +1,13 @@
+import { mergeProps } from '@vitro/zag'
 import { If } from 'vitro'
 import { usePresenceContext } from '../presence'
-import { mergeProps } from '@vitro/zag'
 import { useDialogContext } from './dialog-context'
 
 export type DialogPositionerProps = JSX.IntrinsicElements['div']
 
-export const DialogPositioner = (props: DialogPositionerProps) => {
+export const DialogPositioner: JSX.Component<DialogPositionerProps> = (
+	props,
+) => {
 	const api = useDialogContext()
 	const presenceApi = usePresenceContext()
 	const mergedProps = mergeProps(props, () => api().positionerProps)

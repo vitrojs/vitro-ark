@@ -4,7 +4,9 @@ import { useColorPickerContext } from './color-picker-context'
 
 export type ColorPickerAreaThumbProps = JSX.IntrinsicElements['div']
 
-export const ColorPickerAreaThumb = (props: ColorPickerAreaThumbProps) => {
+export const ColorPickerAreaThumb: JSX.Component<ColorPickerAreaThumbProps> = (
+	props,
+) => {
 	const colorAreaProps = useColorPickerAreaContext()
 	const api = useColorPickerContext()
 	const mergedProps = mergeProps(props, () =>

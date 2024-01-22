@@ -1,6 +1,7 @@
 import type { Observify } from '@vitro/zag'
-import type { Assign } from '../types'
 import { mergeProps } from '@vitro/zag'
+import { Component } from 'vitro'
+import type { Assign } from '../types'
 import { AvatarProvider } from './avatar-context'
 import { useAvatar, type UseAvatarProps } from './use-avatar'
 
@@ -9,14 +10,14 @@ export type AvatarProps = Assign<
 	Observify<UseAvatarProps>
 >
 
-export const Avatar = ({
+export const Avatar: Component<AvatarProps> = ({
 	dir,
 	getRootNode,
 	id,
 	onLoadingStatusChange,
 	// ----
 	...props
-}: AvatarProps) => {
+}) => {
 	const api = useAvatar({ dir, getRootNode, id, onLoadingStatusChange })
 	const mergedProps = mergeProps(props, () => api().rootProps)
 

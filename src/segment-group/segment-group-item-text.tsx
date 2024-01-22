@@ -6,7 +6,9 @@ import { useSegmentGroupItemContext } from './segment-group-item-context'
 
 export type SegmentGroupItemTextProps = JSX.IntrinsicElements['span']
 
-export const SegmentGroupItemText = (props: SegmentGroupItemTextProps) => {
+export const SegmentGroupItemText: JSX.Component<SegmentGroupItemTextProps> = (
+	props,
+) => {
 	const api = useSegmentGroupContext()
 	const itemProps = useSegmentGroupItemContext()
 	const mergedProps = mergeProps(props, () =>

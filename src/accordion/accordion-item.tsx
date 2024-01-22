@@ -1,4 +1,5 @@
 import type { Observify } from '@vitro/zag'
+import { mergeProps } from '@vitro/zag'
 import type { ItemProps, ItemState } from '@zag-js/accordion'
 import { deepEqual as equals } from 'fast-equals'
 import { $$, ObservableReadonly, useMemo } from 'vitro'
@@ -8,7 +9,6 @@ import {
 	usePresencePropsContext,
 } from '../presence'
 import type { Assign } from '../types'
-import { mergeProps } from '@vitro/zag'
 import { applyChildren } from '../utils'
 import { useAccordionContext } from './accordion-context'
 import { AccordionItemProvider } from './accordion-item-context'
@@ -22,12 +22,12 @@ export type AccordionItemProps = Assign<
 	}
 >
 
-export const AccordionItem = ({
+export const AccordionItem: JSX.Component<AccordionItemProps> = ({
 	value,
 	disabled,
 	children,
 	...props
-}: AccordionItemProps) => {
+}) => {
 	const api = useAccordionContext()
 	const presenceProps = usePresencePropsContext()
 	const getItemProps = () => ({

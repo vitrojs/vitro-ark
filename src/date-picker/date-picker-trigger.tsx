@@ -3,7 +3,9 @@ import { useDatePickerContext } from './date-picker-context'
 
 export type DatePickerTriggerProps = JSX.IntrinsicElements['button']
 
-export const DatePickerTrigger = (props: DatePickerTriggerProps) => {
+export const DatePickerTrigger: JSX.Component<DatePickerTriggerProps> = (
+	props,
+) => {
 	const api = useDatePickerContext()
 	const mergedProps = mergeProps(props, () => api().triggerProps)
 

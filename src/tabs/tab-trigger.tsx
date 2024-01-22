@@ -1,22 +1,22 @@
 import { type TriggerProps } from '@zag-js/tabs'
 
+import type { Observify } from '@vitro/zag'
+import { mergeProps } from '@vitro/zag'
 import { $$ } from 'vitro'
 import type { Assign } from '../types'
-import { mergeProps } from '@vitro/zag'
 import { useTabsContext } from './tabs-context'
-import type { Observify } from '@vitro/zag'
 
 export type TabTriggerProps = Assign<
 	JSX.IntrinsicElements['button'],
 	Observify<TriggerProps>
 >
 
-export const TabTrigger = ({
+export const TabTrigger: JSX.Component<TabTriggerProps> = ({
 	disabled,
 	value,
 	// ---
 	...props
-}: TabTriggerProps) => {
+}) => {
 	const getTabParams = () => ({
 		value: $$(value),
 		disabled: $$(disabled),

@@ -13,10 +13,10 @@ export type DatePickerTableProps = Assign<
 	Observify<Pick<TableProps, 'columns'>>
 >
 
-export const DatePickerTable = ({
+export const DatePickerTable: JSX.Component<DatePickerTableProps> = ({
 	columns,
 	...props
-}: DatePickerTableProps) => {
+}) => {
 	const api = useDatePickerContext()
 	const viewProps = useDatePickerViewContext()
 	const tableProps = useMemo(

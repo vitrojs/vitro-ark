@@ -1,13 +1,13 @@
+import { mergeProps } from '@vitro/zag'
 import { $, useEffect } from 'vitro'
 import { useFileUploadContext } from './file-upload-context'
 import { useFileUploadItemContext } from './file-upload-item-context'
-import { mergeProps } from '@vitro/zag'
 
 export type FileUploadItemPreviewImageProps = JSX.IntrinsicElements['img']
 
-export const FileUploadItemPreviewImage = (
-	props: FileUploadItemPreviewImageProps,
-) => {
+export const FileUploadItemPreviewImage: JSX.Component<
+	FileUploadItemPreviewImageProps
+> = (props) => {
 	const api = useFileUploadContext()
 	const item = useFileUploadItemContext()
 	const url = $<string>('')

@@ -3,7 +3,7 @@ import { useTabsContext } from './tabs-context'
 
 export type TabListProps = JSX.IntrinsicElements['div']
 
-export const TabList = (props: TabListProps) => {
+export const TabList: JSX.Component<TabListProps> = (props) => {
 	const api = useTabsContext()
 	const mergedProps = mergeProps(props, () => api().tablistProps)
 

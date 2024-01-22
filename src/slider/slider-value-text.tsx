@@ -1,13 +1,13 @@
-import { $$, useMemo } from 'vitro'
 import { mergeProps } from '@vitro/zag'
+import { $$, useMemo } from 'vitro'
 import { useSliderContext } from './slider-context'
 
 export type SliderValueTextProps = JSX.IntrinsicElements['div']
 
-export const SliderValueText = ({
+export const SliderValueText: JSX.Component<SliderValueTextProps> = ({
 	children,
 	...props
-}: SliderValueTextProps) => {
+}) => {
 	const api = useSliderContext()
 	const mergedProps = mergeProps(props, () => api().valueTextProps)
 

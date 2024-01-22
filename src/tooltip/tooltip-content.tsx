@@ -1,11 +1,11 @@
+import { mergeProps } from '@vitro/zag'
 import { If } from 'vitro'
 import { usePresenceContext } from '../presence'
-import { mergeProps } from '@vitro/zag'
 import { useTooltipContext } from './tooltip-context'
 
 export type TooltipContentProps = JSX.IntrinsicElements['div']
 
-export const TooltipContent = (props: TooltipContentProps) => {
+export const TooltipContent: JSX.Component<TooltipContentProps> = (props) => {
 	const api = useTooltipContext()
 	const presenceApi = usePresenceContext()
 	const mergedProps = mergeProps(

@@ -3,7 +3,7 @@ import { useComboboxContext } from './combobox-context'
 
 export type ComboboxInputProps = JSX.IntrinsicElements['input']
 
-export const ComboboxInput = (props: ComboboxInputProps) => {
+export const ComboboxInput: JSX.Component<ComboboxInputProps> = (props) => {
 	const combobox = useComboboxContext()
 	const mergedProps = mergeProps(props, () => combobox().inputProps)
 

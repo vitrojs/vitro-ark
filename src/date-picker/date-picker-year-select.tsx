@@ -1,10 +1,10 @@
-import { For } from 'vitro'
 import { mergeProps } from '@vitro/zag'
+import { For } from 'vitro'
 import { useDatePickerContext } from './date-picker-context'
 
 export type DatePickerYearSelectProps = JSX.IntrinsicElements['select']
 
-export const DatePickerYearSelect = (props: DatePickerYearSelectProps) => {
+export const DatePickerYearSelect: JSX.Component<DatePickerYearSelectProps> = (props) => {
 	const api = useDatePickerContext()
 	const mergedProps = mergeProps(props, () => api().yearSelectProps)
 

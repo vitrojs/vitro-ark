@@ -1,13 +1,13 @@
 import type { ItemProps, ItemState } from '@zag-js/rating-group'
 
+import type { Observify } from '@vitro/zag'
+import { mergeProps } from '@vitro/zag'
+import { deepEqual as equals } from 'fast-equals'
+import { $$, useMemo } from 'vitro'
 import type { Accessor, Assign } from '../types'
+import { applyChildren } from '../utils'
 import { useRatingGroupContext } from './rating-group-context'
 import { RatingGroupItemProvider } from './rating-group-item-context'
-import type { Observify } from '@vitro/zag'
-import { $$, useMemo } from 'vitro'
-import { mergeProps } from '@vitro/zag'
-import { applyChildren } from '../utils'
-import { deepEqual as equals } from 'fast-equals'
 export type RatingGroupItemProps = Assign<
 	JSX.IntrinsicElements['span'],
 	Observify<ItemProps> & {
@@ -15,12 +15,12 @@ export type RatingGroupItemProps = Assign<
 	}
 >
 
-export const RatingGroupItem = ({
+export const RatingGroupItem: JSX.Component<RatingGroupItemProps> = ({
 	index,
 
 	children,
 	...props
-}: RatingGroupItemProps) => {
+}) => {
 	const itemProps = () => ({ index: $$(index) })
 
 	const api = useRatingGroupContext()

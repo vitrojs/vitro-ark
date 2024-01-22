@@ -4,7 +4,9 @@ import { useSegmentGroupContext } from './segment-group-context'
 
 export type SegmentGroupLabelProps = JSX.IntrinsicElements['label']
 
-export const SegmentGroupLabel = (props: SegmentGroupLabelProps) => {
+export const SegmentGroupLabel: JSX.Component<SegmentGroupLabelProps> = (
+	props,
+) => {
 	const api = useSegmentGroupContext()
 	const mergedProps = mergeProps(props, () => api().labelProps)
 

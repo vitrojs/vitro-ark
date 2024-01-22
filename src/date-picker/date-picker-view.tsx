@@ -1,8 +1,8 @@
 import { datePickerAnatomy } from '@ark-ui/anatomy'
 import type { ViewProps } from '@zag-js/date-picker'
 
-import { $$, useMemo } from 'vitro'
 import type { Observify } from '@vitro/zag'
+import { $$, useMemo } from 'vitro'
 import type { Assign } from '../types'
 import { applyChildren } from '../utils'
 import { useDatePickerContext } from './date-picker-context'
@@ -16,12 +16,12 @@ export type DatePickerViewProps = Assign<
 	}
 >
 
-export const DatePickerView = ({
+export const DatePickerView: JSX.Component<DatePickerViewProps> = ({
 	view,
 	// ----
 	children,
 	...props
-}: DatePickerViewProps) => {
+}) => {
 	const viewProps = () => ({
 		view: $$(view),
 	})

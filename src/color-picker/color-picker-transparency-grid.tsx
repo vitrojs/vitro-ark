@@ -1,9 +1,9 @@
 import type { TransparencyGridProps } from '@zag-js/color-picker'
 
 import type { Observify } from '@vitro/zag'
+import { mergeProps } from '@vitro/zag'
 import { $$ } from 'vitro'
 import type { Assign } from '../types'
-import { mergeProps } from '@vitro/zag'
 import { useColorPickerContext } from './color-picker-context'
 
 export type ColorPickerTransparencyGridProps = Assign<
@@ -11,11 +11,11 @@ export type ColorPickerTransparencyGridProps = Assign<
 	Observify<TransparencyGridProps>
 >
 
-export const ColorPickerTransparencyGrid = ({
+export const ColorPickerTransparencyGrid: JSX.Component<ColorPickerTransparencyGridProps> = ({
 	size,
 	// ----
 	...props
-}: ColorPickerTransparencyGridProps) => {
+}) => {
 	const api = useColorPickerContext()
 	const mergedProps = mergeProps(props, () =>
 		api().getTransparencyGridProps({ size: $$(size) }),

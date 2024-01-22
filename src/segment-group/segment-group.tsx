@@ -1,8 +1,8 @@
 import { segmentGroupAnatomy } from '@ark-ui/anatomy'
 
 import type { Observify } from '@vitro/zag'
-import type { Assign } from '../types'
 import { mergeProps } from '@vitro/zag'
+import type { Assign } from '../types'
 import { SegmentGroupProvider } from './segment-group-context'
 import { useSegmentGroup, type UseSegmentGroupProps } from './use-segment-group'
 
@@ -11,7 +11,7 @@ export type SegmentGroupProps = Assign<
 	Observify<UseSegmentGroupProps>
 >
 
-export const SegmentGroup = ({
+export const SegmentGroup: JSX.Component<SegmentGroupProps> = ({
 	// ----
 	dir,
 	disabled,
@@ -26,7 +26,7 @@ export const SegmentGroup = ({
 	// ---
 
 	...props
-}: SegmentGroupProps) => {
+}) => {
 	const api = useSegmentGroup({
 		dir,
 		disabled,

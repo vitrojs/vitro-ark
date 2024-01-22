@@ -3,7 +3,7 @@ import { useSwitchContext } from './switch-context'
 
 export type SwitchControlProps = JSX.IntrinsicElements['span']
 
-export const SwitchControl = (props: SwitchControlProps) => {
+export const SwitchControl: JSX.Component<SwitchControlProps> = (props) => {
 	const api = useSwitchContext()
 	const mergedProps = mergeProps(props, () => api().controlProps)
 	const inputProps = mergeProps({}, () => api().hiddenInputProps)

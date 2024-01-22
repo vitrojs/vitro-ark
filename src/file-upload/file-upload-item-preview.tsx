@@ -15,17 +15,17 @@ export type FileUploadItemPreviewProps = Assign<
 	}
 >
 
-export const FileUploadItemPreview = ({
-	type,
-	...props
-}: FileUploadItemPreviewProps) => {
-	const api = useFileUploadContext()
-	const item = useFileUploadItemContext()
-	const mergedProps = mergeProps(props, () => api().getItemPreviewProps(item()))
+export const FileUploadItemPreview: JSX.Component<FileUploadItemPreviewProps> =
+	({ type, ...props }) => {
+		const api = useFileUploadContext()
+		const item = useFileUploadItemContext()
+		const mergedProps = mergeProps(props, () =>
+			api().getItemPreviewProps(item()),
+		)
 
-	return (
-		<If when={() => item().file.type.match(type ?? '.*')}>
-			<div {...mergedProps} />
-		</If>
-	)
-}
+		return (
+			<If when={() => item().file.type.match(type ?? '.*')}>
+				<div {...mergedProps} />
+			</If>
+		)
+	}

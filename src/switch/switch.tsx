@@ -1,6 +1,6 @@
 import type { Observify } from '@vitro/zag'
-import type { Assign } from '../types'
 import { mergeProps } from '@vitro/zag'
+import type { Assign } from '../types'
 import { applyChildren } from '../utils'
 import { SwitchProvider } from './switch-context'
 import {
@@ -16,7 +16,7 @@ export type SwitchProps = Assign<
 	}
 >
 
-export const Switch = ({
+export const Switch: JSX.Component<SwitchProps> = ({
 	checked,
 	dir,
 	disabled,
@@ -34,7 +34,7 @@ export const Switch = ({
 	// ----
 	children,
 	...props
-}: SwitchProps) => {
+}) => {
 	const switchProps = {
 		checked,
 		dir,

@@ -1,9 +1,9 @@
 import { connect } from '@zag-js/splitter'
 
-import { $$ } from 'vitro'
 import type { Observify } from '@vitro/zag'
-import type { Assign } from '../types'
 import { mergeProps } from '@vitro/zag'
+import { $$ } from 'vitro'
+import type { Assign } from '../types'
 import { useSplitterContext } from './splitter-context'
 
 type TriggerParams = Parameters<
@@ -15,24 +15,25 @@ export type SplitterResizeTriggerProps = Assign<
 	Observify<TriggerParams>
 >
 
-export const SplitterResizeTrigger = ({
-	// ----
-	disabled,
-	id,
-	step,
+export const SplitterResizeTrigger: JSX.Component<SplitterResizeTriggerProps> =
+	({
+		// ----
+		disabled,
+		id,
+		step,
 
-	...props
-}: SplitterResizeTriggerProps) => {
-	const api = useSplitterContext()
+		...props
+	}) => {
+		const api = useSplitterContext()
 
-	const triggerParams = () => ({
-		disabled: $$(disabled),
-		id: $$(id),
-		step: $$(step),
-	})
-	const mergedProps = mergeProps(props, () =>
-		api().getResizeTriggerProps(triggerParams()),
-	)
+		const triggerParams = () => ({
+			disabled: $$(disabled),
+			id: $$(id),
+			step: $$(step),
+		})
+		const mergedProps = mergeProps(props, () =>
+			api().getResizeTriggerProps(triggerParams()),
+		)
 
-	return <button {...mergedProps} />
-}
+		return <button {...mergedProps} />
+	}

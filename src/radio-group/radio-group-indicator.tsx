@@ -3,7 +3,9 @@ import { useRadioGroupContext } from './radio-group-context'
 
 export type RadioGroupIndicatorProps = JSX.IntrinsicElements['div']
 
-export const RadioGroupIndicator = (props: RadioGroupIndicatorProps) => {
+export const RadioGroupIndicator: JSX.Component<RadioGroupIndicatorProps> = (
+	props,
+) => {
 	const api = useRadioGroupContext()
 	const mergedProps = mergeProps(props, () => api().indicatorProps)
 

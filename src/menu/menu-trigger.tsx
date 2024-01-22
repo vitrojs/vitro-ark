@@ -1,10 +1,10 @@
-import { usePresenceContext } from '../presence'
 import { mergeProps } from '@vitro/zag'
+import { usePresenceContext } from '../presence'
 import { useMenuContext } from './menu-context'
 
 export type MenuTriggerProps = JSX.IntrinsicElements['button']
 
-export const MenuTrigger = (props: MenuTriggerProps) => {
+export const MenuTrigger: JSX.Component<MenuTriggerProps> = (props) => {
 	const api = useMenuContext()
 	const presenceApi = usePresenceContext()
 	const mergedProps = mergeProps(

@@ -1,13 +1,13 @@
 import type { Observify } from '@vitro/zag'
+import { mergeProps } from '@vitro/zag'
 import type { Assign } from '../types'
+import { applyChildren } from '../utils'
 import { NumberInputProvider } from './number-input-context'
 import {
 	useNumberInput,
 	type UseNumberInputProps,
 	type UseNumberInputReturn,
 } from './use-number-input'
-import { mergeProps } from '@vitro/zag'
-import { applyChildren } from '../utils'
 
 export type NumberInputProps = Assign<
 	JSX.IntrinsicElements['div'],
@@ -16,7 +16,7 @@ export type NumberInputProps = Assign<
 	}
 >
 
-export const NumberInput = ({
+export const NumberInput: JSX.Component<NumberInputProps> = ({
 	allowMouseWheel,
 	allowOverflow,
 	clampValueOnBlur,
@@ -47,7 +47,7 @@ export const NumberInput = ({
 	// ----
 	children,
 	...props
-}: NumberInputProps) => {
+}) => {
 	const api = useNumberInput({
 		allowMouseWheel,
 		allowOverflow,

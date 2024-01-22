@@ -1,6 +1,6 @@
 import type { Observify } from '@vitro/zag'
-import type { Assign } from '../types'
 import { mergeProps } from '@vitro/zag'
+import type { Assign } from '../types'
 import { applyChildren } from '../utils'
 import { EditableProvider } from './editable-context'
 import {
@@ -16,7 +16,7 @@ export type EditableProps = Assign<
 	}
 >
 
-export const Editable = ({
+export const Editable: JSX.Component<EditableProps> = ({
 	activationMode,
 	autoResize,
 	dir,
@@ -46,7 +46,7 @@ export const Editable = ({
 	// ----
 	children,
 	...props
-}: EditableProps) => {
+}) => {
 	const useEditableProps = {
 		activationMode,
 		autoResize,

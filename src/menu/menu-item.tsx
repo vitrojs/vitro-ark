@@ -1,9 +1,9 @@
 import type { ItemProps } from '@zag-js/menu'
 
 import type { Observify } from '@vitro/zag'
+import { mergeProps } from '@vitro/zag'
 import { $$ } from 'vitro'
 import type { Assign } from '../types'
-import { mergeProps } from '@vitro/zag'
 import { useMenuContext } from './menu-context'
 
 export type MenuItemProps = Assign<
@@ -11,14 +11,14 @@ export type MenuItemProps = Assign<
 	Observify<ItemProps>
 >
 
-export const MenuItem = ({
+export const MenuItem: JSX.Component<MenuItemProps> = ({
 	id,
 	disabled,
 	valueText,
 	closeOnSelect,
 	// ----
 	...props
-}: MenuItemProps) => {
+}) => {
 	const menu = useMenuContext()
 
 	const mergedProps = mergeProps(

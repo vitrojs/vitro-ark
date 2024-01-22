@@ -5,9 +5,9 @@ import {
 	type UsePresenceProps,
 } from '../presence'
 
+import { mergeProps } from '@vitro/zag'
 import { useMemo } from 'vitro'
 import type { Assign, CollectionItem } from '../types'
-import { mergeProps } from '@vitro/zag'
 import { applyChildren } from '../utils'
 import { SelectProvider } from './select-context'
 import {
@@ -23,7 +23,7 @@ export type SelectProps<T extends CollectionItem> = Assign<
 	}
 >
 
-export const Select = <T extends CollectionItem>({
+export const Select: JSX.Component<SelectProps<CollectionItem>> = ({
 	// ----
 	// Presence
 	lazyMount,
@@ -61,7 +61,7 @@ export const Select = <T extends CollectionItem>({
 	// ----
 	children,
 	...props
-}: SelectProps<T>) => {
+}) => {
 	const api = useSelect({
 		closeOnSelect,
 		dir,

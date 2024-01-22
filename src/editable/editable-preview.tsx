@@ -3,7 +3,7 @@ import { useEditableContext } from './editable-context'
 
 export type EditablePreviewProps = JSX.IntrinsicElements['span']
 
-export const EditablePreview = (props: EditablePreviewProps) => {
+export const EditablePreview: JSX.Component<EditablePreviewProps> = (props) => {
 	const api = useEditableContext()
 	const mergedProps = mergeProps(props, () => api().previewProps)
 

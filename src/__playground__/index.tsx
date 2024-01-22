@@ -66,6 +66,7 @@ const App = () => {
 													>
 														<Dialog.DialogCloseTrigger asChild>
 															<button
+
 																class={[
 																	dialogStyles.closeTrigger,
 																	button({ variant: 'outline' }),

@@ -1,23 +1,23 @@
 import type { AreaProps } from '@zag-js/color-picker'
 
+import type { Observify } from '@vitro/zag'
+import { mergeProps } from '@vitro/zag'
+import { $$ } from 'vitro'
 import type { Assign } from '../types'
 import { ColorPickerAreaProvider } from './color-picker-area-context'
 import { useColorPickerContext } from './color-picker-context'
-import type { Observify } from '@vitro/zag'
-import { $$ } from 'vitro'
-import { mergeProps } from '@vitro/zag'
 
 export type ColorPickerAreaProps = Assign<
 	JSX.IntrinsicElements['div'],
 	Observify<AreaProps>
 >
 
-export const ColorPickerArea = ({
+export const ColorPickerArea: JSX.Component<ColorPickerAreaProps> = ({
 	challenge,
 	yChannel,
 	// ----
 	...props
-}: ColorPickerAreaProps) => {
+}) => {
 	const channelProps = () => ({
 		challenge: $$(challenge),
 		yChannel: $$(yChannel),

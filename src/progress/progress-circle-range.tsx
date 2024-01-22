@@ -3,7 +3,7 @@ import { useProgressContext } from './progress-context'
 
 export type ProgressCircleRangeProps = JSX.IntrinsicElements['circle']
 
-export const ProgressCircleRange = (props: ProgressCircleRangeProps) => {
+export const ProgressCircleRange: JSX.Component<ProgressCircleRangeProps> = (props) => {
 	const api = useProgressContext()
 	const mergedProps = mergeProps(() => api().circleRangeProps, props)
 

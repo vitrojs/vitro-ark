@@ -5,9 +5,9 @@ import {
 } from '../presence'
 
 import type { Observify } from '@vitro/zag'
+import { mergeProps } from '@vitro/zag'
 import { useMemo } from 'vitro'
 import type { Assign, CollectionItem } from '../types'
-import { mergeProps } from '@vitro/zag'
 import { applyChildren } from '../utils'
 import { ComboboxProvider } from './combobox-context'
 import {
@@ -23,7 +23,7 @@ export type ComboboxProps<T extends CollectionItem> = Assign<
 	}
 >
 
-export const Combobox = <T extends CollectionItem>({
+export const Combobox: JSX.Component<ComboboxProps<CollectionItem>> = ({
 	lazyMount,
 	onExitComplete,
 	present,
@@ -68,7 +68,7 @@ export const Combobox = <T extends CollectionItem>({
 	// ----------
 	children,
 	...props
-}: ComboboxProps<T>) => {
+}) => {
 	const api = useCombobox({
 		allowCustomValue,
 		autoFocus,

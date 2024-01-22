@@ -1,23 +1,23 @@
 import type { ItemProps } from '@zag-js/file-upload'
 
+import type { Observify } from '@vitro/zag'
+import { mergeProps } from '@vitro/zag'
+import { $$ } from 'vitro'
 import type { Assign } from '../types'
 import { useFileUploadContext } from './file-upload-context'
 import { FileUploadItemProvider } from './file-upload-item-context'
-import type { Observify } from '@vitro/zag'
-import { $$ } from 'vitro'
-import { mergeProps } from '@vitro/zag'
 
 export type FileUploadItemProps = Assign<
 	JSX.IntrinsicElements['li'],
 	Observify<ItemProps>
 >
 
-export const FileUploadItem = ({
+export const FileUploadItem: JSX.Component<FileUploadItemProps> = ({
 	file,
 	// ----
 	children,
 	...props
-}: FileUploadItemProps) => {
+}) => {
 	const api = useFileUploadContext()
 
 	const itemProps = () => ({

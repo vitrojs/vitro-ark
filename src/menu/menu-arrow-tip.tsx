@@ -3,7 +3,7 @@ import { useMenuContext } from './menu-context'
 
 export type MenuArrowTipProps = JSX.IntrinsicElements['div']
 
-export const MenuArrowTip = (props: MenuArrowTipProps) => {
+export const MenuArrowTip: JSX.Component<MenuArrowTipProps> = (props) => {
 	const menu = useMenuContext()
 	const mergedProps = mergeProps(props, () => menu?.().arrowTipProps)
 

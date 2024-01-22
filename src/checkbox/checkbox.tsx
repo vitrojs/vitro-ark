@@ -14,7 +14,7 @@ export type CheckboxProps = UseCheckboxProps & {
 	children?: JSX.Element | ((api: UseCheckboxReturn) => JSX.Element)
 }
 
-export const Checkbox = ({
+export const Checkbox: JSX.Component<CheckboxProps> = ({
 	children,
 	checked,
 	dir,
@@ -30,7 +30,7 @@ export const Checkbox = ({
 	value,
 
 	...props
-}: CheckboxProps) => {
+}) => {
 	const api = useCheckbox({
 		checked,
 		dir,

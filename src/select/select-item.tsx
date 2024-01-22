@@ -1,9 +1,9 @@
+import type { Observify } from '@vitro/zag'
+import { mergeProps } from '@vitro/zag'
 import type { ItemProps, ItemState } from '@zag-js/select'
 import { deepEqual as equals } from 'fast-equals'
 import { $$, useMemo } from 'vitro'
-import type { Observify } from '@vitro/zag'
 import type { Accessor, Assign } from '../types'
-import { mergeProps } from '@vitro/zag'
 import { applyChildren } from '../utils'
 import { useSelectContext } from './select-context'
 import { SelectItemProvider } from './select-item-context'
@@ -15,12 +15,12 @@ export type SelectItemProps = Assign<
 	}
 >
 
-export const SelectItem = ({
+export const SelectItem: JSX.Component<SelectItemProps> = ({
 	item,
 
 	children,
 	...props
-}: SelectItemProps) => {
+}) => {
 	const itemProps = () => ({ item: $$(item) })
 
 	const api = useSelectContext()

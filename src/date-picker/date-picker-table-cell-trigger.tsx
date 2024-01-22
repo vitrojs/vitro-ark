@@ -5,9 +5,9 @@ import { useDatePickerViewContext } from './date-picker-view-context'
 
 export type DatePickerTableCellTriggerProps = JSX.IntrinsicElements['button']
 
-export const DatePickerTableCellTrigger = (
-	props: DatePickerTableCellTriggerProps,
-) => {
+export const DatePickerTableCellTrigger: JSX.Component<
+	DatePickerTableCellTriggerProps
+> = (props) => {
 	const api = useDatePickerContext()
 	const cellProps = useDatePickerTableCellContext()
 	const viewProps = useDatePickerViewContext()

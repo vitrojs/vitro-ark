@@ -3,7 +3,9 @@ import { usePopoverContext } from './popover-context'
 
 export type PopoverIndicatorProps = JSX.IntrinsicElements['div']
 
-export const PopoverIndicator = (props: PopoverIndicatorProps) => {
+export const PopoverIndicator: JSX.Component<PopoverIndicatorProps> = (
+	props,
+) => {
 	const popover = usePopoverContext()
 	const mergedProps = mergeProps(props, () => popover().indicatorProps)
 

@@ -3,7 +3,7 @@ import { usePopoverContext } from './popover-context'
 
 export type PopoverTitleProps = JSX.IntrinsicElements['div']
 
-export const PopoverTitle = (props: PopoverTitleProps) => {
+export const PopoverTitle: JSX.Component<PopoverTitleProps> = (props) => {
 	const api = usePopoverContext()
 	const mergedProps = mergeProps(props, () => api().titleProps)
 

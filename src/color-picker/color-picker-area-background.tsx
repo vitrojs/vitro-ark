@@ -4,9 +4,9 @@ import { useColorPickerContext } from './color-picker-context'
 
 export type ColorPickerAreaBackgroundProps = JSX.IntrinsicElements['div']
 
-export const ColorPickerAreaBackground = (
-	props: ColorPickerAreaBackgroundProps,
-) => {
+export const ColorPickerAreaBackground: JSX.Component<
+	ColorPickerAreaBackgroundProps
+> = (props) => {
 	const colorAreaProps = useColorPickerAreaContext()
 	const api = useColorPickerContext()
 	const mergedProps = mergeProps(props, () =>

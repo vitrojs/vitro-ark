@@ -1,11 +1,11 @@
+import { mergeProps } from '@vitro/zag'
 import { If } from 'vitro'
 import { usePresenceContext } from '../presence'
-import { mergeProps } from '@vitro/zag'
 import { useComboboxContext } from './combobox-context'
 
 export type ComboboxContentProps = JSX.IntrinsicElements['div']
 
-export const ComboboxContent = (props: ComboboxContentProps) => {
+export const ComboboxContent: JSX.Component<ComboboxContentProps> = (props) => {
 	const api = useComboboxContext()
 	const presenceApi = usePresenceContext()
 

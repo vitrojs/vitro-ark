@@ -5,16 +5,16 @@ import {
 	type UsePresenceProps,
 } from '../presence'
 
+import { mergeProps } from '@vitro/zag'
+import { useMemo } from 'vitro'
 import { type Assign } from '../types'
+import { applyChildren } from '../utils'
 import { ColorPickerProvider } from './color-picker-context'
 import {
 	useColorPicker,
 	type UseColorPickerProps,
 	type UseColorPickerReturn,
 } from './use-color-picker'
-import { useMemo } from 'vitro'
-import { mergeProps } from '@vitro/zag'
-import { applyChildren } from '../utils'
 
 export type ColorPickerProps = Assign<
 	JSX.IntrinsicElements['div'],
@@ -23,7 +23,7 @@ export type ColorPickerProps = Assign<
 	}
 >
 
-export const ColorPicker = ({
+export const ColorPicker: JSX.Component<ColorPickerProps> = ({
 	// ----
 	lazyMount,
 	onExitComplete,
@@ -55,7 +55,7 @@ export const ColorPicker = ({
 	// ----
 	children,
 	...props
-}: ColorPickerProps) => {
+}) => {
 	const api = useColorPicker({
 		closeOnSelect,
 		dir,

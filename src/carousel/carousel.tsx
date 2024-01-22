@@ -1,6 +1,6 @@
 import type { Observify } from '@vitro/zag'
-import type { Assign } from '../types'
 import { mergeProps } from '@vitro/zag'
+import type { Assign } from '../types'
 import { applyChildren } from '../utils'
 import { CarouselProvider } from './carousel-context'
 import {
@@ -16,7 +16,7 @@ export type CarouselProps = Assign<
 	}
 >
 
-export const Carousel = ({
+export const Carousel: JSX.Component<CarouselProps> = ({
 	align,
 	dir,
 	getRootNode,
@@ -32,7 +32,7 @@ export const Carousel = ({
 	// ----
 	children,
 	...props
-}: CarouselProps) => {
+}) => {
 	const api = useCarousel({
 		align,
 		dir,

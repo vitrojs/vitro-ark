@@ -1,21 +1,21 @@
 import type { Observify } from '@vitro/zag'
+import { mergeProps } from '@vitro/zag'
+import { deepEqual as equals } from 'fast-equals'
+import { $$, useMemo } from 'vitro'
+import { Assign } from '../types'
 import { useDatePickerContext } from './date-picker-context'
 import {
 	DatePickerTableCellProvider,
 	type DatePickerTableCellContext,
 } from './date-picker-table-cell-context'
 import { useDatePickerViewContext } from './date-picker-view-context'
-import { mergeProps } from '@vitro/zag'
-import { $$, useMemo } from 'vitro'
-import { deepEqual as equals } from 'fast-equals'
-import { Assign } from '../types'
 
 export type DatePickerTableCellProps = Assign<
 	JSX.IntrinsicElements['div'],
 	Observify<DatePickerTableCellContext>
 >
 
-export const DatePickerTableCell = ({
+export const DatePickerTableCell: JSX.Component<DatePickerTableCellProps> = ({
 	disabled,
 	value,
 	visibleRange,
@@ -23,7 +23,7 @@ export const DatePickerTableCell = ({
 
 	// ----
 	...props
-}: DatePickerTableCellProps) => {
+}) => {
 	const api = useDatePickerContext()
 	const viewProps = useDatePickerViewContext()
 

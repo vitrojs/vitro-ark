@@ -5,9 +5,9 @@ import {
 	type UsePresenceProps,
 } from '../presence'
 
+import { mergeProps } from '@vitro/zag'
 import { useMemo } from 'vitro'
 import type { Assign } from '../types'
-import { mergeProps } from '@vitro/zag'
 import { applyChildren } from '../utils'
 import { DatePickerProvider } from './date-picker-context'
 import {
@@ -23,7 +23,7 @@ export type DatePickerProps = Assign<
 	}
 >
 
-export const DatePicker = ({
+export const DatePicker: JSX.Component<DatePickerProps> = ({
 	lazyMount,
 	onExitComplete,
 	present,
@@ -62,7 +62,7 @@ export const DatePicker = ({
 	// ----
 	children,
 	...props
-}: DatePickerProps) => {
+}) => {
 	const api = useDatePicker({
 		closeOnSelect,
 		dir,

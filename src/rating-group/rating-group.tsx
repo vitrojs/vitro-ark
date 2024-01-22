@@ -1,15 +1,15 @@
 import type { Observify } from '@vitro/zag'
+import { mergeProps } from '@vitro/zag'
 import type { Assign } from '../types'
 import { RatingGroupProvider } from './rating-group-context'
 import { useRatingGroup, type UseRatingGroupProps } from './use-rating-group'
-import { mergeProps } from '@vitro/zag'
 
 export type RatingGroupProps = Assign<
 	JSX.IntrinsicElements['div'],
 	Observify<UseRatingGroupProps>
 >
 
-export const RatingGroup = ({
+export const RatingGroup: JSX.Component<RatingGroupProps> = ({
 	// ----
 	allowHalf,
 	autoFocus,
@@ -28,7 +28,7 @@ export const RatingGroup = ({
 	value,
 	// ----
 	...props
-}: RatingGroupProps) => {
+}) => {
 	const api = useRatingGroup({
 		allowHalf,
 		autoFocus,

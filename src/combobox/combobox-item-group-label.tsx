@@ -1,8 +1,8 @@
 import type { Observify } from '@vitro/zag'
-import type { Assign } from '../types'
 import { mergeProps } from '@vitro/zag'
-import { useComboboxContext } from './combobox-context'
 import { $$ } from 'vitro'
+import type { Assign } from '../types'
+import { useComboboxContext } from './combobox-context'
 
 interface ItemGroupLabelProps {
 	for: string
@@ -13,10 +13,9 @@ export type ComboboxItemGroupLabelProps = Assign<
 	Observify<ItemGroupLabelProps>
 >
 
-export const ComboboxItemGroupLabel = ({
-	for: _for,
-	...props
-}: ComboboxItemGroupLabelProps) => {
+export const ComboboxItemGroupLabel: JSX.Component<
+	ComboboxItemGroupLabelProps
+> = ({ for: _for, ...props }) => {
 	const labelProps = () => ({ for: $$(_for) })
 
 	const api = useComboboxContext()

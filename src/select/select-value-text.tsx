@@ -1,8 +1,8 @@
 import { selectAnatomy } from '@ark-ui/anatomy'
 
 import { $$, FunctionMaybe, useMemo } from 'vitro'
-import { useSelectContext } from './select-context'
 import { Assign } from '../types'
+import { useSelectContext } from './select-context'
 
 export type SelectValueTextProps = Assign<
 	JSX.IntrinsicElements['span'],
@@ -11,10 +11,10 @@ export type SelectValueTextProps = Assign<
 	}
 >
 
-export const SelectValueText = ({
+export const SelectValueText: JSX.Component<SelectValueTextProps> = ({
 	placeholder,
 	...props
-}: SelectValueTextProps) => {
+}) => {
 	const api = useSelectContext()
 	const children = useMemo(() => api().valueAsString || $$(placeholder))
 	return (

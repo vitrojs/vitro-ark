@@ -6,9 +6,9 @@ import { useSegmentGroupItemContext } from './segment-group-item-context'
 
 export type SegmentGroupItemControlProps = JSX.IntrinsicElements['div']
 
-export const SegmentGroupItemControl = (
-	props: SegmentGroupItemControlProps,
-) => {
+export const SegmentGroupItemControl: JSX.Component<
+	SegmentGroupItemControlProps
+> = (props) => {
 	const api = useSegmentGroupContext()
 	const getItemProps = useSegmentGroupItemContext()
 	const mergedProps = mergeProps(props, () =>

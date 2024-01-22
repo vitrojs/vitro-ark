@@ -3,7 +3,9 @@ import { useDialogContext } from './dialog-context'
 
 export type DialogCloseTriggerProps = JSX.IntrinsicElements['button']
 
-export const DialogCloseTrigger = (props: DialogCloseTriggerProps) => {
+export const DialogCloseTrigger: JSX.Component<DialogCloseTriggerProps> = (
+	props,
+) => {
 	const dialog = useDialogContext()
 	const mergedProps = mergeProps(props, () => dialog().closeTriggerProps)
 

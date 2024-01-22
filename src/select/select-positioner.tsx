@@ -4,7 +4,9 @@ import { useSelectContext } from './select-context'
 
 export type SelectPositionerProps = JSX.IntrinsicElements['div']
 
-export const SelectPositioner = (props: SelectPositionerProps) => {
+export const SelectPositioner: JSX.Component<SelectPositionerProps> = (
+	props,
+) => {
 	const api = useSelectContext()
 	const presenceApi = usePresenceContext()
 	const mergedProps = Object.assign(() => api().positionerProps, props)

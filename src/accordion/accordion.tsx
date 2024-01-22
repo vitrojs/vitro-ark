@@ -1,8 +1,8 @@
 import type { Observify } from '@vitro/zag'
 
+import { mergeProps } from '@vitro/zag'
 import { PresencePropsProvider, type UsePresenceProps } from '../presence'
 import type { Assign } from '../types'
-import { mergeProps } from '@vitro/zag'
 import { AccordionProvider } from './accordion-context'
 import { useAccordion, type UseAccordionProps } from './use-accordion'
 
@@ -11,7 +11,7 @@ export type AccordionProps = Assign<
 	Observify<UseAccordionProps & UsePresenceProps>
 >
 
-export const Accordion = ({
+export const Accordion: JSX.Component<AccordionProps> = ({
 	// -----
 	lazyMount,
 	onExitComplete,
@@ -31,7 +31,7 @@ export const Accordion = ({
 	value,
 	// -----
 	...props
-}: AccordionProps) => {
+}) => {
 	const presenceProps = { lazyMount, onExitComplete, present, unmountOnExit }
 
 	const accordionProps = {

@@ -1,7 +1,7 @@
 import type { Observify } from '@vitro/zag'
+import { mergeProps } from '@vitro/zag'
 import { PresencePropsProvider, type UsePresenceProps } from '../presence'
 import type { Assign } from '../types'
-import { mergeProps } from '@vitro/zag'
 import { TabsProvider } from './tabs-context'
 import { useTabs, type UseTabsProps } from './use-tabs'
 
@@ -10,7 +10,7 @@ export type TabsProps = Assign<
 	Observify<UseTabsProps & UsePresenceProps>
 >
 
-export const Tabs = ({
+export const Tabs: JSX.Component<TabsProps> = ({
 	// ----
 	lazyMount,
 	onExitComplete,
@@ -31,7 +31,7 @@ export const Tabs = ({
 	// ----
 
 	...props
-}: TabsProps) => {
+}) => {
 	const api = useTabs({
 		activationMode,
 		dir,

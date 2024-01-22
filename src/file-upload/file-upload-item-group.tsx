@@ -1,7 +1,7 @@
+import { mergeProps } from '@vitro/zag'
 import { ObservableReadonly } from 'oby'
 import { useMemo } from 'vitro'
 import type { Assign } from '../types'
-import { mergeProps } from '@vitro/zag'
 import { applyChildren } from '../utils'
 import { useFileUploadContext } from './file-upload-context'
 export type FileUploadItemGroupProps = Assign<
@@ -13,10 +13,10 @@ export type FileUploadItemGroupProps = Assign<
 	}
 >
 
-export const FileUploadItemGroup = ({
+export const FileUploadItemGroup: JSX.Component<FileUploadItemGroupProps> = ({
 	children,
 	...props
-}: FileUploadItemGroupProps) => {
+}) => {
 	const api = useFileUploadContext()
 	const mergedProps = mergeProps(props, () => api().itemGroupProps)
 	const files = useMemo(() => api().files)

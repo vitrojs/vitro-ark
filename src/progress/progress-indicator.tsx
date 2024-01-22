@@ -1,9 +1,8 @@
 import type { IndicatorProps } from '@zag-js/progress'
 
-import { Observify } from '@vitro/zag'
+import { Observify, mergeProps } from '@vitro/zag'
 import { $$ } from 'vitro'
 import type { Assign } from '../types'
-import { mergeProps } from '@vitro/zag'
 import { useProgressContext } from './progress-context'
 
 export type ProgressIndicatorProps = Assign<
@@ -11,10 +10,10 @@ export type ProgressIndicatorProps = Assign<
 	Observify<IndicatorProps>
 >
 
-export const ProgressIndicator = ({
+export const ProgressIndicator: JSX.Component<ProgressIndicatorProps> = ({
 	state,
 	...props
-}: ProgressIndicatorProps) => {
+}) => {
 	const api = useProgressContext()
 	const mergedProps = mergeProps(props, () =>
 		api().getIndicatorProps({ state: $$(state) }),

@@ -3,9 +3,9 @@ import { useColorPickerContext } from './color-picker-context'
 
 export type ColorPickerFormatTriggerProps = JSX.IntrinsicElements['button']
 
-export const ColorPickerFormatTrigger = (
-	props: ColorPickerFormatTriggerProps,
-) => {
+export const ColorPickerFormatTrigger: JSX.Component<
+	ColorPickerFormatTriggerProps
+> = (props) => {
 	const api = useColorPickerContext()
 	const mergedProps = mergeProps(props, () => api().formatTriggerProps)
 

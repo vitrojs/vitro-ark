@@ -4,7 +4,9 @@ import { useSelectItemContext } from './select-item-context'
 
 export type SelectItemIndicatorProps = JSX.IntrinsicElements['div']
 
-export const SelectItemIndicator = (props: SelectItemIndicatorProps) => {
+export const SelectItemIndicator: JSX.Component<SelectItemIndicatorProps> = (
+	props,
+) => {
 	const api = useSelectContext()
 	const itemProps = useSelectItemContext()
 	const mergedProps = mergeProps(props, () =>

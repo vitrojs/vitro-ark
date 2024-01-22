@@ -1,9 +1,9 @@
 import type { Observify } from '@vitro/zag'
+import { mergeProps } from '@vitro/zag'
 import type { OptionItemProps, OptionItemState } from '@zag-js/menu'
 import { deepEqual as equals } from 'fast-equals'
 import { $$, useMemo } from 'vitro'
 import type { Accessor, Assign } from '../types'
-import { mergeProps } from '@vitro/zag'
 import { applyChildren } from '../utils'
 import { useMenuContext } from './menu-context'
 
@@ -14,7 +14,7 @@ export type MenuOptionItemProps = Assign<
 	}
 >
 
-export const MenuOptionItem = ({
+export const MenuOptionItem: JSX.Component<MenuOptionItemProps> = ({
 	id,
 	disabled,
 	valueText,
@@ -27,7 +27,7 @@ export const MenuOptionItem = ({
 	// ----
 	children,
 	...props
-}: MenuOptionItemProps) => {
+}) => {
 	const menu = useMenuContext()
 	const optionProps = () => ({
 		id: $$(id),

@@ -1,6 +1,6 @@
 import type { Observify } from '@vitro/zag'
-import type { Assign } from '../types'
 import { mergeProps } from '@vitro/zag'
+import type { Assign } from '../types'
 import { applyChildren } from '../utils'
 import { FileUploadProvider } from './file-upload-context'
 import {
@@ -16,7 +16,7 @@ export type FileUploadProps = Assign<
 	}
 >
 
-export const FileUpload = ({
+export const FileUpload: JSX.Component<FileUploadProps> = ({
 	// ----
 	accept,
 	allowDrop,
@@ -39,7 +39,7 @@ export const FileUpload = ({
 	// ----
 	children,
 	...props
-}: FileUploadProps) => {
+}) => {
 	const api = useFileUpload({
 		accept,
 		allowDrop,

@@ -23,7 +23,7 @@ export type MenuProps = Observify<UseMenuProps & UsePresenceProps> & {
 	children?: JSX.Element | ((api: Accessor<menu.Api<PropTypes>>) => JSX.Element)
 }
 
-export const Menu = ({
+export const Menu: JSX.Component<MenuProps> = ({
 	lazyMount,
 	onExitComplete,
 	// present,
@@ -51,7 +51,7 @@ export const Menu = ({
 	// ----
 	children,
 	// ...props
-}: MenuProps) => {
+}) => {
 	const parentMenu = useMenuContext()
 	const parentMachine = useMenuMachineContext()
 	const menu = useMenu({

@@ -3,7 +3,7 @@ import { useComboboxContext } from './combobox-context'
 
 export type ComboboxLabelProps = JSX.IntrinsicElements['label']
 
-export const ComboboxLabel = (props: ComboboxLabelProps) => {
+export const ComboboxLabel: JSX.Component<ComboboxLabelProps> = (props) => {
 	const combobox = useComboboxContext()
 	const mergedProps = mergeProps(props, () => combobox().labelProps)
 

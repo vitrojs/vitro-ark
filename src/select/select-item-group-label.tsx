@@ -1,7 +1,7 @@
 import type { Observify } from '@vitro/zag'
+import { mergeProps } from '@vitro/zag'
 import { $$ } from 'vitro'
 import type { Assign } from '../types'
-import { mergeProps } from '@vitro/zag'
 import { useSelectContext } from './select-context'
 
 interface ItemGroupLabelProps {
@@ -13,10 +13,10 @@ export type SelectItemGroupLabelProps = Assign<
 	Observify<ItemGroupLabelProps>
 >
 
-export const SelectItemGroupLabel = ({
+export const SelectItemGroupLabel: JSX.Component<SelectItemGroupLabelProps> = ({
 	for: _for,
 	...props
-}: SelectItemGroupLabelProps) => {
+}) => {
 	const api = useSelectContext()
 	const mergedProps = mergeProps(props, () =>
 		api().getItemGroupLabelProps({ htmlFor: $$(_for) }),

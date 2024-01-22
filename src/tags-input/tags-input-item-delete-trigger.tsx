@@ -4,9 +4,9 @@ import { useTagsInputItemContext } from './tags-input-item-context'
 
 export type TagsInputItemDeleteTriggerProps = JSX.IntrinsicElements['button']
 
-export const TagsInputItemDeleteTrigger = (
-	props: TagsInputItemDeleteTriggerProps,
-) => {
+export const TagsInputItemDeleteTrigger: JSX.Component<
+	TagsInputItemDeleteTriggerProps
+> = (props) => {
 	const api = useTagsInputContext()
 	const itemProps = useTagsInputItemContext()
 	const mergedProps = mergeProps(props, () =>

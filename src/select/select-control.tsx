@@ -1,10 +1,10 @@
-import { For, useMemo } from 'vitro'
 import { mergeProps } from '@vitro/zag'
-import { useSelectContext } from './select-context'
 import { shallowEqual as equals } from 'fast-equals'
+import { For, useMemo } from 'vitro'
+import { useSelectContext } from './select-context'
 export type SelectControlProps = JSX.IntrinsicElements['div']
 
-export const SelectControl = (props: SelectControlProps) => {
+export const SelectControl: JSX.Component<SelectControlProps> = (props) => {
 	const api = useSelectContext()
 	const mergedProps = mergeProps(props, () => api().controlProps)
 

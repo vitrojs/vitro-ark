@@ -1,12 +1,12 @@
 import { segmentGroupAnatomy } from '@ark-ui/anatomy'
 import type { ItemState } from '@zag-js/radio-group'
 
-import { deepEqual as equals } from 'fast-equals'
 import type { Observify } from '@vitro/zag'
+import { mergeProps, toRecord } from '@vitro/zag'
+import { deepEqual as equals } from 'fast-equals'
 import { ObservableReadonly, useMemo } from 'vitro'
 import type { Assign } from '../types'
 import { applyChildren } from '../utils'
-import { toRecord, mergeProps } from '@vitro/zag'
 import { useSegmentGroupContext } from './segment-group-context'
 import {
 	SegmentGroupItemProvider,
@@ -21,7 +21,7 @@ export type SegmentGroupItemProps = Assign<
 	}
 >
 
-export const SegmentGroupItem = ({
+export const SegmentGroupItem: JSX.Component<SegmentGroupItemProps> = ({
 	// ----
 	value,
 	disabled,
@@ -29,7 +29,7 @@ export const SegmentGroupItem = ({
 	// ----
 	children,
 	...props
-}: SegmentGroupItemProps) => {
+}) => {
 	const itemProps = () => toRecord({ value, disabled, invalid })
 
 	const api = useSegmentGroupContext()

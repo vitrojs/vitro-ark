@@ -4,12 +4,13 @@ import { useDatePickerViewContext } from './date-picker-view-context'
 
 export type DatePickerPrevTriggerProps = JSX.IntrinsicElements['button']
 
-export const DatePickerPrevTrigger = (props: DatePickerPrevTriggerProps) => {
-	const api = useDatePickerContext()
-	const viewProps = useDatePickerViewContext()
-	const mergedProps = mergeProps(props, () =>
-		api().getPrevTriggerProps(viewProps()),
-	)
+export const DatePickerPrevTrigger: JSX.Component<DatePickerPrevTriggerProps> =
+	(props) => {
+		const api = useDatePickerContext()
+		const viewProps = useDatePickerViewContext()
+		const mergedProps = mergeProps(props, () =>
+			api().getPrevTriggerProps(viewProps()),
+		)
 
-	return <button {...mergedProps} />
-}
+		return <button {...mergedProps} />
+	}

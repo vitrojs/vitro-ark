@@ -1,6 +1,6 @@
 import type { Observify } from '@vitro/zag'
-import type { Assign } from '../types'
 import { mergeProps } from '@vitro/zag'
+import type { Assign } from '../types'
 import { applyChildren } from '../utils'
 import { SliderProvider } from './slider-context'
 import {
@@ -16,7 +16,7 @@ export type SliderProps = Assign<
 	}
 >
 
-export const Slider = ({
+export const Slider: JSX.Component<SliderProps> = ({
 	'aria-label': ariaLabel,
 	'aria-labelledby': ariaLabelledby,
 	dir,
@@ -44,7 +44,7 @@ export const Slider = ({
 	// ----
 	children,
 	...props
-}: SliderProps) => {
+}) => {
 	const sliderParams = {
 		'aria-label': ariaLabel,
 		'aria-labelledby': ariaLabelledby,

@@ -1,8 +1,8 @@
-import type { MarkerProps } from '@zag-js/slider'
 import type { Observify } from '@vitro/zag'
+import { mergeProps } from '@vitro/zag'
+import type { MarkerProps } from '@zag-js/slider'
 import { $$ } from 'vitro'
 import type { Assign } from '../types'
-import { mergeProps } from '@vitro/zag'
 import { useSliderContext } from './slider-context'
 
 export type SliderMarkerProps = Assign<
@@ -10,7 +10,10 @@ export type SliderMarkerProps = Assign<
 	Observify<MarkerProps>
 >
 
-export const SliderMarker = ({ value, ...props }: SliderMarkerProps) => {
+export const SliderMarker: JSX.Component<SliderMarkerProps> = ({
+	value,
+	...props
+}) => {
 	const api = useSliderContext()
 
 	const mergedProps = mergeProps(props, () =>

@@ -1,13 +1,12 @@
-import { Observify } from '@vitro/zag'
+import { Observify, mergeProps } from '@vitro/zag'
 import { type Assign } from '../types'
+import { applyChildren } from '../utils'
 import { ProgressProvider } from './progress-context'
 import {
 	useProgress,
 	type UseProgressProps,
 	type UseProgressReturn,
 } from './use-progress'
-import { mergeProps } from '@vitro/zag'
-import { applyChildren } from '../utils'
 
 export type ProgressProps = Assign<
 	Assign<
@@ -19,7 +18,7 @@ export type ProgressProps = Assign<
 	UseProgressProps
 >
 
-export const Progress = ({
+export const Progress: JSX.Component<ProgressProps> = ({
 	dir,
 	getRootNode,
 	id,
@@ -30,7 +29,7 @@ export const Progress = ({
 	value,
 	children,
 	...props
-}: ProgressProps) => {
+}) => {
 	const api = useProgress({
 		dir,
 		getRootNode,

@@ -3,7 +3,7 @@ import { useTabsContext } from './tabs-context'
 
 export type TabIndicatorProps = JSX.IntrinsicElements['div']
 
-export const TabIndicator = (props: TabIndicatorProps) => {
+export const TabIndicator: JSX.Component<TabIndicatorProps> = (props) => {
 	const api = useTabsContext()
 	const mergedProps = mergeProps(props, () => api().indicatorProps)
 

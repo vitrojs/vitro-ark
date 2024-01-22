@@ -1,11 +1,11 @@
-import { For, useMemo } from 'vitro'
 import { mergeProps } from '@vitro/zag'
-import { useDatePickerContext } from './date-picker-context'
 import { deepEqual as equals } from 'fast-equals'
+import { For, useMemo } from 'vitro'
+import { useDatePickerContext } from './date-picker-context'
 
 export type DatePickerMonthSelectProps = JSX.IntrinsicElements['select']
 
-export const DatePickerMonthSelect = (props: DatePickerMonthSelectProps) => {
+export const DatePickerMonthSelect: JSX.Component<DatePickerMonthSelectProps> = (props) => {
 	const api = useDatePickerContext()
 	const mergedProps = mergeProps(props, () => api().monthSelectProps)
 

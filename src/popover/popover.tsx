@@ -6,19 +6,19 @@ import {
 } from '../presence'
 import { applyChildren } from '../utils'
 
+import type { Observify } from '@vitro/zag'
 import { PopoverProvider } from './popover-context'
 import {
 	usePopover,
 	type UsePopoverProps,
 	type UsePopoverReturn,
 } from './use-popover'
-import type { Observify } from '@vitro/zag'
 
 export type PopoverProps = Observify<UsePopoverProps & UsePresenceProps> & {
 	children?: JSX.Element | ((api: UsePopoverReturn) => JSX.Element)
 }
 
-export const Popover = ({
+export const Popover: JSX.Component<PopoverProps> = ({
 	lazyMount,
 	onExitComplete,
 	// present,
@@ -43,7 +43,7 @@ export const Popover = ({
 	positioning,
 	// ----
 	children,
-}: PopoverProps) => {
+}) => {
 	const usePopoverProps = {
 		autoFocus,
 		closeOnEsc,

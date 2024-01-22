@@ -1,6 +1,6 @@
 import type { Observify } from '@vitro/zag'
-import type { Assign } from '../types'
 import { mergeProps } from '@vitro/zag'
+import type { Assign } from '../types'
 import { applyChildren } from '../utils'
 import { SplitterProvider } from './splitter-context'
 import {
@@ -16,7 +16,7 @@ export type SplitterProps = Assign<
 	}
 >
 
-export const Splitter = ({
+export const Splitter: JSX.Component<SplitterProps> = ({
 	// ----
 	dir,
 	getRootNode,
@@ -29,7 +29,7 @@ export const Splitter = ({
 	size,
 	children,
 	...props
-}: SplitterProps) => {
+}) => {
 	const api = useSplitter({
 		dir,
 		getRootNode,

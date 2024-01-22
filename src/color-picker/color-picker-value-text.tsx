@@ -8,10 +8,10 @@ export type ColorPickerValueTextProps = JSX.IntrinsicElements['span'] &
 		placeholder?: string
 	}>
 
-export const ColorPickerValueText = ({
+export const ColorPickerValueText: JSX.Component<ColorPickerValueTextProps> = ({
 	children,
 	...props
-}: ColorPickerValueTextProps) => {
+}) => {
 	const api = useColorPickerContext()
 	const mergedProps = mergeProps(
 		props,

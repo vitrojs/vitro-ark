@@ -1,8 +1,8 @@
-import type { ItemProps } from '@zag-js/carousel'
 import type { Observify } from '@vitro/zag'
+import { mergeProps } from '@vitro/zag'
+import type { ItemProps } from '@zag-js/carousel'
 import { $$ } from 'vitro'
 import type { Assign } from '../types'
-import { mergeProps } from '@vitro/zag'
 import { useCarouselContext } from './carousel-context'
 
 export type CarouselItemProps = Assign<
@@ -10,7 +10,10 @@ export type CarouselItemProps = Assign<
 	Observify<ItemProps>
 >
 
-export const CarouselItem = ({ index, ...props }: CarouselItemProps) => {
+export const CarouselItem: JSX.Component<CarouselItemProps> = ({
+	index,
+	...props
+}) => {
 	const api = useCarouselContext()
 	const mergedProps = mergeProps(props, () =>
 		api().getItemProps({

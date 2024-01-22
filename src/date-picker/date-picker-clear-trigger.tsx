@@ -3,7 +3,7 @@ import { useDatePickerContext } from './date-picker-context'
 
 export type DatePickerClearTriggerProps = JSX.IntrinsicElements['button']
 
-export const DatePickerClearTrigger = (props: DatePickerClearTriggerProps) => {
+export const DatePickerClearTrigger: JSX.Component<DatePickerClearTriggerProps> = (props) => {
 	const api = useDatePickerContext()
 	const mergedProps = mergeProps(props, () => api().clearTriggerProps)
 

@@ -3,7 +3,7 @@ import { useDatePickerContext } from './date-picker-context'
 
 export type DatePickerControlProps = JSX.IntrinsicElements['div']
 
-export const DatePickerControl = (props: DatePickerControlProps) => {
+export const DatePickerControl: JSX.Component<DatePickerControlProps> = (props) => {
 	const api = useDatePickerContext()
 	const mergedProps = mergeProps(props, () => api().controlProps)
 

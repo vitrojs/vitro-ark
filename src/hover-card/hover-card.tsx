@@ -1,4 +1,5 @@
 import type { Observify } from '@vitro/zag'
+import { useMemo } from 'vitro'
 import {
 	PresenceProvider,
 	usePresence,
@@ -11,12 +12,11 @@ import {
 	type UseHoverCardProps,
 	type UseHoverCardReturn,
 } from './use-hover-card'
-import { useMemo } from 'vitro'
 
 export type HoverCardProps = Observify<UseHoverCardProps & UsePresenceProps> & {
 	children?: JSX.Element | ((api: UseHoverCardReturn) => JSX.Element)
 }
-export const HoverCard = ({
+export const HoverCard: JSX.Component<HoverCardProps> = ({
 	// ----
 	lazyMount,
 	onExitComplete,
@@ -35,7 +35,7 @@ export const HoverCard = ({
 	positioning,
 	// ----
 	children,
-}: HoverCardProps) => {
+}) => {
 	const useHoverCardProps = {
 		closeDelay,
 		dir,

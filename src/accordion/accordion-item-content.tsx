@@ -1,12 +1,14 @@
+import { mergeProps } from '@vitro/zag'
 import { If } from 'vitro'
 import { usePresenceContext } from '../presence'
-import { mergeProps } from '@vitro/zag'
 import { useAccordionContext } from './accordion-context'
 import { useAccordionItemContext } from './accordion-item-context'
 
 export type AccordionItemContentProps = JSX.IntrinsicElements['div']
 
-export const AccordionItemContent = (props: AccordionItemContentProps) => {
+export const AccordionItemContent: JSX.Component<AccordionItemContentProps> = (
+	props,
+) => {
 	const api = useAccordionContext()
 	const accordionItem = useAccordionItemContext()
 	const presenceApi = usePresenceContext()

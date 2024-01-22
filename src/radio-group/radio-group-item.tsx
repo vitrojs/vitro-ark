@@ -17,13 +17,13 @@ export type RadioGroupItemProps = Assign<
 	}
 >
 
-export const RadioGroupItem = ({
+export const RadioGroupItem: JSX.Component<RadioGroupItemProps> = ({
 	value,
 	disabled,
 	invalid,
 	children,
 	...props
-}: RadioGroupItemProps) => {
+}) => {
 	const getItemProps = () => toRecord({})
 	const api = useRadioGroupContext()
 

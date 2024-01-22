@@ -1,11 +1,13 @@
-import { usePresenceContext } from '../presence'
 import { mergeProps } from '@vitro/zag'
+import { usePresenceContext } from '../presence'
 import { useAccordionContext } from './accordion-context'
 import { useAccordionItemContext } from './accordion-item-context'
 
 export type AccordionItemTriggerProps = JSX.IntrinsicElements['button']
 
-export const AccordionItemTrigger = (props: AccordionItemTriggerProps = {}) => {
+export const AccordionItemTrigger: JSX.Component<AccordionItemTriggerProps> = (
+	props = {},
+) => {
 	const api = useAccordionContext()
 	const itemProps = useAccordionItemContext()
 	const presenceApi = usePresenceContext()

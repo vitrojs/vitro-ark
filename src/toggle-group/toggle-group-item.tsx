@@ -1,8 +1,8 @@
-import type { ItemProps } from '@zag-js/toggle-group'
 import type { Observify } from '@vitro/zag'
+import { mergeProps } from '@vitro/zag'
+import type { ItemProps } from '@zag-js/toggle-group'
 import { $$ } from 'vitro'
 import type { Assign } from '../types'
-import { mergeProps } from '@vitro/zag'
 import { useToggleGroupContext } from './toggle-group-context'
 
 export type ToggleGroupItemProps = Assign<
@@ -10,12 +10,12 @@ export type ToggleGroupItemProps = Assign<
 	Observify<ItemProps>
 >
 
-export const ToggleGroupItem = ({
+export const ToggleGroupItem: JSX.Component<ToggleGroupItemProps> = ({
 	value,
 	disabled,
 
 	...props
-}: ToggleGroupItemProps) => {
+}) => {
 	const getToggleProps = () => ({
 		value: $$(value),
 		disabled: $$(disabled),

@@ -3,7 +3,7 @@ import { useDialogContext } from './dialog-context'
 
 export type DialogTitleProps = JSX.IntrinsicElements['h2']
 
-export const DialogTitle = (props: DialogTitleProps) => {
+export const DialogTitle: JSX.Component<DialogTitleProps> = (props) => {
 	const dialog = useDialogContext()
 	const mergedProps = mergeProps(props, () => dialog().titleProps)
 

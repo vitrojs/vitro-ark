@@ -3,7 +3,7 @@ import { useSelectContext } from './select-context'
 
 export type SelectIndicatorProps = JSX.IntrinsicElements['div']
 
-export const SelectIndicator = (props: SelectIndicatorProps) => {
+export const SelectIndicator: JSX.Component<SelectIndicatorProps> = (props) => {
 	const api = useSelectContext()
 	const mergedProps = mergeProps(props, () => api().indicatorProps)
 

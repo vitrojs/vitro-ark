@@ -3,7 +3,9 @@ import { useDialogContext } from './dialog-context'
 
 export type DialogDescriptionProps = JSX.IntrinsicElements['p']
 
-export const DialogDescription = (props: DialogDescriptionProps) => {
+export const DialogDescription: JSX.Component<DialogDescriptionProps> = (
+	props,
+) => {
 	const dialog = useDialogContext()
 	const mergedProps = mergeProps(props, () => dialog().descriptionProps)
 

@@ -1,13 +1,13 @@
 import type { ItemProps, ItemState } from '@zag-js/tags-input'
 
-import type { Accessor, Assign } from '../types'
-import { useTagsInputContext } from './tags-input-context'
-import { TagsInputItemProvider } from './tags-input-item-context'
 import type { Observify } from '@vitro/zag'
 import { mergeProps } from '@vitro/zag'
-import { applyChildren } from '../utils'
-import { $$, useMemo } from 'vitro'
 import { deepEqual as equals } from 'fast-equals'
+import { $$, useMemo } from 'vitro'
+import type { Accessor, Assign } from '../types'
+import { applyChildren } from '../utils'
+import { useTagsInputContext } from './tags-input-context'
+import { TagsInputItemProvider } from './tags-input-item-context'
 export type TagsInputItemProps = Assign<
 	JSX.IntrinsicElements['div'],
 	Observify<ItemProps> & {
@@ -15,14 +15,14 @@ export type TagsInputItemProps = Assign<
 	}
 >
 
-export const TagsInputItem = ({
+export const TagsInputItem: JSX.Component<TagsInputItemProps> = ({
 	disabled,
 	index,
 	value,
 	// ----
 	children,
 	...props
-}: TagsInputItemProps) => {
+}) => {
 	const itemProps = () => ({
 		disabled: $$(disabled),
 		index: $$(index),

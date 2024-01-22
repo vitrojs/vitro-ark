@@ -3,9 +3,10 @@ import { usePaginationContext } from './pagination-context'
 
 export type PaginationNextTriggerProps = JSX.IntrinsicElements['button']
 
-export const PaginationNextTrigger = (props: PaginationNextTriggerProps) => {
-	const api = usePaginationContext()
-	const mergedProps = mergeProps(props, () => api().nextTriggerProps)
+export const PaginationNextTrigger: JSX.Component<PaginationNextTriggerProps> =
+	(props) => {
+		const api = usePaginationContext()
+		const mergedProps = mergeProps(props, () => api().nextTriggerProps)
 
-	return <button {...mergedProps} />
-}
+		return <button {...mergedProps} />
+	}

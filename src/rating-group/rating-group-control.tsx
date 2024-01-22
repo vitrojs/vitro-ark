@@ -1,5 +1,5 @@
-import type { Assign } from '../types'
 import { mergeProps } from '@vitro/zag'
+import type { Assign } from '../types'
 import { applyChildren } from '../utils'
 import { useRatingGroupContext } from './rating-group-context'
 import type { UseRatingGroupReturn } from './use-rating-group'
@@ -9,10 +9,10 @@ export type RatingGroupControlProps = Assign<
 	{ children?: JSX.Element | ((api: UseRatingGroupReturn) => JSX.Element) }
 >
 
-export const RatingGroupControl = ({
+export const RatingGroupControl: JSX.Component<RatingGroupControlProps> = ({
 	children,
 	...props
-}: RatingGroupControlProps) => {
+}) => {
 	const api = useRatingGroupContext()
 	const mergedProps = mergeProps(props, () => api().controlProps)
 

@@ -1,13 +1,13 @@
 import type { Observify } from '@vitro/zag'
+import { mergeProps } from '@vitro/zag'
 import type { Assign } from '../types'
+import { applyChildren } from '../utils'
 import { PaginationProvider } from './pagination-context'
 import {
 	usePagination,
 	type UsePaginationProps,
 	type UsePaginationReturn,
 } from './use-pagination'
-import { mergeProps } from '@vitro/zag'
-import { applyChildren } from '../utils'
 
 export type PaginationProps = Assign<
 	JSX.IntrinsicElements['nav'],
@@ -16,7 +16,7 @@ export type PaginationProps = Assign<
 	}
 >
 
-export const Pagination = ({
+export const Pagination: JSX.Component<PaginationProps> = ({
 	count,
 	dir,
 	getRootNode,
@@ -31,7 +31,7 @@ export const Pagination = ({
 	// ----
 	children,
 	...props
-}: PaginationProps) => {
+}) => {
 	const api = usePagination({
 		count,
 		dir,

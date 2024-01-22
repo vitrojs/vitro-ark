@@ -3,7 +3,7 @@ import { useEditableContext } from './editable-context'
 
 export type EditableAreaProps = JSX.IntrinsicElements['div']
 
-export const EditableArea = (props: EditableAreaProps) => {
+export const EditableArea: JSX.Component<EditableAreaProps> = (props) => {
 	const api = useEditableContext()
 	const mergedProps = mergeProps(props, () => api().areaProps)
 

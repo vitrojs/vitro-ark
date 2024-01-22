@@ -4,7 +4,7 @@ import { useComboboxItemContext } from './combobox-item-context'
 
 export type ComboboxItemTextProps = JSX.IntrinsicElements['span']
 
-export const ComboboxItemText = (props: ComboboxItemTextProps) => {
+export const ComboboxItemText: JSX.Component<ComboboxItemTextProps> = (props) => {
 	const api = useComboboxContext()
 	const itemProps = useComboboxItemContext()
 	const mergedProps = mergeProps(props, () =>

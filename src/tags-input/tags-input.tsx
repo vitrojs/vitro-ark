@@ -1,13 +1,13 @@
 import type { Observify } from '@vitro/zag'
+import { mergeProps } from '@vitro/zag'
 import type { Assign } from '../types'
+import { applyChildren } from '../utils'
 import { TagsInputProvider } from './tags-input-context'
 import {
 	useTagsInput,
 	type UseTagsInputProps,
 	type UseTagsInputReturn,
 } from './use-tags-input'
-import { mergeProps } from '@vitro/zag'
-import { applyChildren } from '../utils'
 
 export type TagsInputProps = Assign<
 	JSX.IntrinsicElements['div'],
@@ -16,7 +16,7 @@ export type TagsInputProps = Assign<
 	}
 >
 
-export const TagsInput = ({
+export const TagsInput: JSX.Component<TagsInputProps> = ({
 	addOnPaste,
 	allowEditTag,
 	allowOverflow,
@@ -47,7 +47,7 @@ export const TagsInput = ({
 	// ----
 	children,
 	...props
-}: TagsInputProps) => {
+}) => {
 	const api = useTagsInput({
 		addOnPaste,
 		allowEditTag,

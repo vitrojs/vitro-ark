@@ -3,7 +3,9 @@ import { useHoverCardContext } from './hover-card-context'
 
 export type HoverCardTriggerProps = JSX.IntrinsicElements['button']
 
-export const HoverCardTrigger = (props: HoverCardTriggerProps) => {
+export const HoverCardTrigger: JSX.Component<HoverCardTriggerProps> = (
+	props,
+) => {
 	const hoverCard = useHoverCardContext()
 	const mergedProps = mergeProps(props, () => hoverCard().triggerProps)
 

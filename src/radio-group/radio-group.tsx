@@ -1,6 +1,6 @@
 import type { Observify } from '@vitro/zag'
-import type { Assign } from '../types'
 import { mergeProps } from '@vitro/zag'
+import type { Assign } from '../types'
 import { RadioGroupProvider } from './radio-group-context'
 import { useRadioGroup, type UseRadioGroupProps } from './use-radio-group'
 
@@ -9,7 +9,7 @@ export type RadioGroupProps = Assign<
 	Observify<UseRadioGroupProps>
 >
 
-export const RadioGroup = ({
+export const RadioGroup: JSX.Component<RadioGroupProps> = ({
 	dir,
 	disabled,
 	form,
@@ -22,7 +22,7 @@ export const RadioGroup = ({
 	value,
 
 	...props
-}: RadioGroupProps) => {
+}) => {
 	const api = useRadioGroup({
 		dir,
 		disabled,

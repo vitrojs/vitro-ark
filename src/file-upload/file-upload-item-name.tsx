@@ -1,14 +1,14 @@
-import { $$ } from 'vitro'
 import { mergeProps } from '@vitro/zag'
+import { $$ } from 'vitro'
 import { useFileUploadContext } from './file-upload-context'
 import { useFileUploadItemContext } from './file-upload-item-context'
 
 export type FileUploadItemNameProps = JSX.IntrinsicElements['div']
 
-export const FileUploadItemName = ({
+export const FileUploadItemName: JSX.Component<FileUploadItemNameProps> = ({
 	children,
 	...props
-}: FileUploadItemNameProps) => {
+}) => {
 	const api = useFileUploadContext()
 	const item = useFileUploadItemContext()
 	const mergedProps = mergeProps(props, () => api().getItemNameProps(item()))

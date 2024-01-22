@@ -3,7 +3,9 @@ import { useDatePickerContext } from './date-picker-context'
 
 export type DatePickerRangeTextProps = JSX.IntrinsicElements['div']
 
-export const DatePickerRangeText = (props: DatePickerRangeTextProps) => {
+export const DatePickerRangeText: JSX.Component<DatePickerRangeTextProps> = (
+	props,
+) => {
 	const api = useDatePickerContext()
 	const mergedProps = mergeProps(props, () => api().rangeTextProps)
 

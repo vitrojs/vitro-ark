@@ -3,7 +3,7 @@ import { useDatePickerContext } from './date-picker-context'
 
 export type DatePickerLabelProps = JSX.IntrinsicElements['label']
 
-export const DatePickerLabel = (props: DatePickerLabelProps) => {
+export const DatePickerLabel: JSX.Component<DatePickerLabelProps> = (props) => {
 	const api = useDatePickerContext()
 	const mergedProps = mergeProps(props, () => api().labelProps)
 

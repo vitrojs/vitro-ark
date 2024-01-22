@@ -4,7 +4,7 @@ import { useComboboxItemContext } from './combobox-item-context'
 
 export type ComboboxItemIndicatorProps = JSX.IntrinsicElements['div']
 
-export const ComboboxItemIndicator = (props: ComboboxItemIndicatorProps) => {
+export const ComboboxItemIndicator:JSX. Component<ComboboxItemIndicatorProps> = (props) => {
 	const combobox = useComboboxContext()
 	const itemProps = useComboboxItemContext()
 	const mergedProps = mergeProps(props, () =>

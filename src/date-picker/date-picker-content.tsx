@@ -1,11 +1,11 @@
+import { mergeProps } from '@vitro/zag'
 import { If } from 'vitro'
 import { usePresenceContext } from '../presence'
 import { useDatePickerContext } from './date-picker-context'
-import { mergeProps } from '@vitro/zag'
 
 export type DatePickerContentProps = JSX.IntrinsicElements['div']
 
-export const DatePickerContent = (props: DatePickerContentProps) => {
+export const DatePickerContent: JSX.Component<DatePickerContentProps> = (props) => {
 	const api = useDatePickerContext()
 	const presenceApi = usePresenceContext()
 	const mergedProps = mergeProps(

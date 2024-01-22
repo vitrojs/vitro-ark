@@ -4,7 +4,9 @@ import { useRadioGroupItemContext } from './radio-group-item-context'
 
 export type RadioGroupItemTextProps = JSX.IntrinsicElements['span']
 
-export const RadioGroupItemText = (props: RadioGroupItemTextProps) => {
+export const RadioGroupItemText: JSX.Component<RadioGroupItemTextProps> = (
+	props,
+) => {
 	const api = useRadioGroupContext()
 	const itemProps = useRadioGroupItemContext()
 	const mergedProps = mergeProps(props, () =>

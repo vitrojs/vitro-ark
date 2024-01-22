@@ -1,7 +1,7 @@
 import { type ContentProps } from '@zag-js/tabs'
 
-import { $$, If, useMemo } from 'vitro'
 import type { Observify } from '@vitro/zag'
+import { $$, If, useMemo } from 'vitro'
 import {
 	PresenceProvider,
 	usePresence,
@@ -17,7 +17,7 @@ export type TabContentProps = Assign<
 	Observify<ContentProps>
 >
 
-export const TabContent = ({ value, ...props }: TabContentProps) => {
+export const TabContent: JSX.Component<TabContentProps> = ({ value, ...props }) => {
 	const api = useTabsContext()
 	const presenceProps = usePresencePropsContext()
 

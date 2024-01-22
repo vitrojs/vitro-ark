@@ -4,9 +4,9 @@ import { useColorPickerContext } from './color-picker-context'
 
 export type ColorPickerChannelSliderThumbProps = JSX.IntrinsicElements['div']
 
-export const ColorPickerChannelSliderThumb = (
-	props: ColorPickerChannelSliderThumbProps,
-) => {
+export const ColorPickerChannelSliderThumb: JSX.Component<
+	ColorPickerChannelSliderThumbProps
+> = (props) => {
 	const sliderContext = useColorPickerChannelSliderContext()
 	const api = useColorPickerContext()
 	const mergedProps = mergeProps(props, () =>

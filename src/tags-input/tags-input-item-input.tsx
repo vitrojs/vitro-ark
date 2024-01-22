@@ -4,7 +4,7 @@ import { useTagsInputItemContext } from './tags-input-item-context'
 
 export type TagsInputItemInputProps = JSX.IntrinsicElements['input']
 
-export const TagsInputItemInput = (props: TagsInputItemInputProps) => {
+export const TagsInputItemInput: JSX.Component<TagsInputItemInputProps> = (props) => {
 	const api = useTagsInputContext()
 	const itemProps = useTagsInputItemContext()
 	const mergedProps = mergeProps(props, () =>

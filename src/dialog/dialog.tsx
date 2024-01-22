@@ -19,7 +19,7 @@ export type DialogProps = Observify<UseDialogProps & UsePresenceProps> & {
 	children?: JSX.Element | ((api: UseDialogReturn) => JSX.Element)
 }
 
-export const Dialog = ({
+export const Dialog: JSX.Component<DialogProps> = ({
 	// ----
 	lazyMount,
 	onExitComplete,
@@ -48,7 +48,7 @@ export const Dialog = ({
 	trapFocus,
 	// ----
 	children,
-}: DialogProps) => {
+}) => {
 	const api = useDialog({
 		'aria-label': ariaLabel,
 		closeOnEscapeKeyDown,

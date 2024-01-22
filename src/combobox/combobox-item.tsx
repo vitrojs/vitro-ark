@@ -1,12 +1,12 @@
-import type { ItemProps, ItemState } from '@zag-js/combobox'
-import type { Accessor, Assign } from '../types'
-import { useComboboxContext } from './combobox-context'
-import { deepEqual as equals } from 'fast-equals'
-import { mergeProps } from '@vitro/zag'
-import { applyChildren } from '../utils'
-import { ComboboxItemProvider } from './combobox-item-context'
-import { $$, useMemo } from 'vitro'
 import type { Observify } from '@vitro/zag'
+import { mergeProps } from '@vitro/zag'
+import type { ItemProps, ItemState } from '@zag-js/combobox'
+import { deepEqual as equals } from 'fast-equals'
+import { $$, useMemo } from 'vitro'
+import type { Accessor, Assign } from '../types'
+import { applyChildren } from '../utils'
+import { useComboboxContext } from './combobox-context'
+import { ComboboxItemProvider } from './combobox-item-context'
 export type ComboboxItemProps = Assign<
 	JSX.IntrinsicElements['div'],
 	Observify<ItemProps> & {
@@ -14,11 +14,11 @@ export type ComboboxItemProps = Assign<
 	}
 >
 
-export const ComboboxItem = ({
+export const ComboboxItem: JSX.Component<ComboboxItemProps> = ({
 	item,
 	children,
 	...props
-}: ComboboxItemProps) => {
+}) => {
 	const itemProps = () => ({
 		item: $$(item),
 	})

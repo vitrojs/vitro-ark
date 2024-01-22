@@ -1,7 +1,7 @@
 import type { Observify } from '@vitro/zag'
+import { mergeProps } from '@vitro/zag'
 import { $$ } from 'vitro'
 import type { Assign } from '../types'
-import { mergeProps } from '@vitro/zag'
 import { useMenuContext } from './menu-context'
 
 interface ItemGroupLabelProps {
@@ -12,10 +12,10 @@ export type MenuItemGroupLabelProps = Assign<
 	Observify<ItemGroupLabelProps>
 >
 
-export const MenuItemGroupLabel = ({
+export const MenuItemGroupLabel: JSX.Component<MenuItemGroupLabelProps> = ({
 	for: _for,
 	...props
-}: MenuItemGroupLabelProps) => {
+}) => {
 	const menu = useMenuContext()
 
 	const mergedProps = mergeProps(props, () =>

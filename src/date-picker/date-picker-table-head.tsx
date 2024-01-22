@@ -4,7 +4,9 @@ import { useDatePickerTableContext } from './date-picker-table-context'
 
 export type DatePickerTableHeadProps = JSX.IntrinsicElements['thead']
 
-export const DatePickerTableHead = (props: DatePickerTableHeadProps) => {
+export const DatePickerTableHead: JSX.Component<DatePickerTableHeadProps> = (
+	props,
+) => {
 	const api = useDatePickerContext()
 	const tableProps = useDatePickerTableContext()
 	const mergedProps = mergeProps(props, () =>

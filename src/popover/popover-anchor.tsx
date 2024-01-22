@@ -3,7 +3,7 @@ import { usePopoverContext } from './popover-context'
 
 export type PopoverAnchorProps = JSX.IntrinsicElements['div']
 
-export const PopoverAnchor = (props: PopoverAnchorProps) => {
+export const PopoverAnchor: JSX.Component<PopoverAnchorProps> = (props) => {
 	const api = usePopoverContext()
 	const mergedProps = mergeProps(props, () => api().anchorProps)
 

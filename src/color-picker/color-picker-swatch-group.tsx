@@ -3,7 +3,7 @@ import { useColorPickerContext } from './color-picker-context'
 
 export type ColorPickerSwatchGroupProps = JSX.IntrinsicElements['div']
 
-export const ColorPickerSwatchGroup = (props: ColorPickerSwatchGroupProps) => {
+export const ColorPickerSwatchGroup: JSX.Component<ColorPickerSwatchGroupProps> = (props) => {
 	const api = useColorPickerContext()
 	const mergedProps = mergeProps(props, () => api().swatchGroupProps)
 
