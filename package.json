@@ -28,7 +28,7 @@
     "@vitro/lucide"
   ],
   "dependencies": {
-    "@tanstack/table-core": "^8.11.6",
+    "@tanstack/table-core": "^8.11.7",
     "@vitro/zag": "github:vitrojs/vitro-zag",
     "fast-equals": "^5.0.1",
     "vitro": "github:vitrojs/vitro"
@@ -72,12 +72,12 @@
   "devDependencies": {
     "@biomejs/biome": "^1.5.2",
     "@pandacss/dev": "^0.27.3",
-    "@park-ui/panda-preset": "^0.28.0",
+    "@park-ui/panda-preset": "^0.29.0",
     "@vitro/lucide": "github:vitrojs/vitro-lucide",
     "@vitro/router": "github:vitrojs/vitro-router",
-    "bun-types": "^1.0.23",
+    "bun-types": "^1.0.25",
     "esbuild": "^0.19.11",
-    "vite": "^5.0.11",
+    "vite": "^5.0.12",
     "vite-tsconfig-paths": "^4.3.1"
   }
 }
