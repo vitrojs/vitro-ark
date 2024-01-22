@@ -7,7 +7,7 @@ import { button, dialog, iconButton } from 'styled-system/recipes'
 
 import { X } from '@vitro/lucide'
 import { css } from 'styled-system/css'
-import * as Dialog from '../dialog'
+import { Dialog } from '../dialog'
 import { Environment } from '../environment/environment'
 
 const Layout = () => {
@@ -36,26 +36,26 @@ const App = () => {
 					to: () => (
 						<div class={[container(), css({ w: 'full', p: '8' })]}>
 							<div class={[container(), flex({ justifyContent: 'center' })]}>
-								<Dialog.Dialog>
-									<Dialog.DialogTrigger asChild>
+								<Dialog.Root>
+									<Dialog.Trigger asChild>
 										<button class={[dialogStyles.trigger, button()]}>
 											Open Dialog
 										</button>
-									</Dialog.DialogTrigger>
+									</Dialog.Trigger>
 									<Portal>
-										<Dialog.DialogBackdrop class={dialogStyles.backdrop} />
-										<Dialog.DialogPositioner class={dialogStyles.positioner}>
-											<Dialog.DialogContent class={dialogStyles.content}>
+										<Dialog.Backdrop class={dialogStyles.backdrop} />
+										<Dialog.Positioner class={dialogStyles.positioner}>
+											<Dialog.Content class={dialogStyles.content}>
 												<div class={stack({ gap: '8', p: '6' })}>
 													<div class={stack({ gap: '1' })}>
-														<Dialog.DialogTitle class={dialogStyles.title}>
+														<Dialog.Title class={dialogStyles.title}>
 															Dialog Title
-														</Dialog.DialogTitle>
-														<Dialog.DialogDescription
+														</Dialog.Title>
+														<Dialog.Description
 															class={dialogStyles.description}
 														>
 															Dialog Description
-														</Dialog.DialogDescription>
+														</Dialog.Description>
 													</div>
 													<div
 														class={stack({
@@ -64,9 +64,8 @@ const App = () => {
 															w: 'full',
 														})}
 													>
-														<Dialog.DialogCloseTrigger asChild>
+														<Dialog.CloseTrigger asChild>
 															<button
-
 																class={[
 																	dialogStyles.closeTrigger,
 																	button({ variant: 'outline' }),
@@ -75,12 +74,12 @@ const App = () => {
 															>
 																Cancel
 															</button>
-														</Dialog.DialogCloseTrigger>
+														</Dialog.CloseTrigger>
 														<button class={[button(), css({ w: 'full' })]}>
 															Confirm
 														</button>
 													</div>
-													<Dialog.DialogCloseTrigger
+													<Dialog.CloseTrigger
 														asChild
 														class={[dialogStyles.closeTrigger]}
 													>
@@ -92,12 +91,12 @@ const App = () => {
 														>
 															<X />
 														</button>
-													</Dialog.DialogCloseTrigger>
+													</Dialog.CloseTrigger>
 												</div>
-											</Dialog.DialogContent>
-										</Dialog.DialogPositioner>
+											</Dialog.Content>
+										</Dialog.Positioner>
 									</Portal>
-								</Dialog.Dialog>
+								</Dialog.Root>
 							</div>
 						</div>
 					),

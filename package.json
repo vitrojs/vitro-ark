@@ -28,7 +28,6 @@
     "@vitro/lucide"
   ],
   "dependencies": {
-    "@tanstack/table-core": "^8.11.7",
     "@vitro/zag": "github:vitrojs/vitro-zag",
     "fast-equals": "^5.0.1",
     "vitro": "github:vitrojs/vitro"
